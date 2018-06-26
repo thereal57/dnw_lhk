@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="apple-mobile-web-app-title" content=""><!--  기획팀에 요청후 content 삽입 -->
+	<meta name="viewport" content="width=1273">
+    <link rel="stylesheet" type="text/css" href="//static.danawa.com/new/recss/billing.css">
+<!--    <link rel="stylesheet" type="text/css" href="billing.css">-->
+	<link rel="stylesheet" type="text/css" href="//static.danawa.com/new/recss/common.css">
+	<link rel="stylesheet" type="text/css" href="//static.danawa.com/new/recss/navigation_shop_danawa.css">
+	<link rel="stylesheet" type="text/css" href="//static.danawa.com/new/recss/shop_danawa.css">
+	<link rel="stylesheet" type="text/css" href="//static.danawa.com/new/recss/shop_danawa_mypage.css">
+<!--	<link rel="stylesheet" type="text/css" href="shop_danawa_mypage.css">-->
+	<title>타이틀을 넣어주세요</title><!--  기획팀에 요청후 content 삽입 -->
+	<meta name="keywords" content=""><!--  기획팀에 요청후 content 삽입 -->
+	<meta name="description" content=""><!--  기획팀에 요청후 content 삽입 -->
+	<script type="text/javascript" src="//static.danawa.com/globaljs/external/jquery/core/last/jquery-last.min.js?v=1504090920"></script>
+	<script type="text/javascript" src="common_shop_danawa.js"></script>
+	<script type="text/javascript" src="./js/list.js"></script>
+	<script type="text/javascript" src="sub.js"></script>
+
+</head>
+<body>
+<!-- skip navigation -->
+	<div id="skip_navigation">
+		<a href="#wrap_shop_danawa" onclick="document.getElementById('wrap_shop_danawa').tabIndex=-1;document.getElementById('wrap_shop_danawa').focus();return false;"><span>본문으로 바로보기</span></a>
+	</div>
+<!-- //skip navigation -->
+
+<!-- wrap_shop_danawa -->
+<div id="wrap_shop_danawa">
+
+
+
+	<!-- top_header_Wrap -->
+	<div class="top_header_wrap">
+		<!-- top_header -->
+		<div class="top_header">
+			<!-- top_info -->
+			<div class="top_info">
+				<h1 class="top_logo"><a href=""><img src="//img.danawa.com/new/shop_danawa/img/img_logo2.png" alt="샵다나와" /></a></h1>
+			</div>
+			<!-- //top_info -->
+			<!-- top_menu -->
+			<div class="top_menu">
+				<a href="" class="link_cs">고객센터</a>
+			</div>
+			<!-- //top_menu -->
+		</div>
+		<!-- //top_header -->
+	</div>
+	<!-- //top_header_Wrap -->
+	
+	<!-- 20151228 영역 수정 -->
+	<!-- my_wish_bg -->
+	<div class="my_wish_bg">
+		<!-- my_wish_wrap -->
+		<div class="my_wish_wrap">
+			<!-- left_menu_bar -->
+            <div class="left_menu_bar">
+                <!-- my_head -->
+                <div class="my_head">
+                    <h2 class="my_h2">나의 쇼핑내역</h2>
+                </div>
+                <!-- //my_head -->
+                <!-- side_nav -->
+                <div class="side_nav">
+                    <!-- nav_top -->
+                    <div class="nav_top">
+                        <p class="user">
+                            <strong>jkyoons</strong> 님
+                        </p>
+                        <a href="https://auth.danawa.com/modifyMember" target="_blank" role="button" class="btn_edit">회원정보수정</a>
+                    </div>
+                    <!-- //nav_top -->
+                    <!-- nav_sect -->
+                    <div class="nav_sect">
+                        <h2 class="my_h2">나의 쇼핑내역</h2>
+                        <ul class="menu_list">
+                            <li><a href="https://buyer.danawa.com/order/Order/shopOrders/viewType/orderList">주문/배송 조회</a></li>
+                            <li><a href="https://buyer.danawa.com/order/Order/shopOrders/viewType/orderVoucherList">현금영수증/세금계산서</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav_sect">
+                        <h2 class="my_h2">관심목록</h2>
+                        <ul class="menu_list">
+                            <li class="selected"><a href="/main/?controller=estimate&amp;methods=estimateList">관심상품</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav_sect">
+                        <h2 class="my_h2">나의 활동내역</h2>
+                        <ul class="menu_list">
+                            <li><a href="/main/?controller=boardReview&amp;methods=myReview">내가 쓴 구매후기</a></li>
+                            <li><a href="/main/?controller=board&amp;methods=mySellerQna">판매점 문의내역</a></li>
+                            <li><a href="//help.danawa.com/onlineInquiryForm.php?urlPath=receipt" target="_blank">고객센터 문의내역</a></li>
+                        </ul>
+                    </div>
+
+
+                    <!-- //nav_sect -->
+                </div>
+                <!-- //side_nav -->
+            </div>
+			<!--// left_menu_bar -->
+			<!-- wish_content_wrap -->
+			<div class="wish_content_wrap">
+                <div class="my_info no_sub_info">
+                    <h3>관심상품</h3>
+                </div>
+                <div id="content" class="content cont_my_cancel">
+                    <!-- sect -->
+                    <div class="sect sect_order_list">
+                        <!-- fixed_tab -->
+                        <div class="fixed_tab">
+                            <!-- tab_list -->
+                            <ul class="tab_list">
+                                <li class="selected"><a href="/main/?controller=estimate&amp;methods=estimateList&amp;registerSectionSeq=142">샵다나와</a></li><li><a href="/main/?controller=estimate&amp;methods=estimateList&amp;registerSectionSeq=154">딜러몰/적립몰</a></li>				</ul>
+                            <!-- //tab_list -->
+                        </div>
+                        <!-- //fixed_tab -->
+                        <!-- v180604 .link_dmall -->
+                        <a href="" class="link_dmall">샵다나와 바로가기<i aria-hidden="true"></i></a>
+                        <!--// v180604 .link_dmall -->
+                    </div>
+                    <!-- //sect -->
+                    <div class="my_wish_con">
+                        <ul class="my_wish_info">
+                            <li>관심상품은 1년 저장되며 그 후에는 자동삭제 됩니다. </li>
+                            <li>그룹은 10개까지 만들 수 있으며, 상품은 그룹 별 최대 50개까지 저장됩니다.</li>
+                            <li>견적합계는 부가세 포함 금액이며 배송비는 별도입니다.</li>
+                            <li>조립 및 AS 상품은 장바구니에서 추가할 수 있습니다.</li>
+                        </ul>
+
+                        <div class="my_wish_group">
+                            <!-- 그룹명 관리 -->
+                            <div class="wish_group_edit">
+                                <a href="javascript:openEstimateGroupManager();" class="btn_wish_group">그룹명 관리</a>
+                                <!-- 그룹 관리 팝업 -->
+                                <div class="group_name_edit">
+                                    <h4 class="group_edit_title">그룹명 관리</h4>
+                                    <p class="close"><img src="//img.danawa.com/new/shop_danawa/img/icon_close2.png" alt="닫기" onclick="closeLayer('group_name_edit');"></p>
+                                    <form name="frmEstimateGroup" id="frmEstimateGroup">
+                                        <div class="group_list">
+                                            <ul></ul>
+                                            <input type="hidden" name="registerSectionSeq" value="142">
+                                        </div>
+                                        <div class="new_group">
+                                            <dl class="creat_group">
+                                                <dt>그룹 추가</dt>
+                                                <dd>
+                                                    <input type="text" id="groupName" name="groupName" placeholder="그룹명을 입력해주세요." class="input_group_name" title="그룹명을 입력해주세요." maxlength="30">
+                                                    <a href="javascript:addEstimateGroup();" class="btn_add">등록</a>
+                                                    <a href="javascript:clearGroupName();" class="btn_cancel">취소</a>
+                                                </dd>
+                                            </dl>
+                                            <ul class="new_group_info">
+                                                <li>* 그룹명은 최대 30자, 한글, 영문, 숫자만 입력해주세요.</li>
+                                                <li>* 관심상품 그룹은 10개까지 만들 수 있습니다.</li>
+                                                <li>* 그룹 삭제 시 그룹 내 저장된 상품도 같이 삭제됩니다</li>
+                                            </ul>
+                                            <div class="btn_group_area">
+                                                <a href="javascript:saveEstimateGroup();" class="btn_save">저장</a>
+                                                <a href="javascript:closeLayer('group_name_edit');" class="btn_cancel">취소</a>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- //그룹 관리 팝업 -->
+                            </div>
+                            <!-- //그룹명 관리 -->
+
+                            <!-- 그룹 리스트 -->
+                            <div class="wish_group_list">
+                                <input type="hidden" id="groupSeq" value="7822128">
+                                <input type="hidden" id="marketPlaceSeq" value="29">
+                                <ul class="group_name_list">
+                                    <li class="group_name_item selected">
+                                        <a href="/main/?controller=estimate&amp;methods=estimateList&amp;registerSectionSeq=142&amp;groupSeq=7822128" class="group_name_link" title="그룹명">그룹명</a>
+                                        <input type="hidden" name="groupSeq" value="7822128">
+                                        <input type="hidden" name="groupName" value="그룹명">
+                                    </li>
+                                    <li class="group_name_item">
+                                        <a href="/main/?controller=estimate&amp;methods=estimateList&amp;registerSectionSeq=142&amp;groupSeq=15873532" class="group_name_link" title="그래픽카드">그래픽카드</a>
+                                        <input type="hidden" name="groupSeq" value="15873532">
+                                        <input type="hidden" name="groupName" value="그래픽카드">
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- 그룹 리스트 -->
+                        </div>
+
+                        <!-- 그룹내 관심상품 리스트 -->
+                        <div class="my_wish_list">
+                            <form name="frmEstimateProduct" id="frmEstimateProduct" title="관심상품저장">
+                                <input type="hidden" name="groupSeq" value="7822128">
+                                <input type="hidden" name="mode" value="">
+                                <input type="hidden" name="oldGroupSeq" value="7822128">
+                                <input type="hidden" name="serviceSectionSeqList[]" value="">
+                                <input type="hidden" name="productSeqList[]" value="">
+                            </form>
+                            <p class="wish_list_count">관심상품 수 : 1</p>
+                            <table class="wish_list" summary="등록하신 관심상품 리스트입니다.">
+                                <caption class="screen_out">관심상품 리스트</caption>
+                                <colgroup>
+                                    <col style="width:80px">
+                                    <col style="width:59px">
+                                    <col style="width:*">
+                                    <col style="width:120px">
+                                    <col style="width:50px">
+                                    <col style="width:120px">
+                                    <col style="width:53px">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>이미지</th>
+                                        <th>분류</th>
+                                        <th>상품명</th>
+                                        <th>판매가</th>
+                                        <th>수량</th>
+                                        <th>합계금액</th>
+                                        <th><input type="checkbox" id="checkAll" name="checkAll" onclick="checkAll(this);" title="전체 상품 선택"></th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="7">
+                                            <div class="btn_box">
+                                                선택상품
+                                                <a href="javascript:openEstimateMoveManager();" class="btn_move">그룹이동</a>
+                                                <a href="javascript:openEstimateCopyManager();" class="btn_copy">그룹복사</a>
+                                                <a href="javascript:removeEstimate();" class="btn_del">삭제</a>
+
+                                                <!-- 그룹이동 팝업 -->
+                                                <div class="group_popup pop_move">
+                                                    <h3 class="title_common">그룹이동</h3>
+                                                    <a href="javascript:closeLayer('pop_move');" class="btn_close">그룹이동 팝업 닫기</a>
+                                                    <p class="group_text">
+                                                        <strong>총 <span class="count"></span>개의 상품을 다른 그룹으로 이동합니다.</strong>
+                                                    </p>
+                                                    <div class="group_move">
+                                                        <select name="moveGroupList" id="moveGroupList" class="select_move" title="이동할 그룹을 선택하세요."></select>
+                                                    </div>
+                                                    <p class="group_btn">
+                                                        <a href="javascript:moveEstimate();" class="btn_go" title="확인">확인</a>
+                                                        <a href="javascript:closeLayer('pop_move');" class="btn_cancel" title="취소">취소</a>
+                                                    </p>
+                                                </div>
+                                                <!-- //그룹이동 팝업 -->
+
+                                                <!-- 그룹복사 팝업 -->
+                                                <div class="group_popup pop_copy">
+                                                    <h3 class="title_common">그룹복사</h3>
+                                                    <a href="javascript:closeLayer('pop_copy');" class="btn_close">그룹복사 팝업 닫기</a>
+                                                    <p class="group_text">
+                                                        <strong>총 <span class="count"></span>개의 상품을 다른 그룹으로 복사합니다.</strong>
+                                                    </p>
+                                                    <div class="group_move">
+                                                        <select name="copyGroupList" id="copyGroupList" class="select_move" title="복사할 그룹을 선택하세요."></select>
+                                                    </div>
+                                                    <p class="group_btn">
+                                                        <a href="javascript:copyEstimate();" class="btn_go" title="확인">확인</a>
+                                                        <a href="javascript:closeLayer('pop_copy');" class="btn_cancel" title="취소">취소</a>
+                                                    </p>
+                                                </div>
+                                                <!-- //그룹복사 팝업 -->
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    <tr>
+                                        <td class="prod_thumb">
+                                            <img src="//img.danawa.com/prod_img/500000/646/078/img/5078646_1.jpg?shrink=80:80" onerror="this.src='//img.danawa.com/new/shop_danawa/img/noImage_60.jpg'" alt="상품 썸네일" width="60px" height="60px">
+                                        </td>
+                                        <td class="prod_category">
+                                            그래픽카드								<input type="hidden" name="serviceSectionSeq" value="597">
+                                        </td>
+                                        <td class="prod_name">
+                                            <a href="http://shop.danawa.com/main/?controller=goods&amp;methods=blog&amp;billingInternalProductSeq=5078646" target="_blank">ASUS ROG STRIX 지포스 GTX1050 Ti O4G GAMING D5 4GB</a>
+                                            <input type="hidden" name="productName" value="ASUS ROG STRIX 지포스 GTX1050 Ti O4G GAMING D5 4GB">
+                                            <input type="hidden" name="goodsSeq" value="0">
+                                        </td>
+                                        <td class="prod_price">0원</td>
+                                        <td class="prod_pcs">1</td>
+                                        <td class="total_price">0원</td>
+                                        <td class="prod_select"><input type="checkbox" name="checkProductSeqList" value="5078646" title="이 상품 선택"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- //그룹내 관심상품 리스트 -->
+
+                        <!-- 총 합계 금액 -->
+                        <div class="total_box">
+                            <dl class="total_box_label">
+                                <dt>총 합계</dt>
+                                <dd>샵다나와가 100% 안전거래를 보장합니다.</dd>
+                            </dl>
+                            <div class="total_price online_price">
+                                <p class="total_price_sec purple"><strong>0</strong>원</p>
+                            </div>
+                        </div>
+                        <!-- //총 합계 금액 -->
+                        <p class="btn_right_area"><a href="javascript:printEstimate(764,408);" class="btn_print">견적인쇄</a></p>
+                        <div class="btn_area">
+                            <a href="/main/?controller=board&amp;methods=getBoardList&amp;boardSeq=194" target="_blank" class="btn dark_gray">
+                                PC구매상담 문의
+                                <div class="hover_info"><span class="hover_arrow"></span>PC관련 구매상담, 대량구매, 납품 <br>문의글 남길 시 맞춤 답변 제공</div>
+                            </a>
+                            <a href="javascript:cartEstimate();" class="btn purple btn_cart">장바구니</a>
+                            <div id="frmOrder" style="display: none;"><form id="frmOrderInput" name="frmOrderInput">	<input type="hidden" name="marketPlaceSeq" value=""></form><iframe id="frmOrderTarget" name="frmOrderTarget" title="구매하기"></iframe></div><div class="cart_popup" style="display:none"></div>
+                        </div>
+
+                        <!-- AS신청 안내 팝업 -->
+                        <div class="pop_as">
+                            <h3 class="title_common">조립신청+AS쿠폰 및 운영체제 추가 안내</h3>
+                            <a href="javascript:closeLayer('pop_as');" class="btn_close">조립신청+AS쿠폰 및 운영체제 추가 안내 팝업 닫기</a>
+                            <table width="650" height="701" border="0" cellpadding="0" cellspacing="0">
+                                <tbody>
+                                    <tr>
+                                        <td colspan="3"><img src="//img.danawa.com/new/minishop/img/popup/info_pop_01.jpg" width="650" height="343" alt=""></td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="2"><img src="//img.danawa.com/new/minishop/img/popup/info_pop_02.jpg" width="505" height="358" alt=""></td>
+                                        <td><a href="/shopmain/?controller=guide&amp;methods=guideList&amp;categorySeq=570" target="_blank"><img src="//img.danawa.com/new/minishop/img/popup/info_03.jpg" width="94" height="70" border="0" alt=""></a></td>
+                                        <td rowspan="2"><img src="//img.danawa.com/new/minishop/img/popup/info_pop_04.jpg" width="51" height="358" alt=""></td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="//img.danawa.com/new/minishop/img/popup/info_pop_05.jpg" width="94" height="288" alt=""></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- //AS신청 안내 팝업 -->
+                    </div>
+                </div>
+			</div>
+			<!--// wish_content_wrap -->
+		</div>
+		<!--// my_wish_wrap -->
+	</div>
+	<!--// my_wish_bg -->
+
+	<!-- footer_shop_danawa -->
+	<div id="footer_shop_danawa">
+
+		<!-- footer_top_links -->
+		<div class="footer_top_links">
+				
+				<!-- footer_left_notice -->
+				<div class="footer_left_notice">
+					<span class="notice_squre_box">공지</span>
+					<p class="footer_notice_text"><a href="">4/1 '함께하는 다나와' 서비스 종료 안내</a></p>
+				</div>
+				<!--// footer_left_notice -->
+				
+				<!-- footer_right_policy -->
+				<div class="footer_right_policy">
+					<!-- footer_danawa_policy -->
+					<dl class="footer_danawa_policy">
+						<dt class="screen_out">다나와 정책 및 약관</dt>
+						<dd class="dd_type first_dd"><a href="http://www.danawa.com/corp/main.html" target="_blank" class="policy_link">회사소개 </a></dd>
+						<dd class="dd_type"><a href="http://www.danawa.com/info/provision.html"  target="_blank" class="policy_link">이용약관</a></dd>
+						<dd class="dd_type"><a href="http://www.danawa.com/info/helprule_private.html"  target="_blank" class="policy_link fbold">개인정보취급방침</a></dd>
+						<dd class="dd_type"><a href="" target="_blank" class="policy_link">입점 및 제휴문의</a><!-- 링크값은 별도 전달예정 --></dd>
+					</dl>
+					<!--// footer_danawa_policy -->
+				</div>
+				<!--// footer_right_policy -->
+		</div>
+		<!--// footer_top_links -->
+
+
+
+		<!-- footer_middle_box -->
+		<div class="footer_middle_box">
+			<!-- footer_box_logo -->
+			<div class="footer_box_logo"><a href="http://www.danawa.com" target="_blank" class="footer_dlogo_link"><span class="footer_logo_types">다나와 로고</span></a></div>
+			<!--// footer_box_logo -->
+
+			<!-- footer_box_address -->
+			<div class="footer_box_address">
+				<!-- footer_information_type -->
+				<dl class="footer_information_type">
+					<dt class="dt_type">(주)다나와</dt>
+					<dd class="dd_type2">
+						서울특별시 양천구 목동동로 233-1, 501 (목동, 드림타워)<br />
+						대표이사: 손윤환, 안징현   사업자번호: 117-81-40065 <br />
+						통신판매: 양천918호  부가통신업 3801호<a href="http://www.ftc.go.kr/info/bizinfo/communicationList.jsp" target="_blank" class="btn_box_type">사업자 정보 확인</a>
+					</dd>
+				</dl>
+				<!--// footer_information_type -->
+			</div>
+			<!--// footer_box_address -->
+
+			<!-- footer_box_cs -->
+			<div class="footer_box_cs">
+				<!-- footer_information_type -->
+				<dl class="footer_information_type">
+					<dt class="dt_type">고객센터</dt>
+					<dd class="dd_type2">
+						서울특별시 양천구 목동동로 233-1, 501 (목동, 드림타워)<br />
+						전화: 1688-2470 <a href="http://help.danawa.com/" target="_blank" class="btn_tel_click">전화전클릭</a>   팩스: 1688-2451<br />
+						이메일: cs@danawa.com<a href="" class="btn_box_type">이메일수집거부</a><!-- http://www.danawa.com/info/mail_cancel.html 팝업호출 --><a href="http://help.danawa.com/ars_suggestion.php"  target="_blank"  class="btn_box_type">ARS문의안내</a>
+					</dd>
+				</dl>
+				<!--// footer_information_type -->
+				
+			</div>
+			<!--// footer_box_cs -->
+		</div>
+		<!--// footer_middle_box -->
+
+
+
+		<!-- footer_bottom_contents -->
+		<div class="footer_bottom_contents">
+			
+			<!-- footer_info_bottom -->
+			<div class="footer_info_bottom">
+				<p class="policy_explain_txt1">(주)다나와는 고객님의 안전한 거래를 위해 이니시스의 구매안전(에스크로)에 가입하여 고객님의 결제 대금을 보호하고 있습니다.</p>
+				<!-- iconf_footer_list -->
+				<div class="iconf_footer_list">
+					<a href=""  target="_blank" class="iconf_at1 iconf_sellpr">셀프로</a>
+					<a  href="http://www.kolsa.or.kr/main.html" target="_blank" class="iconf_at1 iconf_kolsa">KOLSA 한국온라인 쇼핑협회</a>
+					<a href="https://www.goodcontent.kr/main.do" target="_blank"  class="iconf_at1 iconf_contents_confirm">콘텐츠제공서비스 품질인증</a>
+					<a href="" class="iconf_at1 iconf_inpay_escrow">클릭하시면 다나와 에스크로 이니페이 가입정보 확인 가능합니다.</a>
+				</div>
+				<!--// icon_footer_list -->
+			</div>
+			<!--// footer_info_bottom -->
+			<div class="footer_copyright_area">Copyright &copy;<strong class="footer_copyright_txt1">danawa</strong> Co., Ltd. All Rights Reserved.</div>
+		</div>
+		<!--// footer_bottom_contents -->
+
+	</div>
+	<!--// footer_shop_danawa -->
+
+</div>
+<!--// wrap_shop_danawa -->
+</body>
+</html>
