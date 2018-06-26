@@ -1,6 +1,5 @@
 markup.danawa.com
 <br />
 
-<?php
-phpinfo();
-?>
+
+윤종경 테스
