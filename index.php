@@ -1,22 +1,13 @@
 <html lang="ko">
-
-
-
-
-
     <head>
         <meta charset="utf-8">
     </head>
+      
+      markup.danawa.com <br />
+      
+      자동배포 테스트 2 <br />
 
-
-                markup.danawa.com
-    <br />
-
-    윤종경
-
-
-    ㅇㅁㄴㄹㄹ;ㅓㅁㄴ;ㅇ라ㅓ;ㅁㄴ어라;ㅁㄴㅇ
-
+    
 </html>
 
 
