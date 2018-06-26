@@ -28,7 +28,7 @@ function includeHTML() {
 	
 var host = window.location.hostname;
 var url = '';
-if (host.indexOf('timg') !== -1) {
+if (host.indexOf('markup') !== -1) {
 	url = '//static.danawa.com/new/recss/';
 }
 else {
