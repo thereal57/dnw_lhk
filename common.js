@@ -2,8 +2,6 @@ var host = window.location.hostname;
 var url = '';
 
 $(function(){
-	includeHTML();
-	
 	var links = window.document.getElementsByTagName('link');
 	var link_href;
 	var rel_val;
@@ -18,7 +16,6 @@ $(function(){
 			}
 			else {
 				url = '//static.danawa.com/new/recss/';
-}
 				if($(this).data('host')){
 					url_re = url.replace("static", $(this).data('host'));
 					$(this).attr('href',url_re+link_href);
