@@ -1,6 +1,8 @@
+var host = window.location.hostname;
+var url = '';
+
 $(function(){
-	var host = window.location.hostname;
-	var url = '';
+	includeHTML();
 	
 	var links = window.document.getElementsByTagName('link');
 	var link_href;
