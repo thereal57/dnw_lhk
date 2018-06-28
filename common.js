@@ -28,11 +28,11 @@ function includeHTML() {
 	
 var host = window.location.hostname;
 var url = '';
-if (host.indexOf('markup') !== -1) {
-	url = '//static.danawa.com/new/recss/';
+if (host.indexOf('markup-local') !== -1) {
+	url = '//static-local.danawa.com/new/recss/';
 }
 else {
-	url = "//" + window.location.host + "/css/";
+	url = '//static.danawa.com/new/recss/';
 }
 
 $(function(){
@@ -45,11 +45,17 @@ $(function(){
 		rel_val = $(this).attr('rel');
 		if(rel_val=="stylesheet"){
 			link_href = $(this).attr('href');
-			if($(this).data('host')){
-				url_re = url.replace("static", $(this).data('host'));
-				$(this).attr('href',url_re+link_href);
-			}else{
+			
+			if (host.indexOf('markup-local') !== -1) {
 				$(this).attr('href',url+link_href);
+			}
+			else {
+				if($(this).data('host')){
+				url_re = url.replace("static", $(this).data('host'));
+					$(this).attr('href',url_re+link_href);
+				}else{
+					$(this).attr('href',url+link_href);
+				}
 			}
 		}
 	});
