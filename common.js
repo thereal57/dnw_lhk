@@ -5,24 +5,20 @@ $(function(){
 	var links = window.document.getElementsByTagName('link');
 	var link_href;
 	var rel_val;
+	var link_split;
+	var link_host;
+	var link_re;
+	
 	$(links).each(function() {
 		rel_val = $(this).attr('rel');
-		if(rel_val=="stylesheet"){
+		if(rel_val=="stylesheet" && host.indexOf('markup-local') !== -1){
 			link_href = $(this).attr('href');
 			
-			if (host.indexOf('markup-local') !== -1) {
-				url = '//static-local.danawa.com/new/recss/';
-				$(this).attr('href',url+link_href);
-			}
-			else {
-				url = '//static.danawa.com/new/recss/';
-				if($(this).data('host')){
-					url_re = url.replace("static", $(this).data('host'));
-					$(this).attr('href',url_re+link_href);
-				}else{
-					$(this).attr('href',url+link_href);
-				}
-			}
+			link_split = link_href.split("/");
+			link_host = link_split[2];
+			
+			link_re = link_href.replace(link_host,"static-local.danawa.com");
+			$(this).attr('href', link_re);
 		}
 	});
 });
