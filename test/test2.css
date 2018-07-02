@@ -3,6 +3,7 @@
 /* BHJ는 이 파일을 계속 수정 */
 div {background:#fff}
 p {font-size:12px;color:#333;}
-새로운 라인 추가
-새로운 라인 하나 더 추가
-라인 계속 추가추가
+
+/* project */
+p_wrap {float: left;}
+p_wrap p {font-size:12px;}
