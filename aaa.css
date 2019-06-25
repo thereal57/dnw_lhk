@@ -16,3 +16,9 @@
 .test04{
 	width:100%
 }
+
+.test04{
+	width:50%;
+	float:left;
+	font-size:14px;
+}
