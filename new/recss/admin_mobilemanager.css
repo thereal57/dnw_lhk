@@ -1,0 +1,159 @@
+@charset "utf-8";
+
+body,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,input,legend,li,ol,p,select,table,td,textarea,th,ul{margin:0;padding:0}
+body,button,input,select,table,textarea{font-size:12px;font-family:Dotum,'ëě',Helvetica,"Apple SD Gothic Neo",sans-serif}
+button,input{border-radius:0}
+fieldset,img{border:0}
+ol,ul{list-style:none}
+address,em{font-style:normal}
+a{color:inherit;text-decoration:none;-webkit-tap-highlight-color:rgba(0, 0, 0, 0.1);}
+iframe{overflow:hidden;margin:0;padding:0;border:0}
+body,html{height:100%}
+html{overflow-y:scroll}
+body{background:#fff;-webkit-backface-visibility:hidden;backface-visibility:hidden}
+input::-ms-clear{display:none}
+head{position:relative}
+table{border-collapse:collapse;}
+img{vertical-align:top;}
+button{border:0;cursor:pointer;vertical-align:top;background:none}
+input{margin:0;padding:4px 5px;border:1px solid #a9a9a9;}
+input[type="file"]{border:0;background:rgba(0,0,0,0)}
+select{padding:4px 2px}
+
+.blind{position:absolute;clip:rect(0 0 0 0);width:1px;height:1px;margin:-1px;overflow:hidden;}
+.clear:after{content:"";clear:both;display:block;}
+.float_l{float:left}
+.float_r{float:right}
+.mg_t5{margin-top:5px}
+.mg_b5{margin-bottom:5px}
+.txt_tip{font-weight:normal;font-size:12px;color:#666}
+.txt_warning{font-weight:bold;color:#ea425c}
+.txt_point{color:#2964e0}
+.button{display:inline-block;margin:0 3px;padding:0 8px;border:1px solid #d5d8dc;background-color:#fff;line-height:22px;font-size:12px;color:#666;}
+.button_q{display:inline-block;margin:-2px 2px 2px;width:16px;height:16px;background:url(//img.danawa.com/img/prod/blog/bg_blog_190313.png) -110px -80px no-repeat;vertical-align:middle}
+
+.tab_list{border-bottom:1px solid #525f78;}
+.tab_list .tab{position:relative;display:inline-block;float:left}
+.tab_list .item{display:block;padding:10px 40px;border:1px solid #d3d3d3;border-width:1px 1px 0;background:#edeff2;margin-left:-1px;font-size:16px;line-height:1;color:#999;text-decoration:none !important;font-family:-apple-system,BlinkMacSystemFont,helvetica,Apple SD Gothic Neo,sans-serif;}
+.tab_list .on .item{position:relative;z-index:1;background:#fff;font-weight:bold;color:#000;border-color:#525f78}
+.tab_list .on .item:after{content:"";position:absolute;right:0;bottom:-1px;left:0;height:1px;background:#fff;}
+.tab_contents{margin-top:25px}
+
+.header_wrap{margin-bottom:15px}
+.title_01{font-size:21px;letter-spacing:-0.5px;font-family:-apple-system,BlinkMacSystemFont,helvetica,Apple SD Gothic Neo,sans-serif;}
+.title_02{font-size:17px;letter-spacing:-0.5px;font-family:-apple-system,BlinkMacSystemFont,helvetica,Apple SD Gothic Neo,sans-serif;}
+
+.board_header .float_l{float:left}
+.board_header .float_l{float:right}
+
+.board_option{padding-top:8px;}
+.board_option select{vertical-align:top}
+.board_option select + select{margin-left:7px}
+
+.board_list table{width:100%}
+.board_list thead th{border-top:1px solid #dbdbdb;border-bottom:1px solid #dbdbdb;font-weight:normal;color:#666;background-color:#f7f8fa;line-height:15px;padding:11px 0 9px;padding:12px 0 8px \0;}
+.board_list td{border-bottom:1px solid #dbdbdb;line-height:15px;padding:8px 0 7px;color:#0f0f0f;text-align:center;}
+.board_list tr:hover td{background-color:#eff3fb;}
+.board_list a:hover, .board_list button:hover{text-decoration:underline}
+
+.board_upload table{width:100%;border-bottom:1px solid #dbdbdb;}
+.board_upload th, .board_upload td{padding-top:12px;padding-bottom:10px;padding-left:15px;border:none;border-top:1px solid #dbdbdb;line-height:19px;}
+.board_upload th{background:#f7f8fa;font-weight:normal;color:#666;text-align:left;vertical-align:top;}
+.board_upload label + label,.board_upload select + label{margin-left:15px}
+.board_upload input{margin-bottom:2px;vertical-align:middle}
+.board_upload .textarea_13x2{width:170px;height:30px}
+
+.board_action{margin-top:15px;}
+.board_action [class^="txt_"]{line-height:30px}
+.button_action{display:inline-block;margin:0 3px;padding:0 15px;border-radius:2px;border:1px solid #d5d8dc;background-color:#fff;line-height:30px;font-weight:bold;font-size:14px;color:#0f0f0f;}
+
+.board_paging{text-align:center;font-size:14px;line-height:1;padding:15px 0;position:relative;clear:both;}
+.board_paging a{display:inline-block;padding:5px 5px 5px 4px;width:15px;font-family:-apple-system,BlinkMacSystemFont,helvetica,Apple SD Gothic Neo,sans-serif;}
+.board_paging .button_prev,.board_paging .button_next{position:relative;border:1px solid #c5c5c5;background:#fafafa}
+.board_paging .button_prev:hover,.board_paging .button_next:hover{text-decoration:none;}
+.board_paging .button_prev span,.board_paging .button_next span{position:absolute;width:20px;height:20px;top:1px;left:1.5px;background-image:url(//img.danawa.com/new/brandlog/admin/img/admin_board.png);background-repeat:no-repeat;}
+.board_paging .button_prev{margin-right:4px;}
+.board_paging .button_prev span{background-position:0 -100px;}
+.board_paging .button_next span{background-position:0 -130px;}
+.board_paging .index_nums{display:inline-block;*display:inline;}
+.board_paging .index_nums a{border:1px solid transparent;margin-right:2px;_border-color:#fafafa;}
+.board_paging .index_nums a.selected,.board_paging .index_nums a:hover{border-color:#c5c5c5;}
+.board_paging .index_nums a.selected:hover,.board_paging .index_nums a:hover:hover{text-decoration:none;}
+.board_paging .index_nums a.selected{cursor:default;}
+
+.preview_wrap{font-family:-apple-system,BlinkMacSystemFont,helvetica,Apple SD Gothic Neo,sans-serif;}
+.preview_wrap .main_combine > .mc_link{margin:0 10px 12px}
+.preview_wrap .main_combine .mc_item{width:100%}
+
+.section_contents .board_upload{float:left;width:-webkit-calc(100% - 230px);width:calc(100% - 230px);}
+.section_contents .contents_preview{float:left;margin-left:50px;width:180px}
+.section_contents .preview_wrap{padding-top:20px;border:1px solid #dbdbdb;}
+
+
+.post_group{display:block;margin-top:20px;padding:5px 0;width:100%;text-align:center;background:#525f78;font-weight:normal;font-size:14px;letter-spacing:-0.5px;font-family:-apple-system,BlinkMacSystemFont,helvetica,Apple SD Gothic Neo,sans-serif;color:#fff}
+.post_group .button_group{display:block;width:100%;height:100%;margin:-5px 0;padding:5px 0;font-size:inherit;font-family:inherit;color:inherit}
+
+.post_list:after{content:"";clear:both;display:block;}
+.post_list .pl_item{padding-top:20px;border-bottom:1px solid #f2f2f2;box-sizing:border-box;}
+.post_list .pl_item:after{content:"";clear:both;display:block;}
+.post_list .pl_item:nth-child(2n+1){clear:both;margin-left:0}
+.post_list .fix_item{margin-top:-1px;margin-left:-1px;border:1px solid #525f78}
+.post_list .fix_item:nth-child(2n){width:-webkit-calc(50% + 1px);width:calc(50% + 1px);}
+.post_list .preview_wrap{float:left;width:180px}
+.post_list .preview_admin{position:relative;float:left;width:-webkit-calc(100% - 180px);width:calc(100% - 180px);}
+.post_list .pa_info{padding:3px 0}
+.post_list .pa_info.bg_skyblue{background-color:#eff3fb;}
+.post_list .pa_info li{line-height:1.4}
+.post_list .pa_action{position:relative;padding-top:5px;text-align:right}
+.preview_rank{float:left;width:40px;text-align:right;}
+.preview_rank .rank{display:block;letter-spacing:-0.5px;font-size:22px;font-family:-apple-system,BlinkMacSystemFont,helvetica,Apple SD Gothic Neo,sans-serif;color:#0f0f0f}
+.preview_rank .toc{display:block;font-size:11px}
+.preview_rank .toc.up{color:#ea425c}
+.preview_rank .toc.down{color:#2964e0}
+
+.section_post .post_waiting{float:left;width:400px;box-sizing:border-box}
+.section_post .post_being{float:right;width:-webkit-calc(100% - 450px);width:calc(100% - 450px);box-sizing:border-box}
+.section_post .scroll_area{height:calc(100vh - 190px);width:100%;overflow-y:scroll}
+
+.post_being .pl_item{float:left;padding-right:10px;width:50%}
+.post_being .preview_admin{padding-bottom:10px;width:-webkit-calc(100% - 220px);width:calc(100% - 220px);}
+
+.section_preview {padding-bottom:40px}
+.section_preview .main_combine_inner{padding-top:0}
+.section_preview .main_combine .mc_list:after{content:"";clear:both;display:block;}
+.section_preview .main_combine .mc_item{position:relative;padding-left:52px}
+.section_preview .post_group{margin-bottom:10px;}
+.section_preview .preview_rank{position:absolute;top:0;left:0}
+
+.winpop_bottom_fix{position:fixed;bottom:0;width:100%;height:40px;border-top:1px solid #525f78;background:#fff;text-align:right;}
+.button_winpop_close{display:inline-block;padding:10px 12px;font-weight:bold}
+
+/* popup */
+.popup_area{display:none;position:fixed;z-index:2000;top:0;left:0;width:100%;height:100%;text-align:center;}
+.popup_dim{position:fixed;top:0;right:0;bottom:0;left:0;background:#000;opacity:.5;filter:alpha(opacity=50);cursor:pointer}
+.popup_wrap{position:relative;display:inline-block;background:#fff;vertical-align:middle}
+.popup_blank{display:inline-block;width:0;height:100%;vertical-align:middle}
+.popup_header{position:relative;background:#525f78;text-align:left}
+.popup_header .title{position:relative;margin:0 38px 0 15px;padding:10px 0;color:#fff;font-size:16px;font-family:-apple-system,BlinkMacSystemFont,helvetica,Apple SD Gothic Neo,sans-serif;}
+.popup_header .close{position:absolute;top:50%;right:10px;display:block;margin-top:-10px;width:20px;height:20px}
+.popup_header .close .icon{position:relative;top:0;left:0;display:block;width:20px;height:20px;background:url(//img.danawa.com/img/m/prod/icons_main_v190313.png) -50px -80px no-repeat}
+.popup_contents{text-align:left}
+/* popup_contents */
+.popup_contents .preview_wrap{padding-top:12px;width:180px;border:0}
+
+/* layer */
+.layer_area{display:none;height:0;text-align:center;}
+.layer_wrap{position:absolute;z-index:2000;display:inline-block;border:1px solid #33383e;background:#fff;vertical-align:middle}
+.layer_blank{display:inline-block;width:0;height:100%;vertical-align:middle}
+.layer_header{position:relative;background:#f8f8f8;text-align:left}
+.layer_header .title{position:relative;margin:0 38px 0 15px;padding:7px 0;color:#010101;font-size:13px;font-family:-apple-system,BlinkMacSystemFont,helvetica,Apple SD Gothic Neo,sans-serif;}
+.layer_header .close{position:absolute;top:50%;right:10px;display:block;margin-top:-6.5px;width:13px;height:13px}
+.layer_header .close .icon{position:relative;top:0;left:0;display:block;width:13px;height:13px;background:url(//img.danawa.com/new/dalgi/img/btn_close_x_tmp.gif) 0 0 no-repeat}
+.layer_contents{text-align:left}
+/* layer_contents */
+.layer_contents .board_explain{padding:10px}
+.layer_contents .return_write{padding:10px}
+.layer_contents .return_write textarea{width:100%;height:80px;}
+.layer_contents .return_action{margin-top:10px;text-align:center}
+.layer_contents .click_history{padding:10px;text-align:center}
+.layer_contents .click_history .ttl{margin-bottom:7px;text-align:left;}

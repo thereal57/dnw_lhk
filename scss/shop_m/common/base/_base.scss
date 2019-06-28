@@ -1,0 +1,1362 @@
+@charset "UTF-8";
+
+article,
+aside,
+audio,
+body,
+button,
+canvas,
+dd,
+details,
+dl,
+dt,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+input,
+legend,
+li,
+menu,
+nav,
+ol,
+p,
+section,
+table,
+td,
+textarea,
+th,
+ul,
+video {
+    margin: 0;
+    padding: 0
+}
+
+ol,
+ul {
+    list-style: none
+}
+
+fieldset,
+img {
+    border: 0
+}
+
+table {
+    border-collapse: collapse
+}
+
+address,
+em {
+    font-style: normal
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, .1)
+}
+
+img {
+    vertical-align: top
+}
+
+hr {
+    display: none !important
+}
+
+html {
+    font-size: 10px;
+    line-height: 10px;
+    // 아이폰 가로모드 시 폰트 사이즈 FIX
+    -webkit-text-size-adjust: 100%;
+}
+
+// 아이폰 감지
+html.iphone,
+html.iphone body,
+html.iphone .sc_cate {
+    height: 100.1%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, helvetica, Apple SD Gothic Neo, sans-serif;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    word-break: break-all;
+    background: $color_primary_bg;
+    height: 100%;
+}
+
+select {
+    font-family: -apple-system, BlinkMacSystemFont, helvetica, Apple SD Gothic Neo, sans-serif;
+    appearance: none;
+
+    &::-ms-expand {
+        display: none;
+    }
+}
+
+textarea {
+    font-family: -apple-system, BlinkMacSystemFont, helvetica, Apple SD Gothic Neo, sans-serif;
+    appearance: none;
+}
+
+button,
+input {
+    font-family: -apple-system, BlinkMacSystemFont, helvetica, Apple SD Gothic Neo, sans-serif;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    background: 0 0;
+    border: 0;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+// 스프라이트 이미지
+.ico {
+    display: inline-block;
+    overflow: hidden;
+    @extend %splite;
+}
+
+// 컨테이너 모듈형 세팅
+#ct {
+    clear: both;
+    overflow: hidden;
+    position: relative;
+}
+
+// 섹션
+.sc {
+    clear: both;
+    position: relative;
+}
+
+// ir기법
+.blind {
+    @include blind();
+}
+
+// display:none 공통 클래스
+.disnone,
+.hide {
+    display: none;
+}
+
+// 스킵네비게이션
+.skip_n {
+    position: relative;
+    width: 100%;
+    z-index: 5995;
+
+    a {
+        position: absolute;
+        top: -177px;
+        left: 0;
+        width: auto;
+        padding: 0 10px;
+        background-color: $color-primary;
+        color: $color_white;
+        line-height: 38px;
+        white-space: nowrap;
+        opacity: 0;
+        -webkit-transition: .3s;
+        transition: .3s;
+
+        &:active,
+        &:focus {
+            top: 84px;
+            text-decoration: none;
+            opacity: 1
+        }
+    }
+}
+
+// 스와이프 모듈화
+
+nav,
+.sc_tab,
+.sc_h {
+    position: relative;
+
+    .nav_inner,
+    .tab_inner {
+        height: 44px;
+        overflow-x: hidden;
+    }
+
+    .catelist {
+        position: relative;
+        height: 100%;
+        font-size: 0;
+        line-height: 0;
+        white-space: nowrap;
+    }
+
+    .tab {
+        font-size: 1.7rem;
+        display: inline-block;
+        position: relative;
+        height: 100%;
+        vertical-align: top;
+        white-space: normal;
+
+        a {
+            display: block;
+            position: relative;
+            height: 36px;
+            padding: 0 3px;
+            margin: 0 3px;
+            line-height: 40px;
+            text-align: center;
+            letter-spacing: -1px;
+            color: $color_primary_txt;
+
+            &.selected {
+                position: relative;
+                font-weight: bold;
+                color: $color-primary;
+
+                &:after {
+                    content: "";
+                    width: 100%;
+                    position: absolute;
+                    bottom: -3px;
+                    left: 0;
+                    right: 0;
+                    height: 3px;
+                    background-color: $color-primary;
+                    border-radius: 3px;
+                }
+            }
+        }
+    }
+
+}
+
+nav .tab>a {
+    margin: 0 4px;
+}
+
+.tab_home>a.selected {
+    margin: 0;
+    padding: 0 7px;
+}
+
+// 탭 스타일링 > 이후 스타일 변경 추가시 숫자로 변경
+.sc_tab.style1_tab {
+    margin-top: 14px;
+
+    .tab_inner {
+        height: auto;
+        background-color: #fff;
+    }
+
+    .tab {
+        a {
+            margin: 0;
+            padding-bottom: 0;
+            line-height: 36px;
+            border: 1px solid #e0e0e0;
+            border-width: 1px 0 1px;
+            border-bottom-color: $color-primary;
+            font-size: 1.3rem;
+        }
+    }
+
+    li {
+        &:after {}
+
+        &.tab:first-child {
+            a {
+                border-left-width: 1px;
+                border-top-left-radius: 4px;
+
+            }
+        }
+
+        &.tab:last-child {
+            a {
+                border-right-width: 1px;
+                border-top-right-radius: 4px;
+
+            }
+        }
+    }
+
+    .on {
+        background: #e0e0e0;
+
+        &.tab:first-child {
+            background: linear-gradient(135deg, #fff, #e0e0e0);
+        }
+
+        &.tab:last-child {
+            background: linear-gradient(-135deg, #fff, #e0e0e0);
+        }
+
+        a {
+            border-top-right-radius: 4px;
+            border-top-left-radius: 4px;
+            border-width: 1px 1px 1px 1px;
+            border-color: $color-primary;
+            border-bottom-color: #fff;
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: $color-primary;
+            background: #fff;
+        }
+
+        &:after {
+            content: none;
+        }
+    }
+}
+
+// 탭 메뉴 3개
+.sc_tab.type_tab3 {
+    .tab {
+        width: 33.33%;
+        margin: 0;
+    }
+}
+
+// GNB nav
+.nav_wrap {
+    nav {
+        li:first-child {
+            margin-left: 8px;
+        }
+
+        li:last-child {
+            margin-right: 8px;
+        }
+    }
+
+}
+
+// 맨위로
+.btn_top {
+    display: none;
+    zoom: 1;
+    position: fixed;
+    @extend %splite;
+    @include bg ($bpx: -204, $bpy:0, $w:48, $h:46, $mgt:0, $mgr:0, $mgb:0, $mgl:0);
+    left: 14px;
+    bottom: 20px;
+    z-index: 11;
+
+    &.type_wide {
+        right: 5%;
+    }
+}
+
+// 이전버튼
+.btn_prev_btm {
+    display: none;
+    zoom: 1;
+    position: fixed;
+    @extend %splite;
+    @include bg ($bpx: -204, $bpy:-49, $w:48, $h:48, $mgt:0, $mgr:0, $mgb:0, $mgl:0);
+    left: 14px;
+    bottom: 82px;
+    z-index: 10;
+}
+
+// 레이어 공통
+.ly_popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, .6);
+    transition: background-color .3s;
+
+    .ly_cont {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        overflow: hidden;
+        width: 290px;
+        max-height: 442px;
+        background: $color_white;
+        font-family: -apple-system, BlinkMacSystemFont, helvetica, Apple SD Gothic Neo, sans-serif;
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+        color: #000;
+        border-radius: 5px;
+        transform: translate(-50%, -50%);
+    }
+
+    .ly_title {
+        text-align: center;
+        padding: 16px;
+        border-bottom: 1px solid #e0e0e0;
+
+        strong {
+            font-weight: normal;
+            font-size: 2rem;
+            letter-spacing: -1px;
+        }
+
+        a {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 52px;
+            height: 52px;
+        }
+
+        .i_close {
+            @include bg ($bpx: -5, $bpy:-64, $w:20, $h:19, $mgt:14, $mgr:0, $mgb:0, $mgl:3);
+        }
+    }
+
+    .ly_detail {
+        padding: 16px 10px 20px;
+        overflow-y: auto;
+        text-align: left;
+        max-height: 356px;
+        border-radius: 5px;
+
+        ul {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        li {
+            font-size: 1.5rem;
+            color: #333;
+            line-height: 1.8rem;
+            margin-bottom: .9rem;
+            padding-left: 10px;
+            position: relative;
+            word-break: break-word;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            &:before {
+                content: "·";
+                position: absolute;
+                left: 2px;
+                top: -1px;
+            }
+        }
+    }
+}
+
+// 레이어 공유하기
+.ly_sns_share {
+    .ly_cont {
+        width: 240px;
+        height: 264px;
+    }
+
+    .ly_title {
+        border-bottom: none;
+    }
+
+    a {
+        display: inline-block;
+        width: 54px;
+        height: 54px;
+    }
+
+    .ly_detail {
+        padding: 0;
+        text-align: center;
+    }
+
+    .ly_detail ul {
+        @include clearfix;
+        padding-left: 26px;
+    }
+
+    .ly_detail li {
+        float: left;
+        padding: 0;
+        margin: 0 14px 12px 0;
+    }
+
+    .ly_detail li:before {
+        content: none;
+    }
+
+    .ly_detail .ico {
+        display: inline-block;
+        overflow: hidden;
+        background: url(//img.danawa.com/img/m/market/bg_sns.png) no-repeat;
+        background-size: 190px 123px;
+
+        &.i_kakao {
+            @include bg ($bpx: 0, $bpy:0, $w:54, $h:54, $mgt:0, $mgr:0, $mgb:0, $mgl:0);
+        }
+
+        &.i_kastory {
+            @include bg ($bpx: -67, $bpy:0, $w:54, $h:54, $mgt:0, $mgr:0, $mgb:0, $mgl:0);
+        }
+
+        &.i_line {
+            @include bg ($bpx: -136, $bpy:0, $w:54, $h:54, $mgt:0, $mgr:0, $mgb:0, $mgl:0);
+        }
+
+        &.i_facebook {
+            @include bg ($bpx: 0, $bpy:-69, $w:54, $h:54, $mgt:0, $mgr:0, $mgb:0, $mgl:0);
+        }
+
+        &.i_twitter {
+            @include bg ($bpx: -68, $bpy:-68, $w:54, $h:54, $mgt:0, $mgr:0, $mgb:0, $mgl:0);
+        }
+    }
+
+    .btn_copy {
+        position: relative;
+        margin-bottom: 4px;
+        overflow: hidden;
+
+        a {
+            display: inline-block;
+            height: auto;
+            width: 190px;
+            border: 1px solid #e0e0e0;
+            font-size: 1.5rem;
+            padding: 10px 5px;
+            box-sizing: border-box;
+            @include shortwords1();
+        }
+    }
+
+    .txt_noti {
+        font-size: 1.1rem;
+        letter-spacing: -.5px;
+        color: #666;
+    }
+}
+
+// 레이어 배송방법
+.ly_delivery {
+    .ly_cont {
+        max-height: none;
+    }
+
+    .ly_detail {
+        padding: 16px 16px 10px;
+
+        li {
+            width: 37%;
+            float: left;
+
+            span {
+                font-size: 1.6rem;
+                line-height: 2.2rem;
+            }
+        }
+    }
+}
+
+// 레이어 이벤트 안내
+.ly_eventinfo {
+    .ly_detail {
+        padding: 20px 10px 30px;
+
+        span,
+        p {
+            font-size: 1.6rem;
+            color: #333;
+        }
+
+        p {
+            margin-top: 5px;
+        }
+    }
+}
+
+// 판매점 선택
+.ly_sellermall {
+    .ly_cont {
+        max-height: 460px;
+        min-height: 300px;
+    }
+
+    .ly_detail {
+        padding: 0 0 23px;
+
+        ul {
+            max-height: initial;
+            @extend %clear;
+        }
+
+        li {
+            float: left;
+            width: 50%;
+            margin: 0;
+            padding: 0;
+
+            &:before {
+                content: none;
+            }
+
+            &:nth-child(2n+1) a {
+                border-right: 1px solid #f2f2f2;
+            }
+
+            &:nth-child(2n):last-child {
+                min-height: 41px;
+                border-bottom: 1px solid #f2f2f2;
+            }
+        }
+
+        a {
+            color: #333;
+            display: block;
+            box-sizing: border-box;
+            border-bottom: 1px solid #f2f2f2;
+            padding: 11px 13px 12px;
+
+            span {
+                display: block;
+                @include shortwords1;
+            }
+        }
+
+        .is_selected {
+            span {
+                font-weight: bold;
+                color: $color-primary;
+            }
+        }
+    }
+}
+
+// PC 레이어 사용 - 헤더 영역일 경우
+.sc_h{
+    .sns_wrap{
+        position: absolute;
+        right:0;
+        top:40px;
+        .btn_close{
+            right: 0;
+            top:0;
+            height: 35px;
+            padding:0;
+        }
+        .bg_cls{
+            margin:12px 0 0 20px;
+        }
+        .i_sns{
+            margin:0 auto;
+        }
+    }
+}
+
+// PC 레이어 사용 - 커뮤니티
+.type_community{
+    .sns_wrap{
+        position: absolute;
+        right:-14px;
+        top:20px;
+        .btn_close{
+            padding:10px 20px;
+            top:0;
+            right:0;
+        }
+        span.i_sns{
+            width: 46px;
+            height: 46px;
+        }
+    }
+}
+
+// PC 레이어 사용 - 제품상세
+.btn_area{
+    .sns_wrap{
+        position: absolute;
+        right:-16px;
+        top:30px;
+        span.i_sns{
+            width:46px;
+            height: 46px;
+        }
+    }
+}
+// 스크롤 시 헤더 상단, 컨테이너 우측 고정
+.is_fixed {
+    .header {
+        display: none;
+    }
+
+    .nav_wrap,
+    .sc_tab {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 20;
+        box-sizing: border-box;
+    }
+
+    .sc_tab {
+        top: 38px;
+    }
+
+    .type_lr .sc_cate {
+        position: fixed;
+        right: 0;
+        top: 80px;
+    }
+
+    .sc_cont {
+        // padding-top: 80px;
+    }
+
+    .type_lr .sc_cate .cate_inner {
+        height: 100%;
+        height: calc(100vh - 78px);
+        height: -webkit-calc(100vh - 160px);
+
+        @include landscope {
+            height: calc(100vh - 80px);
+            height: -webkit-calc(100vh - 80px);
+        }
+    }
+
+    .type_notebook .sc_cont {
+        padding-top: 152px;
+    }
+
+    /// 표준PC 전용
+    .type_standard .sc_cate {
+        top: 38px;
+    }
+}
+
+// 관심상품
+.ly_intgoods {
+
+    .ly_detail {
+        padding: 23px 4px 50px;
+        max-height: none;
+
+        li {
+            margin-bottom: 1.3rem;
+
+            div {
+                @include shortwords1();
+            }
+
+            &:before {
+                content: none;
+            }
+        }
+
+    }
+
+    .ly_cont {
+        width: 270px;
+        max-height: 470px;
+        min-height: 300px;
+    }
+
+    input[type="radio"] {
+        display: none;
+    }
+
+    label {
+        font-size: 1.7rem;
+        letter-spacing: -.5px;
+    }
+
+    input[type='radio']+label::before {
+        content: ' ';
+        display: inline-block;
+        vertical-align: -3px;
+        margin: 0 6px 0 0;
+        background: url("//img.danawa.com/img/m/market/bg_radio_v1.0.png") no-repeat 0 -30px;
+        background-size: 22px 53px;
+        width: 22px;
+        height: 23px;
+    }
+
+    input[type='radio']:checked+label::before {
+        background: url("//img.danawa.com/img/m/market/bg_radio_v1.0.png") no-repeat 0 1px;
+        background-size: 22px 53px;
+    }
+
+    >div {
+        span {
+            @include shortwords1();
+            display: inline-block;
+            width: 200px;
+        }
+    }
+
+    .is_checked {
+        >label {
+            font-weight: bold;
+        }
+
+    }
+
+    .ly_btn {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+
+        >a {
+            display: block;
+            height: 40px;
+            line-height: 40px;
+            font-size: 1.8rem;
+            background: $color-primary;
+            color: #fff;
+            font-weight: bold;
+            border-radius: 0 0 5px 5px;
+        }
+    }
+}
+
+// 오류페이지
+.sub_error {
+    position: relative;
+    background-color: #fff;
+    height: 100vh;
+    text-align: center;
+
+    .logo_area {
+        position: absolute;
+        right: 18px;
+        top: 14px;
+        width: 120px;
+        height: 18px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .error_area {
+        padding-top: 60px;
+    }
+
+    .img_wrap {
+        display: block;
+        width: 310px;
+        margin: 0 auto 36px;
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    .tit {
+        display: block;
+        font-size: 2.1rem;
+        color: #0f0f0f;
+    }
+
+    .desc {
+        display: block;
+        font-size: 1.4rem;
+        color: #666;
+        margin: 10px 0 20px;
+    }
+
+    .btn_area {
+        padding-bottom: 30px;
+        margin-bottom: 28px;
+        border-bottom: 1px solid #f2f2f2;
+
+        a {
+            display: inline-block;
+            width: 100px;
+            height: 30px;
+            font-size: 1.4rem;
+            line-height: 30px;
+            border: 1px solid #bfbfbf;
+            box-sizing: border-box;
+            border-radius: 5px;
+            margin: 0 2px;
+        }
+
+        .btn_home {
+            background-color: $color-primary;
+            color: #fff;
+            border-color: $color-primary;
+        }
+    }
+
+    .copyright {
+        font-size: 1.2rem;
+        color: #919191;
+    }
+}
+
+// textarea 리플 작성
+.textarea {
+    display: block;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 120px;
+    font-size: 1.5rem;
+    line-height: 20px;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    -webkit-appearance: none;
+    resize: none;
+}
+
+// 모바일 다나와 TOP 버튼 위치 재조정
+.right_fix_area {
+    right: auto;
+    left: 5%;
+    bottom: 20px;
+}
+
+// 샵다나와
+.sub_word_29 {
+    color: $color_shopdnw
+}
+
+// 표준PC
+.sub_word_4 {
+    color: $color_standard
+}
+
+//판매점조립PC
+.sub_word_5 {
+    color: $color_assamble
+}
+
+// 기업용PC
+.sub_word_7 {
+    color: $color_company
+}
+
+// PC견적/역경매
+.sub_word_10 {
+    color: $color_auction
+}
+
+// PC견적
+.sub_word_16 {
+    color: $color_estimate
+}
+
+// 미니샵
+.sub_word_33 {
+    color: $color_minishop
+}
+
+// 샵다나와노트북
+.sub_word_35 {
+    color: $color_notebook
+}
+
+// 하이엔드PC
+.sub_word_43 {
+    color: $color_highend
+}
+
+// 17 중고마켓
+.sub_word_15,
+.sub_word_17,
+.sub_word_20,
+.sub_word_21 {
+    color: $color_used
+}
+
+// 백그라운드형
+.bg_badge {
+
+    // 샵다나와
+    &.sub_word_29 {
+        background-color: $bg_shopdnw
+    }
+
+    // 표준PC
+    &.sub_word_4 {
+        background-color: $bg_standard
+    }
+
+    //판매점조립PC
+    &.sub_word_5 {
+        background-color: $bg_assamble
+    }
+
+    // 기업용PC
+    &.sub_word_7 {
+        background-color: $bg_company
+    }
+
+    // PC견적/역경매
+    &.sub_word_10 {
+        background-color: $bg_auction
+    }
+
+    // PC견적
+    &.sub_word_16 {
+        background-color: $bg_estimate
+    }
+
+    // 미니샵
+    &.sub_word_33 {
+        background-color: $bg_minishop
+    }
+
+    // 샵다나와노트북
+    &.sub_word_35 {
+        background-color: $bg_notebook
+    }
+
+    // 하이엔드PC
+    &.sub_word_43 {
+        background-color: $bg_highend
+    }
+
+    // 17 중고마켓
+    &.sub_word_15,
+    &.sub_word_17,
+    &.sub_word_20,
+    &.sub_word_21 {
+        background-color: $bg_used
+    }
+
+}
+
+// 무보정링크 
+/* PC주요부품(220,213) */
+.bbs_real_272_220 {
+    background: #553de8;
+    color: #fff;
+}
+
+.bbs_dev_374_213 {
+    background: #553de8;
+    color: #fff;
+}
+
+/* LCD/LED 모니터(221,214) */
+.bbs_real_272_221 {
+    background: #e538a2;
+    color: #fff;
+}
+
+.bbs_dev_374_214 {
+    background: #e538a2;
+    color: #fff;
+}
+
+/* 노트북(222,215) */
+.bbs_real_272_222 {
+    background: #3059bb;
+    color: #fff;
+}
+
+.bbs_dev_374_215 {
+    background: #3059bb;
+    color: #fff;
+}
+
+/* 데스크탑(223,216) */
+.bbs_real_272_223 {
+    background: #11996e;
+    color: #fff;
+}
+
+.bbs_dev_374_216 {
+    background: #11996e;
+    color: #fff;
+}
+
+/* 무보정리뷰(291,379) */
+/* CPU(286,285) */
+.bbs_real_291_286 {
+    background: #3059bb;
+    color: #fff;
+}
+
+.bbs_dev_379_285 {
+    background: #3059bb;
+    color: #fff;
+}
+
+/* 메인보드(287,286) */
+.bbs_real_291_287 {
+    background: #186f28;
+    color: #fff;
+}
+
+.bbs_dev_379_286 {
+    background: #186f28;
+    color: #fff;
+}
+
+/* 메모리(288,287) */
+.bbs_real_291_288 {
+    background: #c64b00;
+    color: #fff;
+}
+
+.bbs_dev_379_287 {
+    background: #c64b00;
+    color: #fff;
+}
+
+/* 그래픽카드(289,288) */
+.bbs_real_291_289 {
+    background: #6b30bb;
+    color: #fff;
+}
+
+.bbs_dev_379_288 {
+    background: #6b30bb;
+    color: #fff;
+}
+
+/* SSD(290,289) */
+.bbs_real_291_290 {
+    background: #186a6f;
+    color: #fff;
+}
+
+.bbs_dev_379_289 {
+    background: #186a6f;
+    color: #fff;
+}
+
+/* 케이스(291,290) */
+.bbs_real_291_291 {
+    background: #b930bb;
+    color: #fff;
+}
+
+.bbs_dev_379_290 {
+    background: #b930bb;
+    color: #fff;
+}
+
+/* 파워(292,291) */
+.bbs_real_291_292 {
+    background: #5a6f18;
+    color: #fff;
+}
+
+.bbs_dev_379_291 {
+    background: #5a6f18;
+    color: #fff;
+}
+
+/* 키보드(293,293) */
+.bbs_real_291_293 {
+    background: #8e6b20;
+    color: #fff;
+}
+
+.bbs_dev_379_293 {
+    background: #8e6b20;
+    color: #fff;
+}
+
+/* 쿨러/튜닝(294,294) */
+.bbs_real_291_294 {
+    background: #ce509a;
+    color: #fff;
+}
+
+.bbs_dev_379_294 {
+    background: #ce509a;
+    color: #fff;
+}
+
+/* 기타(5,5) */
+.bbs_real_291_5 {
+    background: #666;
+    color: #fff;
+}
+
+.bbs_dev_379_5 {
+    background: #666;
+    color: #fff;
+}
+
+// 리스트
+// 무보정리뷰 리스트
+.nereview_inner {
+
+    /* PC주요부품(220,213) */
+    .bbs_real_272_220 {
+        background-color: #fff;
+        color: #553de8;
+    }
+
+    .bbs_dev_374_213 {
+        background-color: #fff;
+        color: #553de8;
+    }
+
+    /* LCD/LED 모니터(221,214) */
+    .bbs_real_272_221 {
+        background-color: #fff;
+        color: #e538a2;
+    }
+
+    .bbs_dev_374_214 {
+        background-color: #fff;
+        color: #e538a2;
+    }
+
+    /* 노트북(222,215) */
+    .bbs_real_272_222 {
+        background-color: #fff;
+        color: #3059bb;
+    }
+
+    .bbs_dev_374_215 {
+        background-color: #fff;
+        color: #3059bb;
+    }
+
+    /* 데스크탑(223,216) */
+    .bbs_real_272_223 {
+        background-color: #fff;
+        color: #11996e;
+    }
+
+    .bbs_dev_374_216 {
+        background-color: #fff;
+        color: #11996e;
+    }
+
+    /* 무보정리뷰(291,379) */
+    /* CPU(286,285) */
+    .bbs_real_291_286 {
+        background-color: #fff;
+        color: #3059bb;
+    }
+
+    .bbs_dev_379_285 {
+        background-color: #fff;
+        color: #3059bb;
+    }
+
+    /* 메인보드(287,286) */
+    .bbs_real_291_287 {
+        background-color: #fff;
+        color: #186f28;
+    }
+
+    .bbs_dev_379_286 {
+        background-color: #fff;
+        color: #186f28;
+    }
+
+    /* 메모리(288,287) */
+    .bbs_real_291_288 {
+        background-color: #fff;
+        color: #c64b00;
+    }
+
+    .bbs_dev_379_287 {
+        background-color: #fff;
+        color: #c64b00;
+    }
+
+    /* 그래픽카드(289,288) */
+    .bbs_real_291_289 {
+        background-color: #fff;
+        color: #6b30bb;
+    }
+
+    .bbs_dev_379_288 {
+        background-color: #fff;
+        color: #6b30bb;
+    }
+
+    /* SSD(290,289) */
+    .bbs_real_291_290 {
+        background-color: #fff;
+        color: #186a6f;
+    }
+
+    .bbs_dev_379_289 {
+        background-color: #fff;
+        color: #186a6f;
+    }
+
+    /* 케이스(291,290) */
+    .bbs_real_291_291 {
+        background-color: #fff;
+        color: #b930bb;
+    }
+
+    .bbs_dev_379_290 {
+        background-color: #fff;
+        color: #b930bb;
+    }
+
+    /* 파워(292,291) */
+    .bbs_real_291_292 {
+        background-color: #fff;
+        color: #5a6f18;
+    }
+
+    .bbs_dev_379_291 {
+        background-color: #fff;
+        color: #5a6f18;
+    }
+
+    /* 키보드(293,293) */
+    .bbs_real_291_293 {
+        background-color: #fff;
+        color: #8e6b20;
+    }
+
+    .bbs_dev_379_293 {
+        background-color: #fff;
+        color: #8e6b20;
+    }
+
+    /* 쿨러/튜닝(294,294) */
+    .bbs_real_291_294 {
+        background-color: #fff;
+        color: #ce509a;
+    }
+
+    .bbs_dev_379_294 {
+        background-color: #fff;
+        color: #ce509a;
+    }
+
+    /* 기타(5,5) */
+    .bbs_real_291_5 {
+        background-color: #fff;
+        color: #666;
+    }
+
+    .bbs_dev_379_5 {
+        background-color: #fff;
+        color: #666;
+    }
+}

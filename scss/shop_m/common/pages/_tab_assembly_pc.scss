@@ -1,0 +1,183 @@
+@charset "UTF-8";
+
+// 좌우형 컨테이너
+.type_lr {
+    position: relative;
+    min-height: calc(100vh - 80px);
+    -webkit-min-height: calc(100vh - 80px);
+
+    .sc_cate {
+        position: absolute;
+        right: 0;
+        top: 50px;
+        text-align: center;
+        z-index: 10;
+        background-color: #ededed;
+        width: 70px;
+        height: 100%;
+
+        //탭 갯수에 따라 가변 높이
+        @for $i from 1 through 8 {
+
+            li:first-child:nth-last-child(#{$i}),
+            li:first-child:nth-last-child(#{$i})~li {
+                height: 100% / $i;
+            }
+        }
+
+        .cate_inner {
+            position: relative;
+            height: calc(100vh - 130px);
+            -webkit-height: calc(100vh - 130px);
+            overflow-y: auto;
+        }
+
+        .catelist {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            // min-height: 86vh;
+            // max-height: 90vh;
+            background-color: #fefefe;
+            overflow: auto;
+        }
+
+        .tab {
+            margin: 0 0 2px;
+            position: relative;
+            background: #e5e5e5;
+            height: calc(12.5vh - 2px);
+            min-height: 54px;
+
+            >a {
+                color: $color_primary_txt;
+                margin: 0;
+                padding: 0;
+                font-size: 1.2rem;
+                line-height: 1.3rem;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 100%;
+
+                &.selected {
+                    background-color: $color-primary;
+                    color: $color_white;
+
+                    >a {
+                        background-color: $color-primary;
+                        color: $color_white;
+                    }
+                }
+
+                &:after {
+                    content: none;
+                }
+
+                span {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: 0;
+                    right: 0;
+                    padding: 0 10px;
+                    word-break: break-word;
+                }
+            }
+        }
+    }
+
+    .sc_cont {
+        padding-right: 70px;
+
+        .title_area {
+            margin-bottom: 4px;
+        }
+    }
+
+    // 구분선이 필요할 경우 nth-child() 활용
+    // .sc_tab li{
+    //     &:after{
+    //         @include bar();
+    //     }
+    //     &:first-child:after{
+    //         content: none;
+    //     }
+    // }
+    // 상품 없을때
+    .noitem_area {
+        border-top: none;
+    }
+}
+
+// 컨테이너 상단 탭네비 메뉴
+.sc_tab {
+    background-color: #fafafa;
+
+    &.fixed {
+        position: fixed;
+        top: 40px;
+    }
+
+    .tab_inner {
+        height: 42px;
+        box-sizing: border-box;
+    }
+
+    li {
+        &:after {
+            @include bar();
+        }
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:last-child {
+            margin-left: 5px;
+
+            &:after {
+                content: none;
+            }
+        }
+    }
+
+    .selected>i {
+        @include bg ($bpx: -66, $bpy:-2, $w:12, $h:11, $mgt:0, $mgr:0, $mgb:0, $mgl:0);
+        margin-right: 5px;
+    }
+
+    .tab {
+        font-size: 1.4rem;
+
+        >a {
+            margin: 0 5px;
+            padding: 0 12px 6px;
+            line-height: 42px;
+            color: #333;
+        }
+
+        .selected:after {
+            display: none;
+        }
+    }
+}
+
+// 아이폰 미디어쿼리
+@include iphone-small {
+    .iphone .is_fixed {
+
+        // 좌우형
+        .type_lr {
+
+            // 좌측 탭 카테고리
+            .sc_cate {
+                .tab {
+                    min-height: 40px;
+                }
+            }
+        }
+    }
+}

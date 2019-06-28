@@ -1,0 +1,109 @@
+@charset "utf-8";
+
+p, button{margin:0;padding:0;}
+button, input{-webkit-border-radius:0;border-radius:0;background:0 0;border:0}
+
+/* header_area_section02 (mdanawa_new exception) */
+.body_color{background:#ededed}
+.header_area_section02{position:relative}
+.header_area_section02 .btn_back_l{margin-left:5px;padding:11px 15px}
+.header_area_section02 .btn_hdtxt_r{right:10px}
+.footer_copyright{padding:20px 0 60px}
+.footer_copyright .address{font-size:12px;font-weight:bold;font-style:normal;color:#919191}
+.footer_copyright .address .f_normal{font-weight:normal;}
+
+/* container_wish common */
+.container_wish{background:#fff}
+.container_wish .clear:after{display:block;overflow:hidden;clear:both;content:""}
+.container_wish .button{display:inline-block;padding:9px;border:1px solid #bfbfbf;color:#333}
+
+/* background */
+.select_box:before,
+.chk_box input+label .ico,
+.input_box .btn_del:after,
+.input_box .btn_plus:after,
+.wc_action .btn_seldel:before,
+.wc_action .btn_selmove:before,
+.wfl_wrap .btn_choice_delete2:after,
+.plist_t7 .check_t3 label{background-image:url(//img.danawa.com/img/m/mypage/icon_wish.png);-webkit-background-size:210px auto;background-size:210px auto;}
+
+/* input */
+input[type=number],textarea{outline:0}
+input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none}
+input::-webkit-input-placeholder{color:#b2b2b2;} /* WebKit browsers */
+input :-moz-placeholder{color:#b2b2b2;opacity:1;}/* Mozilla Firefox 4 to 18 */
+input::-moz-placeholder {color:#b2b2b2;opacity:1;}/* Mozilla Firefox 19+ */
+input:-ms-input-placeholder{color:#b2b2b2;}/* Internet Explorer 10+ */
+.input_box{position:relative;display:block;display:-webkit-box;display:-webkit-flex;display:flex;padding-right:6px;height:42px;border:1px solid #bfbfbf;border-radius:4px;overflow:hidden}
+.input_box.focus, .input_box.valid{border-color:#0375e0}
+.input_box.error{border-color:#db3838}
+.input_box .lb {position:absolute;z-index:8;top:13px;left:11px;font-size:15px;line-height:16px;color:#b2b2b2;}
+.input_box input{position:relative;z-index:9;-webkit-box-flex:1;-webkit-flex:1;flex:1;padding:0 5px 0 15px;width:100%;height:42px;border:0 none;border-radius:inherit;background:#fff;vertical-align:top;-webkit-appearance:none;color:#0f0f0f;box-sizing:border-box}
+.input_box [class^="btn_"]{position:relative;display:block;-webkit-box-flex:none;-webkit-flex:none;flex:none;margin-top:6px;padding:0 5px;height:31px;line-height:0;font-size:0;color:transparent;-webkit-appearance: none;}
+.input_box .btn_del:after{content:"";display:block;width:20px;height:20px;background-position:-90px -30px;}
+.input_box .btn_plus:after{content:"";display:block;margin-top:4px;width:22px;height:22px;background-position:0 0;}
+.input_box.valid .btn_plus:after{background-position:-30px 0;}
+
+/* select */
+.select_box{position:relative;display:block;border:1px solid #bfbfbf;border-radius:4px;height:42px;}
+.select_box:before{content:"";position:absolute;top:50%;right:13px;margin-top:-4.5px;width:11px;height:9px;background-position:0 -30px;}
+.select_box select{position:relative;display:block;margin:0;padding:0 24px 0 15px;width:100%;height:100%;border:0;border-radius:0;background:transparent;font-size:15px;color:#0f0f0f;-webkit-appearance:none;-moz-appearance:none;box-sizing:border-box}
+.select_box select::-ms-expand {display: none;}
+.float_l{float:left}
+.float_r{float:right}
+
+/* checkbox */
+.chk_box{position:relative;min-height:22px}
+.chk_box input{position:absolute;top:1px;left:1px;width:22px;height:22px;background:none;border:0 none;border-radius:0;vertical-align:top;-webkit-appearance:none;}
+.chk_box input+label{position:absolute;top:0;left:0;line-height:1.6;color:#666}
+.chk_box input+label .ico{position:relative;left:auto;display:inline-block;margin-right:7px;width:22px;height:22px;vertical-align:top;background-position:-120px 0}
+.chk_box input:checked+label{font-weight:bold;color:#333}
+.chk_box input:checked+label .ico{background-position:-90px 0}
+.chk_box.type_r input{left:auto;right:1px;}
+.chk_box.type_r input+label{left:auto;right:0;text-align:right}
+.chk_box.type_r input+label .ico{float:right;margin-right:0;margin-left:7px}
+
+.wish_control{padding:20px;border-bottom:1px solid #f2f2f2}
+.wc_action{padding-top:12px}
+.wc_action .float_r{min-width:85px;min-width:5.5rem;margin-top:10px}
+.wc_action .btn_seldel:before{content:"";position:relative;top:1px;display:inline-block;margin-right:7px;width:15px;height:14px;background-position:-30px -30px;}
+.wc_action .selmove{position:relative;display:inline}
+.wc_action .btn_selmove{margin-left:11px}
+.wc_action .btn_selmove:before{content:"";display:inline-block;margin-right:7px;width:14px;height:14px;background-position:-60px -30px;}
+.wc_action .select_temp7_position{left:auto;right:0;width:100%;width:-webkit-calc(100% - 11px);width:calc(100% - 11px);height:38px}
+
+/* wish_list (plist_t7 exception) */
+.wish_list .plist_t7 li:first-child{border-top:0}
+.wish_list .plist_t7 .goods_info_wrap{padding:21px 20px;box-sizing:border-box}
+.wish_list .plist_t7 .table_cell{vertical-align:top}
+.wish_list .plist_t7 .check_interest{margin-bottom:10px;padding:3px 30px 0 0;min-height:22px;word-break:break-all;box-sizing:border-box}
+.wish_list .plist_t7 .check_interest .check_t3{top:21px;right:0;width:22px;height:22px}
+.wish_list .plist_t7 .goods_title_10{margin-right:0}
+.wish_list .plist_t7 .price_tarea{margin-top:13px}
+.wish_list .plist_t7 .spec_box{background:#f7f7f7}
+.wish_list .plist_t7 .spec_title_c2{color:#666}
+.wish_list .plist_t7 .sepc_mtitle2{margin-right:42px;color:#919191}
+.wish_list .plist_t7 .mr_cg{margin-right:80px}
+.wish_list .plist_t7 .spec_area_extend{right:20px;background:#fff}
+.wish_list .plist_t7 .goods_price_06{font-weight:bold;color:#0f0f0f}
+.wish_list .plist_t7 .check_t3 input{width:22px;height:22px;background:none;border:0 none;border-radius:0;vertical-align:top;-webkit-appearance:none;}
+.wish_list .plist_t7 .check_t3 label{left:0;width:22px;height:22px;background-position:-120px 0}
+.wish_list .plist_t7 .check_t3 input:checked + label{background-position:-90px 0}
+.wish_list .plist_t7 .spec_title_colum3{margin-right:20px;padding-left:20px}
+.wish_list .igoods_none_area{min-height:-webkit-calc(100vh - 240px);min-height:calc(100vh - 280px);border-top:0}
+.wish_list .txt_igoods_none01{padding:0 20px;line-height:1.35;font-size:15px;color:#333}
+
+/* wish_folder_make */
+.wish_folder_make{padding:20px;border-bottom:1px solid #f2f2f2}
+.wfm_wrap .tip{margin-top:11px;font-size:12px;color:#666}
+
+/* wish_folder_list */
+.wfl_wrap .li_t2{display:table;table-layout:fixed;margin-bottom:0;width:100%;border-top:1px solid #f2f2f2}
+.wfl_wrap .li_t2:first-child{border-top:0}
+.wfl_wrap .interest_title,
+.wfl_wrap .list_right_position{display:table-cell;vertical-align:middle;padding-top:5px;padding-bottom:5px}
+.wfl_wrap .interest_title{padding-left:20px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-weight:normal;line-height:1.3}
+.wfl_wrap .list_right_position{position:relative;padding-right:55px;width:180px;height:auto;box-sizing:border-box}
+.wfl_wrap .interest_number{display:block;float:none;margin:0;padding-left:20px;text-align:right;color:#666;font-weight:normal;}
+.wfl_wrap .btn_choice_delete2{position:absolute;top:50%;right:14px;float:none;margin:-16px 0 0 0;width:32px;height:32px;border:0;line-height:0;font-size:0;color:transparent;}
+.wfl_wrap .btn_choice_delete2:after{content:"";display:block;margin-top:7.5px;margin-left:7.5px;width:17px;height:17px;background-position:-60px 0;}

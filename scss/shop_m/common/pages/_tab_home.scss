@@ -1,0 +1,506 @@
+@charset "UTF-8";
+
+.home {
+    .sc_banner {
+        position: relative;
+
+        button {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 40px;
+            height: 40px;
+            margin-top: -20px;
+            z-index: 1;
+
+            &:before {
+                position: absolute;
+                top: 50px;
+                right: 12px;
+                @extend %splite;
+                background-position: -204px -105px;
+                width: 18px;
+                height: 28px;
+                top: 50%;
+                margin-top: -12px;
+                content: "";
+            }
+        }
+
+        // swiper API style control
+        .swiper-button-prev,
+        .swiper-button-next {
+            width: 18px;
+            height: 28px;
+            margin-top: -14px;
+            @extend %splite;
+            background-position: -204px -105px;
+        }
+
+        .swiper-button-next {
+            background-position: -232px -104px;
+        }
+
+        .btn_right {
+            left: auto;
+            right: 0;
+            z-index: 1;
+
+            &:before {
+                background-position: -232px -104px;
+            }
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #E33E38;
+        }
+    }
+
+    .bnr_area {
+        text-align: center;
+
+        a {
+            display: block;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .link_allview {
+        display: block;
+        position: absolute;
+        right: 14px;
+        bottom: 14px;
+        @extend %splite;
+        background-position: -1px -216px;
+        width: 64px;
+        height: 22px;
+        z-index: 2;
+    }
+
+    .paging_area {
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
+        text-align: center;
+        z-index: 3;
+    }
+
+    .paging_list {
+        position: absolute;
+        display: inline-block;
+        height: 12px;
+        left: 80px;
+        right: 80px;
+        bottom: 20px;
+        text-align: center;
+        z-index: 1;
+
+        li {
+            display: inline-block;
+            margin: 0;
+        }
+
+        a {
+            @extend %splite;
+            @include bg ($bpx: -187, $bpy:-160, $w:12, $h:12, $mgt:0, $mgr:0, $mgb:0, $mgl:0);
+            display: inline-block;
+        }
+
+        strong {
+            @extend %splite;
+            @include bg ($bpx: -187, $bpy:-174, $w:12, $h:12, $mgt:0, $mgr:0, $mgb:0, $mgl:0);
+            display: inline-block;
+
+        }
+    }
+
+    .sr_inner {
+        position: relative;
+        background-color: #fff;
+        padding: 0 92px 0 114px;
+        margin-top: 8px;
+        font-size: 1.3rem;
+    }
+
+    .sr_lwrap {
+        position: absolute;
+        top: 10px;
+        left: 12px;
+        font-size: 1.3rem;
+        color: #282828;
+        font-weight: bold;
+    }
+
+    .sr_title {
+        @extend %spliteBefore;
+        vertical-align: top;
+
+        &:before {
+            background-position: -7px -278px;
+            width: 16px;
+            height: 16px;
+            vertical-align: -4px;
+            margin-left: 2px;
+        }
+
+    }
+
+    .sr_cwrap {
+        padding: 9px 0;
+    }
+
+    .sr_txt {
+        display: block;
+        @include shortwords1();
+    }
+
+    .sr_rwrap {
+        position: absolute;
+        top: 8px;
+        right: 14px;
+        font-size: 1.2rem;
+        color: $color_secondary;
+        font-weight: bold;
+
+        strong {
+            font-size: 1.4rem;
+        }
+    }
+
+    .ss_inner {
+        background-color: #fff;
+        margin-top: 8px;
+        padding: 0 12px;
+    }
+
+    .ss_list {
+        @extend %clear;
+        padding-bottom: 10px;
+    }
+
+    .ss_item {
+        float: left;
+        width: 25%;
+
+        a {
+            display: block;
+            text-align: center;
+
+            strong {
+                display: block;
+                padding: 40px 0 0 0;
+                font-size: 1.1rem;
+                color: #333;
+                @extend %spliteBefore;
+
+                &:before {
+                    background-position: -260px 0;
+                    position: absolute;
+                    top: 42%;
+                    left: 50%;
+                    overflow: hidden;
+                    transform: translate(-50%, -50%);
+                    width: 40px;
+                    height: 32px;
+                }
+            }
+        }
+    }
+
+    a.link_gallery {
+        & strong:before {
+            background-position: -268px -32px;
+            width: 32px;
+        }
+    }
+
+    a.link_review {
+        & strong:before {
+            background-position: -263px -66px;
+            width: 38px;
+        }
+    }
+
+    a.link_help {
+        & strong:before {
+            background-position: -266px -100px;
+            width: 34px;
+        }
+    }
+
+    a.link_youtube {
+        & strong:before {
+            background-position: -264px -128px;
+            width: 36px;
+        }
+    }
+
+    a.link_cafe {
+        & strong:before {
+            background-position: -267px -160px;
+            width: 34px;
+        }
+    }
+
+    a.link_blog {
+        & strong:before {
+            background-position: -265px -190px;
+            width: 36px;
+        }
+    }
+
+    a.link_kin {
+        & strong:before {
+            background-position: -260px -222px;
+            width: 42px;
+        }
+    }
+
+    // 조립갤러리
+    .sag_inner {
+        position: relative;
+        margin-top: 8px;
+
+        .item {
+            width: 120px;
+            padding: 10px 13px 4px;
+        }
+
+        .thumb_box {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+
+            .badge {
+                background-color: $bg_estimate;
+            }
+        }
+
+
+        div.thumb_box {
+            @extend %crop;
+        }
+
+        .title_area {
+            margin-bottom: 4px;
+        }
+
+        .txt_box {
+            height: 80px;
+            vertical-align: middle;
+        }
+
+        a.link_box {
+            width: 120px;
+        }
+
+        .tit {
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .price {
+            margin: 0;
+        }
+
+        .date {
+            font-size: 1.2rem;
+            color: #666;
+        }
+    }
+
+    .title_area {
+        h3 {
+            strong {
+                font-size: 1.6rem;
+                color: #282828;
+            }
+        }
+    }
+
+    .link_area {
+        display: block;
+        @extend %spliteAfter;
+
+        &:after {
+            position: absolute;
+            right: 20px;
+            top: 3px;
+            background-position: -240px -140px;
+            width: 8px;
+            height: 16px;
+        }
+    }
+
+    // 주간판매순위
+    .swr_inner {
+        margin-top: 8px;
+        padding-top: 18px;
+
+        .thumb_box {
+            img {
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+        .item {
+            width: auto;
+            padding: 10px 12px 9px;
+        }
+
+        .txt_box {
+            vertical-align: middle;
+            height: 80px;
+        }
+
+        .badge_num {
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: block;
+            text-align: center;
+            width: 20px;
+            height: 20px;
+            color: #fff;
+            font-size: 1.5rem;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+    }
+
+    // 구매후기
+    .spr_inner {
+        margin-top: 8px;
+
+        // 리스트 1~2위 섬네일 노출
+        .list_area {
+            padding: 0 4px;
+        }
+
+        .item {
+            width: 50%;
+            padding-bottom: 0;
+        }
+
+        div.thumb_box {
+            .bg_badge{
+                position: absolute;
+                bottom:0;
+                left:0;
+                color:#fff;
+                font-size: 1.2rem;
+                font-weight: bold;
+                padding:0 10px;
+            }
+            @extend %crop;
+        }
+
+        div.txt_box {
+            height: 88px;
+            vertical-align: middle;
+        }
+
+        div.tit {
+            margin-top: 10px;
+        }
+
+    }
+
+    // 리스트 3~5위
+    .review_area {
+        .link_review {
+            padding: 7px 74px 11px 66px;
+        }
+
+        .title_area {
+            padding-left: 0;
+        }
+
+        .i_star {
+            margin: 0;
+        }
+
+        .rating_area {
+            right: 12px;
+            top: 12px;
+        }
+
+        .badge {
+            position: absolute;
+            left: 14px;
+            top: 8px;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+    }
+
+    .i_star {
+        margin: 12px 0 0 0;
+        @extend %starS;
+    }
+    // 유튜브채널
+    .syc_inner{
+        padding:16px 0 8px;
+        margin-top:8px;
+        background-color:#fff;
+
+        .title_area{
+            padding:0 14px;
+            
+        }
+        .thumb_box{
+            img{
+                width:123px;
+                height: 69px;
+            }
+        }
+        .box_main{
+            padding:4px 14px 0 14px;
+        }
+        .txt_box{
+            width:calc(100vw - 100px);
+            padding:0;
+            height: 72px;
+            vertical-align: middle;
+        }
+        .list_area{
+            padding-top:4px;
+        }
+        .link_box{
+            height: auto;
+        }
+    }
+    // 인기상품
+    .pg_inner{
+        padding-top:18px;
+        .style1_tab{
+            padding:0 14px;
+            margin-bottom:11px;
+        }
+        .title_area{
+            padding:0 14px;
+        }
+        .txt_box{
+            text-align: center;
+        }
+        .grid{
+            display:block;
+        }
+        .item{
+            float:left;
+            width:calc(50% - 22px);
+            padding:7px 11px;
+        }
+        div.txt_box{
+            width:100vmin;
+            height: 78px;
+        }
+        .tit{
+            margin-top:8px;
+        }
+        
+    }
+}

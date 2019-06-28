@@ -1,0 +1,107 @@
+@charset "UTF-8";
+
+/* common */
+legend, .blind {position:absolute; overflow:hidden; clip:rect(0 0 0 0); margin:-1px; width:1px; height: 1px;}
+i {display:inline-block;background:url(//img.danawa.com/new/tour/img/ico_listblog_v180108.png) no-repeat;}
+.unvisual {display:none}
+.ico_required{display:inline-block;margin-right:7px;width:9px;height:8px;background:url(//img.danawa.com/img/tour/ico_tour_181203.png) -30px -640px no-repeat;text-indent:-9999px;vertical-align:middle}
+
+/* clear */
+.clear:after, .lowest_comparison:after, .lowest_comparison .list_wrap:after, .header_option:after, .tab_list:after, .tag_badge:after, .head_bloglist_table:after {clear:both; content: ""; display:block;}
+
+/* Layout */
+
+/* font */
+.txt_date, .link_more, .link_total_view, .body_bloglist_table  {font-family: dotum,'돋움',gulim,'굴림',AppleGothic,Helvetica,Sans-serif;}
+.lowest_comparison, .search_input, .search_input[type="text"]::-webkit-input-placeholder {font-family:'Malgun Gothic','맑은 고딕',dotum,'돋움',gulim,'굴림',AppleGothic,Helvetica,Sans-serif; letter-spacing: -.5px;}
+.num, .cal_month a, .list_month .month, .nation .en, .infomation .post_info {font-family:'Century Gothic',Sans-serif,arial,'돋움',Dotum,'굴림',gulim;}
+
+/* layout */
+.container.tour_detail .content{z-index:auto;font-family:'Malgun Gothic','맑은 고딕',dotum,'돋움',gulim,'굴림',AppleGothic,Helvetica,Sans-serif;}
+.main .top_down_position{width:1020px}
+
+.section_detail{margin:0 auto;width:1020px;}
+.dtheader_wrap{position:relative;padding:45px 125px 35px 0;border-bottom:2px solid #666}
+.dtheader_wrap .title{font-size:22px;letter-spacing:-0.05em}
+.dtheader_wrap .sns_list{position:absolute;top:50px;right:0;}
+
+.dtsummary_wrap{margin:40px 0}
+.dtsummary_left{float:left;width:380px}
+.dtsummary_left .thumb img{display:block;width:380px;height:258px}
+.dtsummary_left .logo img{display:block;margin:20px auto 22px;width:137px;height:30px}
+.dtsummary_left .btn_reserve{display:block;width:100%;height:56px;background:#017f85;line-height:56px;text-align:center;font-weight:bold;font-size:18px;color:#fff}
+.dtsummary_right{float:right;width:620px}
+.dtsummary_right th{width:120px}
+.dtsummary_price .pr_box{color:#000}
+.dtsummary_price .pr_box.point{color:#008388}
+.dtsummary_price .pr_box.large{display:inline-block;margin:10px 0;font-size:13px}
+.dtsummary_price .pr_box.large .num{position:relative;top:-1px;font-size:24px;vertical-align:top}
+.dtsummary_price .original_prc .num{vertical-align:top;line-height:20px;font-size:16px}
+.dtsummary_schedule{margin-top:10px}
+.airline img {padding:2px;width:12px;height:12px;border-radius:16px;border:1px solid #ddd;margin-bottom:2px;margin-right:2px;vertical-align:middle;}
+.dtsummary_notice{margin-top:30px;padding:15px 40px 25px;border:1px solid #dcdcdc;background:#fafafa}
+.dtsummary_notice li{padding-top:5px;font-size:13px;color:#555}
+
+.dtinfo_wrap{margin-bottom:55px;padding:11px;border:1px solid #dcdcdc}
+
+.recommand_wrap{margin-bottom:88px}
+.recommand_header .title{margin-bottom:19px;font-size:22px}
+.recommand_list li{float:left;margin-left:33px;width:228px;height:294px;border:1px solid #dcdcdc}
+.recommand_list li:first-child{margin-left:0}
+.recommand_list a{display:block;width:100%;height:100%}
+.recommand_list a:hover{text-decoration:none}
+.recommand_list a:hover .subj{text-decoration:underline}
+.recommand_list .thumbimg{display:block;width:228px;height:155px}
+.recommand_list .info_cont{padding:12px 15px 15px}
+.recommand_list .date{display:block;font-size:15px;font-weight:bold}
+.recommand_list .subj{display:block;margin:7px 0 20px;height:38px;overflow:hidden;font-size:14px}
+.recommand_list .tour{float:left}
+.recommand_list .tour img{display:block;padding-top:2px;height:20px}
+.recommand_list .price{float:right}
+.pr_box{font-size:14px}
+.pr_box .num{font-weight:bold;font-size:18px}
+
+/* 약관 */
+.terms_wrap .point{color:#018287}
+.terms_title{position:relative;padding-bottom:10px;font-size:15px;font-weight:bold}
+.terms_cont{overflow-y:auto;padding:10px 15px;height:54px;border:1px solid #dadee5;border-top-color:#9699a0;font-size:12px;font-family:dotum,gulim;color:#666}
+.terms_cont.open{display:block}
+.terms_cont p{margin:5px 0 0}
+.terms_cont p:first-child{margin-top:0}
+.terms_chk{margin-top:10px;text-align:right;font-size:13px}
+.terms_chk .chk_box input+label{right:0}
+.terms_chk .chk_box input+label{right:0}
+
+/* reserve_layer */
+.dtsummary_wrap .dim_layer{position:static}
+.dim_layer.dim_show .reserve_layer {display:block;}
+.reserve_layer{position:absolute;top:120px;left:50%;margin:0 0 0 -425px;width:850px;height:970px;border:none;background:#fff}
+.reserve_layer .ly_cont{padding:25px 30px 30px}
+.reserve_layer .terms_wrap{padding  -bottom:7px}
+.reserve_layer .terms_box{float:left;margin-left:22px;width:384px;}
+.reserve_layer .terms_box:first-child{margin-left:0}
+.reserve_info caption{position:relative;padding:14px 0 10px;text-align:left;font-weight:bold;font-size:15px}
+.reserve_info caption .cp_r{position:absolute;bottom:10px;right:0;font-size:12px}
+.reserve_info .table_default{border-top:2px solid #333}
+.reserve_info .table_default th{padding-top:7px;padding-bottom:7px;width:116px}
+.reserve_info .table_default td{padding-top:10px;padding-bottom:10px}
+.reserve_info .tour img{margin-top:-2px;margin-right:7px;padding-bottom:2px;height:24px;vertical-align:middle}
+.reserve_info .input_box{width:244px}
+.reserve_info .select_box{float:left;margin-left:10px;width:130px}
+.reserve_info .select_box:first-child{margin-left:0}
+.reserve_info .select_box select{width:100%}
+.reserve_info .guide{position:relative;top:5px;padding-top:5px;font-size:11px;font-family:dotum,gulim;color:#018287}
+.reserve_info .no_required{margin-left:16px}
+.reserve_notice{margin-top:20px;font-size:15px}
+.reserve_notice dt{padding-bottom:10px;font-size:15px;font-weight:bold}
+.reserve_notice dd{padding:11px 20px 15px;background:#f8f8f8;font-size:12px;color:#666;letter-spacing:-0.04em}
+.reserve_notice dd p{padding-top:4px}
+.reserve_action .btn_submit{display:block;margin:20px auto 0;width:140px;height:40px;background:#017f85;line-height:40px;text-align:center;font-weight:bold;font-size:15px;color:#fff}
+
+/* 제휴사 style 조정 */
+#danawa-tour-sale-schedule-self .itinerary_info .itinerary{width:100%}
+#danawa-tour-sale-schedule-self .itinerary_info .itinerary .detail_info{margin-top:0}
+#danawa-tour-sale-schedule-self .itinerary_info .itinerary .detail_info .daily_routine{padding-top:0}
+#danawa-tour-sale-schedule-self .schedule_infomation{padding-top:0}
+#danawa-tour-sale-schedule-self .schedule_infomation .travel_sch_cont .day_title:first-child{margin-top:0}
+#danawa-tour-sale-schedule-self .card_section.flight{min-width:634px;}

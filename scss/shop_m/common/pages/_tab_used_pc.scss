@@ -1,0 +1,84 @@
+@charset "UTF-8";
+
+// 상하메뉴 중고PC
+.type_usedpc {
+    .cont_inner {
+        background-color: #f2f2f2;
+    }
+
+    .sc_cont {
+        margin-top: 6px;
+    }
+
+    .title_area,
+    .list_area .more {
+        margin-bottom: 1px;
+    }
+
+    .box_main .link_box {
+        height: 118px;
+    }
+
+    .box_main .txt_box .tit {
+        font-size: 1.5rem;
+        line-height: 1.8rem;
+        margin-bottom: 6px;
+    }
+
+    // 텍스트가 늘어나 탭 스크롤 처리 인한 주석처리
+    .sc_tab {
+        li {
+            width: auto;
+            // > a{
+            //     padding:0;
+            //     line-height: 40px;
+            // }
+        }
+    }
+
+    .list_area .item {
+        margin-bottom: 1px;
+    }
+
+    .box_main {
+        display: table;
+        padding: 28px 18px 0 10px;
+
+        .thumb_box {
+            margin: 0px 14px 0 4px;
+
+            >img {
+                width: 116px;
+                height: 116px;
+            }
+        }
+
+        .txt_box {
+            // min-width: 158px;
+            display: table-cell;
+            vertical-align: middle;
+            height: 116px;
+        }
+    }
+
+    .box_sub {
+        background-color: #fff;
+
+        .box_desc {
+            padding-left: 14px;
+        }
+
+        .btn_extend {
+            background-color: #fff;
+        }
+    }
+
+    .cont_inner .option_area select {
+        width: auto;
+    }
+
+    // 태그 없을 시
+    .no_tag .box_main {
+        padding-top: 10px;
+    }
+}

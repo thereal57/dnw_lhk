@@ -1,0 +1,178 @@
+@charset "utf-8";
+
+/* initialize */
+html,body{width:100%;height:100%}
+html{overflow-y:auto}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,form,fieldset,p,button,strong,span{margin:0;padding:0}
+body{background:#fff;color:#333;font-size:12px;font-family:"Malgun Gothic",Dotum,Helvetica,"Apple SD Gothic Neo",sans-serif;
+    -webkit-text-size-adjust:100%;
+    -moz-text-size-adjust:100%;
+    -ms-text-size-adjust:100%}
+ul,ol,li{list-style:none;}
+img,fieldset,iframe{border:0 none;}
+img {-ms-interpolation-mode:bicubic;}   
+input[type='button'], input[type='submit'], button{cursor:pointer;}
+input[type=text],input[type=image],button,input[type=button],input[type=submit],textarea{-webkit-appearance:none;-webkit-text-size-adjust:none;-webkit-border-radius:0}
+a{color:#333;text-decoration:none;}
+a:hover{color:#333;text-decoration:underline}
+::-webkit-input-placeholder {color:#919191;font-weight:normal;}/* WebKit browsers */
+:-moz-placeholder {color:#919191;font-weight:normal;opacity:1;}/* Mozilla Firefox 4 to 18 */
+::-moz-placeholder {color:#919191;font-weight:normal;opacity:1;}/* Mozilla Firefox 19+ */
+:-ms-input-placeholder {color:#919191 !important;font-weight:normal !important;}/* Internet Explorer 10+ */
+
+/* common */
+.blind{overflow:hidden;position:absolute;top:0;left:0;width:1px;height:1px;font-size:0;line-height:0}
+
+/* danawa_header */
+.report_head_top{width:960px;height:80px;line-height:80px;margin:0 auto}
+.report_head_top:after{content:"";display:block;clear:both;}
+.report_head_top .head_logo{float:left}
+.head_logo h1, .head_logo h2{display:inline-block}
+.head_logo h1 a{display:block;width:85px;height:18px;overflow:hidden;text-indent:-200px;background:url(//img.danawa.com/img/dpg/reporter/logo_danawa.png) no-repeat 0 0;}
+.head_logo h2 a{display:block;width:107px;height:15px;margin-left:10px;overflow:hidden;text-indent:-200px;background:url(//img.danawa.com/img/dpg/reporter/logo_reporter.png) no-repeat 0 0;}
+.report_head_top .member_wrap{float:right}
+.member_wrap ul li{float:left;font-family:"dotum"}
+.member_wrap ul li:first-child:after{content:"|";margin:0 10px;color:#a7a7a7;font-size:11px}
+.member_wrap ul li a{font-size:11px;color:#666;letter-spacing:-0.5px}
+.member_wrap ul li strong{font-size:11px;color:#666;letter-spacing:-0.5px}
+
+#report_gnb{width:960px;margin:0 auto}
+#report_gnb .item_wrap:after{content:"";display:block;clear:both;}
+.item_wrap .gnb_item{position:relative;float:left;margin-left:50px;color:#333;font-size:15px;letter-spacing:-0.4px;cursor:pointer}
+.item_wrap .gnb_item.select{font-weight:bold}
+.item_wrap .gnb_item:after{display:none;content:"";position:absolute;bottom:-14px;left:0;width:100%;border-bottom:2px solid #000}
+.item_wrap .gnb_item.select:after{display:block}
+.item_wrap .gnb_item:hover:after{display:block}
+.item_wrap .gnb_item:first-child{margin-left:0}
+.gnb_item a{color:#333;font-size:15px;letter-spacing:-0.4px}
+.gnb_item a:hover{text-decoration:none;}
+
+/* danawa_content */
+/* container_reporter */
+.container_reporter{margin-top:13px;border-top:1px solid #ebebeb;letter-spacing:-0.4px}
+/* section_top */
+.container_reporter .st_wrap{padding:60px 0 50px 80px;width:880px;margin:0 auto;min-height:155px}
+.sw_icon{display:inline-block;height:24px;line-height:25px;padding:0 12px;border-radius:15px;color:#fff;font-weight:bold;background:#3c4dc4}
+.sw_title{margin:15px 0;font-size:27px;font-weight:bold;letter-spacing:-0.9px}
+.sw_con{font-size:15px;line-height:25px;letter-spacing:-0.6px}
+
+.grid_report01 .section_top{background:#e5fbff}
+.grid_report01 .st_wrap{padding-top:50px;background:url(//img.danawa.com/img/dpg/reporter/top_bg01.png) no-repeat right 45px}
+
+.grid_report02 .section_top{background:#f4f2ff}
+.grid_report02 .st_wrap{padding-top:50px;background:url(//img.danawa.com/img/dpg/reporter/top_bg02.png) no-repeat right 15px top 45px}
+.grid_report02 .sw_icon{background:#8b38e5}
+
+.grid_report03 .section_top{background:#fff8e5}
+.grid_report03 .st_wrap{background:url(//img.danawa.com/img/dpg/reporter/top_bg03.png) no-repeat right 80px top 70px}
+.grid_report03 .sw_icon{background:#ff3f19}
+
+.grid_report04 .section_top{background:#fff6f2}
+.grid_report04 .st_wrap{background:url(//img.danawa.com/img/dpg/reporter/top_bg04.png) no-repeat right 90px top 65px}
+.grid_report04 .sw_icon{background:#e6172c}
+
+.grid_report05 .section_top{background:#e6fcfc}
+.grid_report05 .st_wrap{background:url(//img.danawa.com/img/dpg/reporter/top_bg05.png) no-repeat right 55px top 60px}
+.grid_report05 .sw_icon{background:#3244c1}
+
+.grid_report06 .section_top{background:#f2f5ff}
+.grid_report06 .st_wrap{background:url(//img.danawa.com/img/dpg/reporter/top_bg06.png) no-repeat right 115px top 70px}
+.grid_report06 .sw_icon{background:#074b97}
+
+/* section_bottom */
+.section_bottom{position:relative}
+.sb_box{position:relative;width:960px;margin:0 auto;padding:48px 0;border-top:1px solid #ebecf0}
+.section_bottom .sb_box:first-child{border-top:0}
+.sb_box:after{content:"";display:block;clear:both}
+.sb_title{float:left;width:200px}
+.sb_title h4{font-size:20px;line-height:28px;font-weight:bold;color:#333;letter-spacing:-0.9px}
+.sb_con{float:left;width:760px;font-size:15px;line-height:24px}
+.sb_con dt{font-weight:bold;color:#000;margin-bottom:5px;letter-spacing:-0.9px}
+.first_con{margin-bottom:32px}
+.apply_notice{height:34px;line-height:35px;padding-left:25px;margin:15px 0 10px;border:1px solid #ebebeb}
+.apply_notice img{vertical-align:-3px}
+.apply_notice .notice{margin-left:10px;font-size:12px;color:#666;letter-spacing:-0.9px;font-family:"dotum"}
+.reporter_info{line-height:25px;padding:25px;background:#f2f5f7}
+
+.adoption_box{border-bottom:1px solid #ebecf0;padding-bottom:48px;margin-bottom:48px}
+.adoption_wrap:after{content:"";display:block;clear:both}
+.adoption_wrap li{float:left;margin-left:40px;padding-left:60px;text-align:center;background:url(//img.danawa.com/img/dpg/reporter/reporter01_bg.png) no-repeat -327px 45px}
+.adoption_wrap li.adoption_01{margin-left:0;padding-left:0;background:none}
+.adoption_wrap li dt{color:#3244c1}
+.adoption_wrap li dt:before{content:"";display:block;width:71px;height:62px;margin:40px 0 25px;background:url(//img.danawa.com/img/dpg/reporter/reporter01_bg.png) no-repeat}
+.adoption_wrap li dd{font-size:13px}
+.adoption_wrap li.adoption_01 dt:before{margin-left:43px;background-position:0 0}
+.adoption_wrap li.adoption_02 dt:before{margin-left:22px;background-position:-81px 0}
+.adoption_wrap li.adoption_03 dt:before{margin-left:27px;background-position:-162px 0}
+.adoption_wrap li.adoption_04 dt:before{margin-left:21px;background-position:-243px 0}
+.list_dot li{position:relative;padding-left:10px;}
+.list_dot li:before{content:"-";display:inline-block;position:absolute;left:0;top:0}
+
+.adoption_info_wrap{margin:35px 0 10px}
+.adoption_info_wrap:after{content:"";display:block;clear:both}
+.adoption_info_wrap .adoption_info{float:left;width:306px;padding:33px;border:1px solid #e1eaf0;font-size:13px;line-height:21px;margin-left:12px}
+.adoption_info_wrap .adoption_info:first-child{margin-left:0}
+.adoption_info .info_img{margin-bottom:30px}
+
+.adoption_notice_wrap{padding:30px 30px 0;background:#f2f5f7;font-size:13px}
+.adoption_notice_wrap > dl > dt:before{content:"";display:inline-block;width:11px;height:12px;margin-right:5px;background:url(//img.danawa.com/img/dpg/reporter/reporter_bg.png) no-repeat -21px 0}
+.adoption_notice_wrap > dl > dd{padding-bottom:20px}
+.adoption_notice_sub:after{content:"";display:block;clear:both}
+.adoption_notice_sub dt{float:left;width:238px;margin-bottom:0}
+.adoption_notice_sub dd{float:left;width:448px}
+
+.bottom_btn_wrap{width:960px;margin:0 auto;padding:48px 0;text-align:center;border-top:1px solid #ebecf0}
+.bottom_btn_wrap a{display:inline-block;width:240px;height:50px;line-height:50px;margin-left:10px;border:0;color:#fff;font-family:"Malgun Gothic";font-size:15px;font-weight:bold;letter-spacing:-0.9px;cursor:pointer}
+.bottom_btn_wrap a:first-child{margin-left:0}
+.bottom_btn_wrap a:hover{text-decoration:none}
+.bottom_btn_wrap a.btn_blue{background:#3c4dc4}
+.bottom_btn_wrap a.btn_black{background:#444}
+.bottom_btn_wrap a span:after{content:"";display:inline-block;width:8px;height:12px;vertical-align:-1px;margin-left:5px;background:url(//img.danawa.com/img/dpg/reporter/reporter_bg.png) no-repeat -38px -2px}
+
+.info_img3{height:146px;text-align:center;background:#f3f4f8;margin-bottom:30px}
+.cybermoney_adopt{margin:20px 0}
+.cybermoney_adopt li{font-weight:bold}
+.cybermoney_adopt li:before{content:"";display:inline-block;width:15px;height:15px;margin-right:10px;background:url(//img.danawa.com/img/dpg/reporter/reporter_bg.png) no-repeat 0 0}
+.cybermoney_info{line-height:25px;margin-top:20px;padding:17px 30px;background:#f2f5f7}
+.cybermoney_info .info_font_small{margin-top:5px;font-size:12px;font-family:"dotum";color:#666}
+
+.con_dl_wrap dt{margin-top:35px;padding-top:35px;border-top:1px solid #ebecf0}
+.con_dl_wrap dt:first-child{margin-top:0;padding-top:0;border-top:0}
+.grid_report04 .sb_con{letter-spacing:-0.5px}
+.grid_report04 .sb_con dl dd a{font-weight:bold;text-decoration:underline;text-underline-position:under;}
+
+.emblem_info{margin-bottom:40px}
+.emblem_info strong{text-decoration:underline;text-underline-position:under;}
+.emblem_list:after{content:"";display:block;clear:both;}
+.emblem_list li{float:left;margin-left:32px;text-align:center}
+.emblem_list li:before{content:"";display:block;width:165px;height:187px;background:url(//img.danawa.com/img/dpg/reporter/reporter05_bg.png) no-repeat}
+.emblem_list li.emblem_01{margin-left:0}
+.emblem_list li.emblem_02:before{background-position:-175px 0}
+.emblem_list li.emblem_03:before{margin:57px 0;height:73px;background-position:0 -196px}
+.emblem_list li.emblem_04:before{margin:57px 0;height:73px;background-position:-175px -196px}
+.emblem_list li a{display:inline-block;width:103px;height:28px;line-height:28px;margin-top:20px;border-radius:3px;background:#f2f5f7;text-decoration:underline;text-underline-position:under;font-size:13px;font-weight:bold}
+.emblem_list li.emblem_01.premium:before,.emblem_list li.emblem_02.premium:before{background-position-y:-278px}
+.emblem_list li.emblem_03.premium:before,.emblem_list li.emblem_04.premium:before{background-position-y:-474px}
+
+.txt_area{width:100%;height:447px;padding:20px;background:#f6f6f6;border:1px solid #d4d4d4;box-sizing:border-box;font-family:"dotum";font-size:12px;resize:none;}
+
+.tos_wrap{position:absolute;bottom:-34px}
+.tos_wrap .tos_btn{font-family:dotum;font-size:12px;color:#666;cursor:pointer}
+.tos_wrap .tos_btn:hover{text-decoration:underline}
+.tos_wrap .tos_btn:after{content:"";display:inline-block;width:5px;height:7px;background:url(//img.danawa.com/img/dpg/reporter/reporter_bg.png) no-repeat -48px 0;margin-left:7px;vertical-align:1px}
+
+.layer_tos_wrap{display:none}
+.layer_tos_wrap .dim_bg{position:fixed;top:0;left:0;width:100%;height:120%;background:#000;opacity:0.6;filter:alpha(opacity=60);z-index:90}
+.tos_con_wrap{position:absolute;width:800px;height:676px;top:50%;left:50%;margin:-338px 0 0 -400px;border:1px solid #33383e;background:#fff;z-index:99}
+.tos_con_wrap .tcw_title{height:48px;line-height:48px;padding:0 20px;background:#f8f8f8}
+.tos_con_wrap .tcw_title h4{font-size:13px;color:#0f0f0f;font-weight:bold}
+.tos_con_wrap .date{font-family:dotum;font-size:11px;color:#666;text-align:right;padding:15px 20px 5px}
+.tcw_contents{padding:30px;padding-top:0}
+.tcw_contents h5{margin-bottom:10px;font-size:15px;font-weight:bold;color:#0f0f0f}
+.tcw_contents .txt_area{margin-bottom:20px}
+.tos_select_con{color:#666;font-family:dotum;line-height:18px;letter-spacing:-0.2px}
+.tcw_close_wrap{position:absolute;top:17px;right:20px}
+.tcw_close_wrap .close{display:inline-block;width:13px;height:13px;background:url(//img.danawa.com/img/dpg/reporter/reporter_bg.png) no-repeat 0 -17px;border:0}
+
+/* danawa_footer */
+#danawa_footer{margin:52px 0 20px;text-align:center;font-family:tahoma,Dotum,gulim,AppleGothic,Helvetica,Sans-serif;font-size:10px;color:#999}
