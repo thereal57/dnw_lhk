@@ -1,0 +1,583 @@
+@charset "UTF-8";
+
+// 푸터 노출
+.aside_on footer,
+.intgoods footer {
+    display: block;
+}
+
+// 다나와홈 푸터 컨트롤
+.footer_v3 {
+    padding: 15px 70px 113px 1px;
+
+    .btn_footer {
+        padding-left: 14px;
+    }
+}
+
+// 결제 관련 버튼, 푸터
+// 하단 메뉴 고정 공통
+.sc_btmfixed {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+
+    .bf_inner {
+
+        .btn_wrap {
+            position: relative;
+            z-index: 11;
+            display: table;
+            width: 100%;
+            box-sizing: border-box;
+            table-layout: fixed;
+            background: #fff;
+
+            &>div {
+                display: table-cell;
+                position: relative;
+                vertical-align: top;
+                text-align: center;
+
+                &>button {
+                    position: relative;
+                    width: 100%;
+                    height: 50px;
+                    font-size: 1.9rem;
+                    font-weight: bold;
+                    border: none;
+                    color: #fff;
+
+                    &.btn_purchase {
+                        background-color: #E33E38;
+                        font-size: 2.0rem;
+                    }
+                }
+            }
+        }
+
+        .opchange {
+            width: 30%;
+        }
+
+        .btn_opchange {
+            display: block;
+            background-color: #353535;
+            padding: 6px 0;
+
+            &>strong {
+                color: $color_white;
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+
+    // 취소 변경하기
+    .bf_inner.cc_inner {
+        .cc_cancel {
+            background-color: $color_white;
+            width: 30%;
+        }
+
+        .btn_cc_cancel {
+            border: 1px solid #bfbfbf;
+            border-bottom-color: #fff;
+            color: $color_primary_txt;
+        }
+
+        .btn_cc_change {
+            background-color: #353535;
+            color: $color_white;
+        }
+    }
+}
+
+// 장바구니, 구매하기 레이어
+.cb_inner {
+    .cart {
+        float: left;
+        width: 110px;
+        height: 42px;
+        border: 1px solid #bfbfbf;
+        box-sizing: border-box;
+        margin-left: 14px;
+        border-radius: 5px;
+        line-height: 42px;
+
+        &>button {
+            display: block;
+            width: 100%;
+            height: 100%;
+
+            &>strong {
+                font-size: 1.9rem;
+            }
+        }
+    }
+
+    .purchase {
+        padding-left: 134px;
+        height: 42px;
+        margin: 0 14px 14px 0;
+        line-height: 42px;
+
+        .btn_purchase {
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+            background-color: $color-primary;
+
+            &>strong {
+                font-size: 2.0rem;
+                color: $color_white;
+            }
+        }
+    }
+}
+
+//  190516 장바구니개선
+.cart {
+    .cb_inner{
+        .btn_inner{
+            border-top:1px solid #e0e0e0;
+        }
+        .estimated{
+            float:left;
+            width:130px;
+            height:42px;
+            box-sizing: border-box;
+            margin:14px 0 0 14px;
+        }
+        .price_estimate{
+            display:table-cell;
+            height: 42px;
+            vertical-align: middle;
+            font-size: 1.2rem;
+            text-align: left;
+            dt{
+                color:#666;
+                strong{
+                    font-weight: normal;
+                }
+            }
+            dd{
+                color:$color_secondary;
+                font-weight: bold;
+                strong{
+                    font-size: 2.0rem;
+                }
+            }
+        }
+        .purchase{
+            padding-left:160px;
+            margin:14px 12px 14px 0;
+        }
+    }
+}
+
+.ly_order_wrap {
+    position: relative;
+    z-index: 1;
+}
+
+.btn_close_area {
+    position: relative;
+    border-bottom: 1px solid #bfbfbf;
+    background-color: transparent;
+
+    button {
+        display: block;
+        width: 100%;
+        height: 16px;
+
+        &:before {
+            position: absolute;
+            left: 50%;
+            margin-left: -25px;
+            top: 1px;
+            @extend %splite;
+            background-position: 10px -238px;
+            background-color: #f8f8f8;
+            width: 50px;
+            height: 16px;
+            border: 1px solid #bfbfbf;
+            border-bottom: 0;
+            box-sizing: border-box;
+            border-radius: 5px 5px 0 0;
+            content: "";
+        }
+
+        // @extend %splite;
+        // background-size: 250px 250px;
+        // background-position: 10px -238px;
+        // background-color: #f8f8f8;
+    }
+
+    //     display: inline-block;
+    //     width: 100%;
+    //     position: relative;
+    //     top: 0;
+    //     height: 19px;
+    //     border-bottom:1px solid #bfbfbf;
+    //     &:before {
+    // position: absolute;
+    // left: 50%;
+    // margin-left: -25px;
+    // top: 1px;
+    // @extend %splite;
+    // background-size: 250px 250px;
+    // background-position: 10px -238px;
+    // background-color: #f8f8f8;
+    // width: 50px;
+    // height: 16px;
+    // border:1px solid #bfbfbf;
+    // border-radius: 5px 5px 0 0;
+    // border-bottom-color:red;
+    // outline: 1px solid blue;
+    content: "";
+    //     }
+
+    //     &:after {
+    //         width:52px;
+    //         height: 2px;
+    //         vertical-align: bottom;
+    //         position: relative;
+    //         top:2px;
+    //         left:1px;
+    //         display: inline-block;
+    //         background: #f8f8f8;
+    //         z-index: 99;
+    //         content: "";
+    //     }
+    // }
+}
+
+.ly_order_inner {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    max-height: 334px;
+    background: #fff;
+
+    .btn_opchange {
+        position: absolute;
+        right: 0;
+        top: 6px;
+        text-align: center;
+    }
+}
+
+.ordinfo_area {
+    background-color: #F8F8F8;
+    padding: 14px 15px;
+
+    .title {
+        margin-bottom: 0;
+
+        &>strong {
+            font-size: 1.5rem;
+            line-height: 1.9rem;
+            font-weight: normal;
+            color: $color_primary_txt;
+            display: block;
+            padding-right: 68px;
+            @include shortwords2();
+        }
+    }
+
+    .detail {
+        position: relative;
+        padding-right: 80px;
+        margin-top: 12px;
+
+        .btn_opchange {
+            width: 84px;
+            border-radius: 5px;
+        }
+
+        &>dl {
+            @include clearfix();
+
+            &>dt {
+                float: left;
+                width: 54px;
+                font-size: 1.3rem;
+                color: #666;
+            }
+
+            &>dd {
+                float: left;
+                font-size: 1.3rem;
+                color: #333;
+            }
+        }
+    }
+
+}
+
+/// 판매몰 전체보기
+.link_allseller{
+    color:#333;
+    font-size: 1.4rem;
+    @extend %spliteAfter;
+    &:after{
+        background-position:-184px -8px;
+        width:8px;
+        height: 12px;
+        vertical-align: -1px;
+    }
+    >span{
+        strong{
+            color:$color_secondary;
+        }
+    }
+}
+
+.cprice_area {
+    @include clearfix();
+    padding: 15px 14px;
+    text-align: right;
+
+
+    .total_price {
+        float: right;
+        margin-top: 4px;
+
+        .total {
+            font-size: 1.2rem;
+            color: #666;
+            margin-right: 10px;
+        }
+
+        .price {}
+
+        .num,
+        .won {
+            color: $color_secondary;
+        }
+
+        .num {
+            font-size: 2.2rem;
+        }
+    }
+}
+
+.quantity_box {
+    float: left;
+    width: 112px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+    &>button,
+    &>input {
+        float: left;
+        position: relative;
+        width: 36px;
+        height: 30px;
+    }
+
+    button {
+        &:before {
+            position: absolute;
+            top: 12px;
+            left: 10px;
+            content: "";
+        }
+    }
+
+    .btn_down {
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+
+        &:before {
+            @extend %splite;
+            background-position: -185px -70px;
+            top: 14px;
+            width: 15px;
+            height: 2px;
+        }
+
+        &.is_min {
+            background-color: #f2f2f2;
+
+            &:before {
+                background-position: -185px -81px;
+            }
+        }
+    }
+
+    .btn_up {
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+
+        &:before {
+            @extend %splite;
+            background-position: -185px -26px;
+            top: 8px;
+            width: 15px;
+            height: 15px;
+        }
+
+        &.is_max {
+            background-color: #f2f2f2;
+
+            &:before {
+                background-position: -185px -45px;
+            }
+        }
+    }
+
+    &>input {
+        border: 1px solid #e0e0e0;
+        border-width: 0 1px 0 1px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.4rem;
+    }
+}
+
+// 푸터
+.footer {
+    padding-bottom: 60px;
+    background-color: #ededed;
+}
+
+.sc_ftop {
+    position: relative;
+    padding: 23px;
+    text-align: right;
+
+    .btn_area {
+        position: absolute;
+        left: 14px;
+        top: 16px;
+
+        &>a {
+            float: left;
+            position: relative;
+            padding: 1px 8px;
+            font-size: 1.4rem;
+            color: #666;
+            margin-right: 10px;
+
+            &+a:before {
+                background-color: #e0e0e0;
+                position: absolute;
+                top: 3px;
+                left: -6px;
+                width: 1px;
+                height: 16px;
+                content: "";
+            }
+        }
+    }
+
+    .cs_area {
+        position: absolute;
+        right: 20px;
+        top: 16px;
+        font-size: 1.4rem;
+        color: #666;
+    }
+}
+
+.sc_fbtm {
+    position: relative;
+    margin: 0 20px 14px;
+    padding: 11px 15px 4px;
+    background-color: #fff;
+    font-size: 1.4rem;
+    color: #919191;
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+
+    &:after {
+        @include afterbg($x: -185, $y:-100, $w:8, $h:14, $t:13, $r:16);
+        background: url(//img.danawa.com/img/m/common/icons_footer.png) 0 0 no-repeat;
+        background-size: 50px auto;
+        background-position: 0 0;
+        transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+    }
+
+    .danawa {
+        display: block;
+        margin-bottom: 6px;
+        color: #666;
+    }
+
+    .ceo,
+    .address,
+    .infolist,
+    .link_area {
+        display: none;
+    }
+
+    &.on {
+        padding-bottom: 14px;
+
+        .ceo,
+        .address,
+        .infolist,
+        .link_area {
+            display: block;
+            font-size: 1.2rem;
+            line-height: 1.7rem;
+        }
+
+        &:after {
+            transform: rotate(270deg);
+            -webkit-transform: rotate(270deg);
+        }
+
+        .address {
+            line-height: 1.4rem;
+            margin: 2px 0 4px;
+        }
+
+        .infolist {
+            @include clearfix();
+
+            li {
+                span {
+                    position: relative;
+                }
+            }
+        }
+
+        .link_area {
+            margin-top: 12px;
+            border: 1px solid #c7c7c7;
+            border-width: 1px 0 0 1px;
+            box-sizing: border-box;
+            @include clearfix();
+
+            li {
+                float: left;
+                width: 33.33%;
+
+                &:last-child>div {
+                    padding: 8px 0 !important;
+                }
+            }
+
+            a {
+                display: block;
+                border: 1px solid #c7c7c7;
+                border-width: 0 1px 1px 0;
+                text-align: center;
+                padding: 8px 0;
+                color: #666;
+                letter-spacing: -.5px;
+            }
+        }
+    }
+}
+
+// 상품상세 페이지 푸터 장바구니, 구매하기 버튼 노출
+.footer_wrapper {
+    padding-bottom: 50px;
+}

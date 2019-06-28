@@ -1,0 +1,152 @@
+@charset "UTF-8";
+
+// 서브페이지 구매후기
+.sub_pureview {
+    background-color: $color_white;
+
+    .specinfo_area {
+        padding: 0;
+    }
+}
+
+.sc_pureview {
+    margin-top: 1px;
+
+}
+
+.pureview_inner {
+    padding: 22px 15px;
+
+    .title_area {
+        font-size: 1.7rem;
+        color: #333;
+
+        .title {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+
+        .detail {
+            >span {
+                font-size: 1.2rem;
+                color: #666;
+                position: relative;
+                margin-right: 12px;
+
+                &.user_id:after {
+                    @include bar;
+                    top: 2px;
+                    right: -8px;
+                }
+            }
+        }
+    }
+
+    .review_area {
+        padding: 0;
+    }
+
+    .review_box {
+        margin: 10px 0 45px;
+
+        >span {
+            font-size: 1.4rem;
+            color: #333;
+            line-height: 1.8rem;
+            display: block;
+        }
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    .rating_area {
+        background-color: #fafafa;
+        margin: 10px 0 20px;
+
+        .rating {}
+
+        >ul {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .tit {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        span.ico {
+            position: relative;
+            background-position: -101px -73px;
+            width: 58px;
+            height: 10px;
+            ;
+        }
+
+        i.ico {
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-position: -101px -61px;
+            height: 10px;
+        }
+    }
+
+    .img_wrap img {
+        max-width: 100%;
+    }
+
+    // 사양변경
+    .specinfo_area {
+        .th {
+            .box {
+                background: #fafafa;
+                color: #666;
+            }
+
+            .tit_area {
+                background: #fafafa;
+            }
+
+            .desc_area {
+                padding-left: 0;
+                text-align: center;
+            }
+        }
+
+        .tit_area {
+            width: 60px;
+            border-right: 1px solid #f2f2f2;
+            background: #fff;
+
+            >strong {
+                font-weight: normal;
+            }
+        }
+
+        .box_area {
+
+            &:after {
+                content: none;
+            }
+        }
+
+        .desc_area {
+            padding: 9px 0 9px 10px;
+
+        }
+
+        .box {
+            font-size: 1.4rem;
+            color: #333;
+            height: auto;
+        }
+
+        .detail {
+            -webkit-line-clamp: 10;
+
+        }
+    }
+}

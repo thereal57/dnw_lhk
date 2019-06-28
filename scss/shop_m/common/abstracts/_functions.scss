@@ -1,0 +1,79 @@
+
+@charset "UTF-8";
+
+// _판매점별 서비스코드 bar 처리
+@each $seller in _11507,
+_4343 {
+
+    li.category_dev#{$seller},
+    li.category_real#{$seller} {
+        &:after {
+            content: none;
+        }
+    }
+}
+
+// 시퀀스 번호: 서비스명
+// 4352 : 배틀그라운드
+// 4353 : 로스트아크
+@each $exh in _10572,
+_123_45,
+_10953,
+_4352,
+_4353 {
+
+    li.category_dev#{$exh},
+    li.category_real#{$exh} {
+        &:after {
+            content: none;
+        }
+
+        .ico {
+            background: url('//img.danawa.com/img/m/market/category_dev#{$exh}.png') no-repeat;
+            @include bgexh();
+        }
+
+        &.tab>a {
+            padding: 0;
+            margin: 0 4px;
+
+            &>span {
+                @include blind();
+            }
+        }
+    }
+
+    li.category_real#{$exh} {
+        .ico {
+            background: url('//img.danawa.com/img/m/market/category_real#{$exh}.png') no-repeat;
+            @include bgexh();
+        }
+    }
+}
+
+// 원형 그래프
+$theme-color : #e53c39;
+$back-color : #bfbfbf;
+$size : 15rem;
+$step : 1;
+$loops : round(100 / $step);
+$increment : 360 / $loops;
+$half : round($loops / 2);
+$i : 0;
+$next-deg:0;
+
+@for $i from 0 through $loops {
+    .circle[data-progress="#{$i*$step}"]:after {
+        @if $i < $half {
+            $next-deg: 90deg + $increment * $i;
+            background-image: linear-gradient(90deg, $back-color 50%, transparent 50%, transparent), linear-gradient($next-deg, $theme-color 50%, $back-color 50%, $back-color);
+        }
+
+        @else {
+            $next-deg: -90deg + $increment * ($i - $half);
+            background-image: linear-gradient($next-deg, $theme-color 50%, transparent 50%, transparent), linear-gradient(270deg, $theme-color 50%, $back-color 50%, $back-color);
+        }
+    }
+}
+
+// 유튜브 조건문 iframe 호출 여부

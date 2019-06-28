@@ -1,0 +1,98 @@
+@charset "UTF-8";
+
+%clear {
+    &:after {
+        display: block;
+        clear: both;
+        content: "";
+    }
+}
+
+%splite {
+    background-image: url(//img.danawa.com/img/m/market/bg_mshop_v2.0.2.png);
+    background-repeat: no-repeat;
+    background-size: 300px 400px;
+}
+
+%spliteBefore {
+    position: relative;
+
+    &:before {
+        @extend %splite;
+        content: "";
+        display: inline-block;
+    }
+}
+
+%spliteAfter {
+    position: relative;
+
+    &:after {
+        @extend %splite;
+        content: "";
+        display: inline-block;
+    }
+}
+
+%barBefore {
+    position: relative;
+
+    &:before {
+        position: absolute;
+        width: 1px;
+        height: 10px;
+        left: -1px;
+        top: 5px;
+        background-color: #e2e2e2;
+        content: '';
+    }
+}
+
+%bar {
+    position: relative;
+
+    &:after {
+        position: absolute;
+        width: 1px;
+        height: 10px;
+        left: -1px;
+        top: 5px;
+        background-color: #e2e2e2;
+        content: '';
+    }
+}
+
+%crop {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding-top: 100%;
+
+    & img {
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        bottom: -50%;
+        left: -50%;
+        width: auto;
+        height: 100%;
+        margin: auto;
+
+    }
+
+}
+
+// 별점
+%starS {
+    width: 58px;
+    height: 12px;
+    @extend %splite;
+    background-position: -101px -73px;
+
+    & .i_stared {
+        height: 12px;
+        vertical-align: top;
+        @extend %splite;
+        background-position: -101px -61px;
+    }
+}

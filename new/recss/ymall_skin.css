@@ -1,0 +1,162 @@
+@charset "euc-kr";
+
+/* initialization */
+body,div,form,fieldset,legend,input,textarea,button{margin:0;padding:0}
+body{text-align:left;background:#fff;font-size:12px;font-family:Dotum,gulim,AppleGothic,Helvetica,Sans-serif;*word-break:break-all;-ms-word-break:break-all;}
+input,select,textarea,button{font-size:12px;font-family:Dotum,gulim,AppleGothic,Helvetica,Sans-serif;}
+
+/* common */
+fieldset,img{border:0 none}
+hr{display:none;}
+
+/* initialize */
+html,body{width:100%;height:100%}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,form,fieldset,p,button,strong,span{margin:0;padding:0}
+body{background:#fff;color:#333;font-size:12px;}
+ul,ol,li{list-style:none;}
+img,fieldset,iframe{border:0 none;}
+img {-ms-interpolation-mode:bicubic}   
+input[type='button'], input[type='submit'], button{cursor:pointer;}
+input[type=text],input[type=image],button,input[type=button],input[type=submit],textarea{-webkit-appearance:none;-webkit-text-size-adjust:none;-webkit-border-radius:0}
+a{color:#333;text-decoration:none;font-size:12px}
+a:hover{color:#333;text-decoration:underline}
+::-webkit-input-placeholder {color:#919191;font-weight:normal;}/* WebKit browsers */
+:-moz-placeholder {color:#919191;font-weight:normal;opacity:1;}/* Mozilla Firefox 4 to 18 */
+::-moz-placeholder {color:#919191;font-weight:normal;opacity:1;}/* Mozilla Firefox 19+ */
+:-ms-input-placeholder {color:#919191 !important;font-weight:normal !important;}/* Internet Explorer 10+ */
+table,tr,td,select,input,textarea{font-size:12px}
+
+/* common */
+.blind{overflow:hidden;position:absolute;top:0;left:0;width:1px;font-size:0}
+
+/* skip_navigation */
+#skip_navigation{position:relative;top:-7px;z-index:12345678}
+#skip_navigation a{position:absolute;left:0;top:-35px;width:120px;background:#000;border:1px solid #0375e0;text-align:center;outline:0}
+#skip_navigation a:active,#skip_navigation a:focus{top:0;text-decoration:none;cursor:pointer;zoom:1}
+#skip_navigation span{display:inline-block;padding:0px 0 0 0;background:#000;font-size:11px;letter-spacing:-1px;color:#fff;line-height:24px;}
+
+/* ymall_header */
+.ymall_head_top{border-bottom:1px solid #e0e0e0}
+.yht_wrap{display:table;width:1100px;height:70px;margin:0 auto}
+.yht_wrap .head_logo{display:table-cell;vertical-align:middle}
+.yht_wrap .head_logo h1{margin-left:20px}
+.yht_wrap .member_wrap{display:table-cell;vertical-align:middle;text-align:right;padding-top:2px}
+.member_wrap ul{display:inline-block}
+.member_wrap ul:after{content:"";display:block;clear:both}
+.member_wrap ul li{float:left}
+.member_wrap ul li:before{content:"|";margin:0 10px;color:#e0e0e0;font-size:11px}
+.member_wrap ul li:first-child:before{content:"";}
+.member_wrap ul li a{font-size:11px;color:#666}
+.member_wrap ul li strong{font-size:11px;color:#666}
+
+/* ymall_gnb */
+#ymall_gnb{display:table;width:100%;border-bottom:1px solid #e0e0e0}
+#ymall_gnb .yg_wrap{width:1100px;height:48px;margin:0 auto;padding:0 15px}
+#ymall_gnb .item_wrap{display:table-cell;height:48px;vertical-align:middle;padding-left:210px;min-width:730px}
+.item_wrap .gnb_item{float:left;margin-right:49px;font-family:"Malgun Gothic";font-weight:bold}
+.item_wrap .gnb_item a{color:#010101;letter-spacing:-0.5px;font-size:15px}
+.item_wrap .gnb_item:last-child{margin-right:0}
+.search_wrap{display:table-cell;position:relative;width:100%;height:49px;vertical-align:middle;text-align:right}
+.search_wrap .search_box{float:right;width:118px;height: 30px;line-height: 29px;border:1px solid #33383e;padding:0 10px;border-right:0;box-sizing:border-box}
+.search_wrap .search_btn{float:right;width:29px;height:30px;cursor:pointer;background:#fff;border:1px solid #33383e;border-left:0}
+.search_wrap .search_btn:after{content:"";display:block;width:15px;height:15px;margin-left:7px;background:url(//img.danawa.com/img/market/ymall/ico_new_skin.png) -45px 0 no-repeat}
+
+.ymall_banner{position:relative;width:100%;overflow:hidden;height:200px}
+.inner{position:absolute;float:left;width:100%}
+.inner img{position:absolute;left:50%;margin-left:-960px}
+
+/* ymall_content */
+#ymall_content{position:relative;width:1100px;margin:0 auto}
+#ymall_content:after{content:"";display:block;clear:both}
+.ymall_cate{float:left;position:relative;width:190px;margin-top:-250px}
+.ymall_cate h2{width:190px;height:50px;line-height:50px;background:#33383e;font-size:15px;color:#fff;font-family:"Malgun Gothic";text-align:center;letter-spacing:-0.5px}
+.ymall_cate h2:before{content:"";display:inline-block;width:11px;height:11px;background:url(//img.danawa.com/img/market/ymall/ico_new_skin.png) -66px 0 no-repeat;margin-right:5px}
+.ymall_cate .yc_wrap{border:1px solid #e0e0e0;border-top:0}
+.ymall_cate .yc_lnb{width:100%;box-sizing:border-box;min-height:183px;padding:16px 15px;line-height:16px;background:#fff}
+.ymall_cate .yc_lnb dt{display:table;width:100%;padding-top:16px;font-family:"Malgun Gothic"}
+.ymall_cate .yc_lnb dt:first-child{padding-top:0}
+.ymall_cate .yc_lnb dt .dt_wrap{display:table-cell;vertical-align:middle}
+.ymall_cate .yc_lnb dt a{font-size:13px;font-weight:bold;letter-spacing:-0.5px;padding:0 5px;text-decoration:none}
+.ymall_cate .yc_lnb dt a:hover{text-decoration:underline}
+.ymall_cate .yc_lnb dd{margin:0}
+.ymall_cate .yc_lnb dd:after{content:"";display:block;clear:both}
+.ymall_cate .yc_lnb dd .dt_wrap{display:table}
+.ymall_cate .yc_lnb dd a{display:table-cell;min-width:24px;color:#666;vertical-align:middle;padding:2px 5px;font-size:12px;text-decoration:none;line-height:16px;word-break:break-all}
+.ymall_cate .yc_lnb dd a:first-child:before{display:none}
+.ymall_cate .yc_lnb dd a:hover:before{text-decoration:none}
+.ymall_cate .yc_lnb dd a:hover{text-decoration:none;line-height:16px}
+.ymall_cate .yc_lnb dd a:hover span{text-decoration:underline}
+.ymall_cate .yc_lnb .yl_sep{display:table-cell;vertical-align:middle;padding:0}
+
+.shop_info_wrap{width:100%;margin-top:20px;background:#f6f8ff}
+.shop_info_wrap > div{padding:20px 30px}
+.shop_info_wrap > div h3{color:#0f0f0f;font-size:15px;font-family:"Malgun Gothic";margin-bottom:12px;letter-spacing:-0.5px}
+.shop_info_wrap > div h3:before{content:"";vertical-align:-6px;display:inline-block;width:23px;height:23px;background:url(//img.danawa.com/img/market/ymall/ico_new_skin.png) no-repeat;margin-right:5px}
+.shop_info_wrap .siw_top{border-bottom:1px solid #e0e0e0;}
+.shop_info_wrap .siw_top h3:before{background-position:-45px -17px}
+.shop_info_wrap .siw_bottom h3:before{background-position:-72px -17px}
+.shop_info_wrap > div li{position:relative;padding-left:7px;margin-top:7px;word-break:normal;word-wrap:break-word;color:#666}
+.shop_info_wrap > div li:before{content:"";display:block;position:absolute;width:2px;height:2px;top:5px;left:0;background:#666}
+.shop_info_wrap > div li p{line-height:16px}
+.shop_info_wrap > div li .title{font-weight:bold}
+
+.container_ymall{float:left;width:890px;margin-left:20px;margin-top:25px}
+
+.cy_section{width:100%;margin-bottom:40px}
+.cy_section .cs_title{border-bottom:1px solid #33383e;padding-bottom:8px;margin-bottom:15px}
+.cy_section .cs_title h3{font-size:15px;color:#010101;font-family:"Malgun Gothic"}
+
+.cs_item_wrap{min-height:170px;font-size:12px;font-family:dotum}
+.cs_item_wrap .cs_list{display:table;width:100%;margin-top:15px;padding:0;box-sizing:border-box}
+.cs_item_wrap .cs_item{display:table-cell;padding:0 17.5px;text-align:center}
+.cs_item_wrap .cs_item:last-child{padding-right:0}
+.cs_item_wrap .cs_item:first-child{padding-left:0}
+.cs_item_wrap .cs_item a{text-decoration:none;display:inline-block;line-height:17px}
+.cy_section .cs_item_wrap .cs_item a{width:150px}
+.cs_item_wrap .cs_item a:hover{text-decoration:none}
+.cs_item .title{height:34px;color:#666;line-height:16px;margin:8px 0 5px;overflow:hidden}
+.cs_item_wrap .cs_item a:hover .title{text-decoration:underline}
+.cs_item .price{font-weight:bold;color:#333}
+.cs_item .price .num{font-size:16px;font-family:"Century Gothic";vertical-align:-1px;margin-right:3px}
+.cs_item .price img{margin-left:4px;vertical-align:-1px}
+
+.section_wrap > div{margin-left:35px}
+.section_wrap > div:first-child{margin-left:0}
+.section_wrap:after{content:"";display:block;clear:both}
+
+.cy_section.txt_itme1{float:left;width:335px;margin-bottom:20px}
+.cy_section.txt_itme2{float:left;width:260px;margin-bottom:20px}
+.cy_section.txt_itme3{float:left;width:225px;margin-bottom:20px}
+.cy_section.txt_itme1 .cs_title,.cy_section.txt_itme2 .cs_title,.cy_section.txt_itme3 .cs_title{margin-bottom:15px}
+.cs_txt_wrap{min-height:136px;font-size:12px;font-family:dotum}
+.cs_txt_wrap .cs_item a{text-decoration:none}
+.cs_txt_wrap .cs_item a:hover{text-decoration:underline}
+.cs_txt_wrap .cs_item{display:table;width:100%;table-layout:fixed;margin-top:14px}
+.cs_txt_wrap .cs_item:after{content:"";display:block;clear:both}
+.cs_txt_wrap .cs_item .title{display:table-cell;width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin:0;height:auto}
+.cs_txt_wrap .cs_item .date{display:table-cell;width:70px;color:#909090;text-align:right;line-height:16px}
+
+
+/* ymall_footer */
+.yf_banner_wrap{width:1100px;margin:0 auto;text-align:right;margin-top:20px}
+.yf_banner_wrap .banner_list li{width:213px;height:68px;margin-left:5px;display:inline-block;border:1px solid #e0e0e0;text-align:center}
+.yf_banner_wrap .banner_list li a{display:table-cell;width:213px;height:68px;overflow:hidden;vertical-align:middle}
+.yf_banner_wrap .banner_list li img{max-width:213px;max-height:68px}
+
+.yf_company_info{padding-bottom:20px;margin-top:18px;border-top:1px solid #e0e0e0}
+.yf_company_info .yci_wrap{display:table;width:1100px;margin:0 auto}
+.yci_wrap > div{display:table-cell;vertical-align:top}
+.yci_wrap > div.logo{width:190px;text-align:center;vertical-align:middle}
+.yci_wrap > div.info{width:650px;padding:20px 0 0 20px;font-size:11px;color:#666}
+.yci_wrap > div.sgi_logo{width:239px}
+
+.yci_wrap .info .yi_link{margin-bottom:20px;font-size:12px}
+.yi_link li{display:inline-block}
+.yi_link li:before{content:"|";margin:0 10px;color:#e0e0e0;font-size:11px}
+.yi_link li:first-child:before{display:none}
+.yi_link li a{font-weight:bold;color:#666}
+.yci_wrap .info .yi_notice{font-size:11px;margin-bottom:15px}
+
+.yi_info li{display:inline-block;line-height:20px;margin-right:15px}
+.yi_info li .btn{display:inline-block;width:90px;height:17px;line-height:19px;text-align:center;border:1px solid #bfbfbf;color:#666;margin-left:5px;font-size:11px}
+

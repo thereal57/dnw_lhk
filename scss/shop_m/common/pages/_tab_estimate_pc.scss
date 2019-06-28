@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+// PC견적 안내페이지
+.notice_estimatepc {
+    height: calc(100vh - 81px);
+    background: url(//img.danawa.com/img/m/market/bg_assmpc_dimm.jpg) 0 0 no-repeat;
+    background-size: 100% auto;
+    background-repeat-y: repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .ne_wrap {
+        position: relative;
+
+        img {
+            display: block;
+        }
+
+        a {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50%;
+            height: 250px;
+
+            &.link_estimatepc_pc {
+                left: auto;
+                right: 0;
+            }
+        }
+    }
+}

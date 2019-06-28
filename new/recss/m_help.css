@@ -1,0 +1,98 @@
+@charset "utf-8";
+
+/* Common */
+.danawa_help p{margin:0;padding:0;}
+.danawa_help .clear:after{display:block;overflow:hidden;clear:both;content:""}
+
+/* help search word */
+.danawa_help .hsw{display:inline-block;padding:3px 0;background:#e8efff;line-height:normal;font-weight:bold} 
+
+/* skip types */
+.danawa_help .blind{position:absolute;clip:rect(1px 1px 1px 1px);clip:rect(1px, 1px, 1px, 1px); padding:0;border:0;height:1px;width:1px;overflow:hidden;}
+
+/* ico */
+.danawa_help .ico{display:inline-block;overflow:hidden;color:transparent;white-space:nowrap;background:url(//img.danawa.com/img/m/help/icons.png) no-repeat;-webkit-background-size:110px auto;background-size:110px auto;}
+.danawa_help .ico_back{margin-top:10px;margin-left:20px;width:13px;height:22px;background-position:0 0}
+.danawa_help .ico_cs{margin-right:2px;width:18px;height:16px;background-position:-41px 0}
+.danawa_help .ico_search{margin-top:7px;width:25px;height:24px;background-position:-15px 0}
+
+/* input */
+.danawa_help input[type=number],textarea{outline:0}
+.danawa_help input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none}
+.danawa_help input::-webkit-input-placeholder {color:#adadad;   } /* WebKit browsers */
+.danawa_help input :-moz-placeholder{color:#adadad;opacity:1;}/* Mozilla Firefox 4 to 18 */
+.danawa_help input::-moz-placeholder {color:#adadad;opacity:1;}/* Mozilla Firefox 19+ */
+.danawa_help input:-ms-input-placeholder {color:#adadad;}/* Internet Explorer 10+ */
+
+/* header */
+.danawa_help .header{position:relative;height:43px;overflow:hidden;background:#fff;border-bottom:1px solid #e0e0e0;word-break:break-all;overflow:hidden}
+.danawa_help .header_ttl{margin:0 44px 0 52px;text-align:center;line-height:43px;font-size:20px;color:#0f0f0f;white-space:nowrap}
+.danawa_help .btn_back{position:absolute;top:0;left:0;width:52px;height:43px;}
+
+/* container_help */
+.container_help .grid{margin-top:8px;background:#fff}
+.container_help .section_title{font-size:18px;font-weight:bold;color:#333}
+
+.link_move{position:relative;display:table;width:100%;;min-height:58px}
+.link_move:after{content:"";position:absolute;top:50%;right:20px;margin-top:-7px;width:7px;height:15px;background:url(//img.danawa.com/img/m/help/icons.png) -65px 0 no-repeat;-webkit-background-size:110px auto;background-size:110px auto;}
+.link_move .txt{display:table-cell;padding:10px 30px 7px 20px;vertical-align:middle;line-height:20px;font-size:18px;font-weight:bold;color:#333;word-break:break-all}
+.link_move .num{display:inline-block;padding-bottom:2px;line-height:inherit;vertical-align: middle;font-size:20px;color:#0f0f0f}
+.link_move .subtxt{font-size:16px;color:#0f0f0f}
+
+.result_header{margin-top:-8px;margin-bottom:-8px;padding:18px 20px 16px;background:#eee;}
+.result_title{line-height:1.2;font-size:18px;font-weight:normal;color:#333;word-break:break-all}
+.result_title .word{font-weight:bold;color:#0f0f0f}
+
+.help_category{overflow:hidden}
+.help_category ul{margin-bottom:-1px}
+.help_category li{float:left;width:33.3%;height:40px;border-right:1px solid #eee;border-bottom:1px solid #eee;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.help_category li:nth-child(3n){border-right:0}
+.help_category li.on{border-color:#33383e;background:#33383e}
+.help_category a{display:block;overflow:hidden;width:100%;height:100%;text-align:center;line-height:40px;font-size:14px;font-weight:bold;color:#333}
+.help_category li.on a{color:#fff}
+.help_wrap{border-top:8px solid #eee}
+.list_dropdown li{border-top:1px solid #f2f2f2}
+.list_dropdown li:first-child{border-top:0}
+.list_dropdown li.on, .list_dropdown li.on + li{border-top:1px solid #bfbfbf}
+.list_dropdown li.on:last-child{position:relative;z-index:1;margin-bottom:-1px;border-bottom:1px solid #bfbfbf}
+.list_dropdown li.blank{border-bottom:0;padding:30px;text-align:center;font-size:15px;color:#919191}
+.drdn_header{position:relative;}
+.drdn_arrow{display:block;padding:0 50px 0 20px;width:100%;height:50px;overflow:hidden;line-height:50px;white-space:nowrap;text-overflow:ellipsis;font-size:16px;color:#333;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.drdn_arrow:after{content:"";position:absolute;top:50%;right:20px;margin-top:-4px;width:13px;height:7px;background:url(//img.danawa.com/img/m/help/icons.png) -75px 0 no-repeat;-webkit-background-size:110px auto;background-size:110px auto;}
+.drdn_inquiry{display:table;width:100%;min-height:70px;}
+.drdn_inquiry .box_middle{display:table-cell;vertical-align:middle;}
+.drdn_inquiry .subj{display:block;padding:17px 20px 7px;line-height:1.65rem;font-size:16px;color:#333}
+.drdn_inquiry .info{display:block;padding:0 20px 17px;font-size:12px;color:#666}
+.drdn_inquiry .info .col{position:relative;display:inline;color:#666}
+.drdn_inquiry .info .col:before{content:' | ';padding:0 4px;color:#e0e0e0;font-size:11px}
+.drdn_inquiry .info .col:first-child:before{content:'';padding:0}
+.drdn_inquiry .status{width:67px;height:100%;text-align:center;border-left:1px solid #f2f2f2;font-weight:bold;font-size:15px;}
+.drdn_inquiry .status_q{color:#666}
+.drdn_inquiry .status_a{color:#0f0f0f}
+.drdn_cont{display:none;font-size:15px;word-break:break-all}
+.drdn_cont .cont_inner{padding:0 20px 30px;color:#666}
+.drdn_cont .bg_gray{padding-top:20px;background:#fafafa;color:#333}
+.drdn_cont a{color:#2965e1}
+.drdn_cont img{display:block;width:100% !important;height:auto !important}
+.list_dropdown .on .drdn_arrow{font-weight:bold}
+.list_dropdown .on .drdn_arrow:after{background-position:-88px 0}
+.list_dropdown .on .drdn_inquiry .subj{font-weight:bold}
+.list_dropdown .on .drdn_inquiry .status{border-left-color:#fff}
+.list_dropdown .on .drdn_cont{display:block;}
+.btn_listmore{display:block;height:50px;border-top:1px solid #f2f2f2;text-align:center;line-height:50px;font-size:15px;color:#666}
+
+/* section help search */
+.section_helpsch{padding:18px 20px}
+.helpsch_wrap{position:relative;margin-top:6px;height:39px;border-bottom:2px solid #33383e}
+.helpsch_input{padding:0 40px 0 0;width:100%;height:100%;background:none;border:0 none;border-radius:0;vertical-align:top;-webkit-appearance:none;color:#000;font-size:17px;box-sizing:border-box} 
+.btn_helpsch{position:absolute;top:0;right:0;width:28px;height:100%;}
+
+/* myinquiry */
+.myinquiry_wrap li.blank{padding:140px 0}
+.myinquiry_wrap li:nth-child(-n+5){border-bottom:0}
+
+/* section help cs */
+.section_helpcs{position:relative;padding:18px 180px 16px 20px;background:#33383e;color:#fff}
+.section_helpcs .section_title{color:#fff;letter-spacing:-0.4px}
+.section_helpcs .helpcs_info{margin-top:9px;line-height:1;font-size:14px}
+.section_helpcs .btn_helpcs{position:absolute;top:50%;right:20px;display:block;margin-top:-21px;width:160px;height:38px;border:1px solid #bfbfbf;border-radius:38px;text-align:center;line-height:38px;font-size:21px;font-weight:bold}

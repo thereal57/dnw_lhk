@@ -1,0 +1,16 @@
+/* 카테고리 출력 */
+@for $i from 0 through 6 {
+  .cate_#{$i} {
+    @extend %cate;
+    background-position-x:-($i*110px);
+  }
+}
+
+/* 로고 출력 */
+@each $code, $width in $LOGO {
+  .sl_#{$code} {
+    @extend %s_logo;
+    background-position-y:-(((index($LOGO, $code $width))-1)*25px); // 맵 index를 가져와서 x값 구하기
+    width:$width;
+  }
+}

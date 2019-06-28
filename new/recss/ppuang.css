@@ -1,0 +1,4 @@
+@charset "utf-8";
+
+.danawa_go_text {color:#0066ff;font-weight:bold;font-size:14px;font-family:dotum,sans-serif;margin-top:60px;margin-bottom:22px;overflow:hidden;}
+.btn_dnw_go {background:url(//img.danawa.com/new/ppuang/img/btn_danawa_go.gif) no-repeat left top;width:163px;height:25px;display:inline-block;text-indent:-9999em;margin-left:15px;vertical-align:middle;}

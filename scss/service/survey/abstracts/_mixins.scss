@@ -1,0 +1,161 @@
+@charset "UTF-8";
+
+// 미디어쿼리
+@mixin landscope {
+    @media only screen and (orientation: landscape){
+        @content;
+    }
+}
+
+// Break Point (max width 720)
+$max-width : 720px;
+@mixin pc-only {
+    @media screen and (min-width: #{$max-width + 1}) {
+        @content;
+    }
+}
+
+// clear
+@mixin clearfix() {
+    &::after {
+        content: "";
+        clear: both;
+        display: block;
+    }
+}
+
+// ir blind 
+@mixin blind(){
+    position: absolute;
+            clip: rect(0 0 0 0);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            &::before,&::after {
+                display: block;
+                width: 0;
+                height: 0;
+                content: '\00a0';
+                font-size: 0
+            }
+}
+
+// 구분선 믹스인
+@mixin bar() {
+    content: "";
+    width: 1px;
+    height: 8px;
+    position: absolute;
+    right: -1px;
+    top: 13px;
+    background-color: #ccc;
+}
+
+// 말줄임 1줄
+@mixin shortwords1() {
+    white-space: nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+// 말줄임 2줄
+@mixin shortwords2() {
+    display: block;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    word-wrap: break-word;
+    word-break: break-all;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+// 말줄임 3줄
+@mixin shortwords3() {
+    @include shortwords2();
+    -webkit-line-clamp: 3;
+}
+
+// 양옆 간격 20px
+@mixin mlr() {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+// 스프라이트 공통 믹스인
+@mixin sp() {
+    display: inline-block;
+    overflow: hidden;
+    background: url(//img.danawa.com/img/service/survey/sp.png) no-repeat;
+    background-size: 50px 75px;
+    text-indent: -9999px;
+}
+
+// box shadow 
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+    @if $inset {
+    -webkit-box-shadow:inset $left $top $blur $color;
+    -moz-box-shadow:inset $left $top $blur $color;
+    box-shadow:inset $left $top $blur $color;
+    } @else {
+    -webkit-box-shadow: $left $top $blur $color;
+    -moz-box-shadow: $left $top $blur $color;
+    box-shadow: $left $top $blur $color;
+    }
+}
+
+// btn style (white)
+@mixin btn-wt() {
+    display: inline-block;
+    box-sizing: border-box;
+    height: 33px;
+    padding: 0 20px;
+    line-height: 31px;
+    border: 1px solid #bfbfbf;
+    border-radius: 4px;
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+    background: #fff;
+    text-align: center;
+}
+
+// btn style (black)
+@mixin btn-bk() {
+    display: inline-block;
+    box-sizing: border-box;
+    height: 33px;
+    padding: 0 20px;
+    line-height: 31px;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    background: #33383e;
+    text-align: center;
+}
+
+// input style 
+@mixin ipt {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 23px;
+    height: 23px;
+    cursor: pointer;
+    border: 0;
+    background: transparent;
+}
+
+// input label style
+@mixin ipt-lb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 23px;
+    height: 23px;
+    text-indent: -9999px;
+    z-index: 10;
+}

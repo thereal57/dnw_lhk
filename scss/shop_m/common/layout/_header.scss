@@ -1,0 +1,144 @@
+@charset "UTF-8";
+
+// 태그역할_콘텐츠명
+
+// 헤더 섹션
+.sc_h {
+    position: relative;
+    background: #fff;
+
+    .tit_logo {
+        display: block;
+        padding: 12px 50px 10px;
+        text-align: center;
+
+        strong {
+            font-size: 2.1rem;
+            line-height: 2.6rem;
+            display: block;
+            color: #0f0f0f;
+            @include shortwords1();
+        }
+    }
+
+    .btn_aside,
+    .btn_mypage,
+    .btn_prev,
+    .btn_sns,
+    .btn_cart,
+    .btn_close,
+    .btn_home {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 48px;
+        height: 42px;
+    }
+
+    .btn_mypage,
+    .btn_sns,
+    .btn_cart,
+    .btn_close {
+        left: auto;
+        right: 0;
+    }
+
+    .i_ham {
+        @include bg ($bpx: -4, $bpy:-4, $w:21, $h:16, $mgt:15, $mgr:0, $mgb:0, $mgl:14);
+    }
+
+    .i_mypage {
+        @include bg ($bpx: -34, $bpy:-1, $w:24, $h:23, $mgt:12, $mgr:0, $mgb:0, $mgl:10);
+    }
+
+    .i_prev {
+        @include bg ($bpx: -8, $bpy:-35, $w:12, $h:19, $mgt:15, $mgr:0, $mgb:0, $mgl:14);
+    }
+
+    .i_sns {
+        @include bg ($bpx: -34, $bpy:-33, $w:23, $h:20, $mgt:13, $mgr:0, $mgb:0, $mgl:10);
+    }
+
+    .i_cart {
+        @include bg ($bpx: -34, $bpy:-64, $w:23, $h:20, $mgt:13, $mgr:0, $mgb:0, $mgl:6);
+
+        strong {
+            position: absolute;
+            font-size: 1.0rem;
+            line-height: 1.0rem;
+            right: 12px;
+            top: 10px;
+            padding: 1px 3px 0;
+            background-color: $color-primary;
+            color: $color_white;
+            border-radius: 5px;
+            font-style: normal;
+        }
+    }
+
+    .i_close {
+        @include bg ($bpx: -5, $bpy:-94, $w:20, $h:20, $mgt:14, $mgr:0, $mgb:0, $mgl:11);
+    }
+
+    .btn_cart {
+        strong {
+            position: absolute;
+            font-size: 1.0rem;
+            line-height: 1.0rem;
+            right: 12px;
+            top: 10px;
+            padding: 1px 3px 0;
+            background-color: $color-primary;
+            color: $color_white;
+            border-radius: 5px;
+            font-style: normal;
+        }
+    }
+
+    .btn_aside {
+        width: 42px;
+    }
+
+    .btn_home {
+        width:42px;
+        height: 42px;
+        left:42px;
+        @extend %spliteAfter;
+        &:after{
+            background-position:-35px -272px;
+            width:28px;
+            height: 28px;
+            margin:9px 0 0 8px;
+        }        
+    }
+}
+
+// 헤더 네비
+.nav_wrap {
+    position: relative;
+    z-index: 11;
+    height: 38px;
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+
+    // transition: transform .3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    &.fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 12;
+    }
+}
+
+
+.tablist {
+    position: relative;
+    height: 100%;
+    font-size: 0;
+    line-height: 0;
+    white-space: nowrap;
+}
+
+// 다나와 홈
+.btn_home {}

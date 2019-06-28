@@ -1,0 +1,139 @@
+@charset "UTF-8";
+
+// 미디어쿼리
+@mixin landscope {
+    @media only screen and (orientation: landscape){
+        @content;
+    }
+}
+
+/// Break Point (아이폰5,SE)
+$iphone-s-width : 320px;
+@mixin iphone-small {
+    @media screen and (max-width: #{$iphone-s-width}) {
+        @content;
+    }
+}
+
+// 폰트패밀리
+@mixin fontFamily(){
+    font-family: -apple-system, BlinkMacSystemFont, helvetica, Apple SD Gothic Neo, sans-serif;
+}
+
+// 클리어 믹스인
+@mixin clearfix() {
+    &::after {
+        content: "";
+        clear: both;
+        display: block;
+    }
+}
+
+// ir blind 
+@mixin blind(){
+    position: absolute;
+            clip: rect(0 0 0 0);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            &::before,&::after {
+                display: block;
+                width: 0;
+                height: 0;
+                content: '\00a0';
+                font-size: 0
+            }
+}
+
+// 이미지 형 탭리스트
+@mixin bgexh() {
+        display:inline-block;
+        overflow:hidden; 
+        background-size: 56px 25px;
+        width:58px;
+        height:25px;
+        margin-top:8px;
+        border:1px solid #e0e0e0;
+        border-radius: 5px;
+        box-sizing: border-box;
+}
+
+// 스프라이트 버전
+@mixin spurl() {
+    @extend %splite;
+}
+
+// 스프라이트 믹스인 
+// @include bg ($bpx:-4, $bpy:-4, $w:21, $h:16, $mgt:13, $mgl:14);
+@mixin bg($bpx:0, $bpy:0, $w:0, $h:0, $mgt:0, $mgr:0, $mgb:0, $mgl:0) {
+    background-position: $bpx+px $bpy+px;
+    width: $w+px;
+    height: $h+px;
+    margin: $mgt+px $mgr+px $mgb+px $mgl+px;
+}
+
+// 스프라이트 가상화
+@mixin beforebg($x:0, $y:0, $w:0, $h:0, $t:0, $r:0){
+    position:absolute;
+    top:$t+px;
+    right:$r+px;
+    @extend %splite;
+    background-position:$x+px $y+px;
+    width:$w+px;
+    height:$h+px;
+    content:"";
+}
+@mixin afterbg($x:0, $y:0, $w:0, $h:0, $t:0, $r:0){
+    position:absolute;
+    top:$t+px;
+    right:$r+px;
+    @extend %splite;
+    background-position:$x+px $y+px;
+    width:$w+px;
+    height:$h+px;
+    content:"";
+}
+
+// 스프라이트 공통 믹스인
+@mixin sp() {
+    display: inline-block;
+    overflow: hidden;
+    @extend %splite;
+}
+
+// 구분선 믹스인
+@mixin bar() {
+    content: "";
+    width: 1px;
+    height: 10px;
+    position: absolute;
+    right: -1px;
+    top: 15px;
+    background-color: #e2e2e2;
+}
+// 말줄임 1줄
+@mixin shortwords1() {
+    white-space: nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+// 말줄임 2줄까지
+@mixin shortwords2() {
+    display: block;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    word-wrap: break-word;
+    word-break: break-all;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+// 말줄임 3줄까지
+@mixin shortwords3() {
+    @include shortwords2();
+    -webkit-line-clamp: 3;
+}
+
