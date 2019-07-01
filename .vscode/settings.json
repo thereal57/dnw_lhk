@@ -14,5 +14,8 @@
     "liveSassCompile.settings.autoprefix": [
         "> 1%",
         "last 2 versions"
+    ],
+    "liveSassCompile.settings.includeItems": [
+        "scss/prod/hotdeal_sass/hotdeal_sass.scss",
     ]
 }
