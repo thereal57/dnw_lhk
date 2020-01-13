@@ -1,0 +1,150 @@
+@charset "UTF-8";
+
+.modelinfo-model {
+    padding: 20px 15px 15px;
+    border-top: 10px solid #f6f6f6;
+
+    .model {
+        margin-bottom: 8px;
+    }
+
+    .logo {
+        display: inline-block;
+        width: 45px;
+        vertical-align: top;
+    }
+
+    .name {
+        display: inline;
+        letter-spacing: -0.03rem;
+        line-height: 3rem;
+        font-size: 19px;
+        vertical-align: top;
+    }
+}
+
+.modelinfo-tab {
+    &--fixed {
+        position: fixed;
+        top: 0;
+        z-index: 99;
+        background: $color_white;
+    }
+}
+
+.modelinfo-price {
+    padding-top: 10px;
+
+    // 기본스타일 예외처리
+    .article-box:first-child {
+        border-top: none;
+    }
+
+    .article-box[class*="--"] .article-box__header {
+        padding-left: 20px;
+    }
+
+    .article-box__cont {
+        padding: 0;
+    }
+
+    .choice__cell {
+        padding: 0;
+        font-size: 13px;
+    }
+
+    .choice__info {
+        padding-right: 30px;
+    }
+
+    .choice input:checked+label+.choice__check+.choice__wrap {
+        border-color: $color_white;
+    }
+
+    &__base {
+        margin: 0 20px 15px;
+        font-size: 13px;
+        color: $color_secondary_txt;
+    }
+
+    &__option {
+        margin: 0 19px 15px;
+        padding: 10px 0 1px;
+        border-radius: 3px;
+        background: $color_white;
+        letter-spacing: -0.02rem;
+    }
+
+    &__sum {
+        padding: 15px 25px;
+        background: #eaeef7;
+
+        .row {
+            display: table;
+            width: 100%;
+            padding: 3px 0;
+            font-size: 14px;
+        }
+
+        .total {
+            margin-top: 7px;
+            padding-top: 7px;
+            border-top: 1px solid #d7d9df;
+            font-weight: bold;
+        }
+
+        .left {
+            display: table-cell;
+            width: 100%;
+        }
+
+        .right {
+            display: table-cell;
+            white-space: nowrap;
+            letter-spacing: -0.04rem;
+        }
+
+        .bottom {
+            text-align: right;
+        }
+
+        .btn-estm {
+            display: inline-block;
+            letter-spacing: -0.02rem;
+            font-size: 12px;
+            color: $color_primary;
+            text-decoration: underline;
+        }
+    }
+}
+
+.modelinfo-spec {
+    padding: 15px 14px 0;
+
+    img {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 335px;
+    }
+}
+
+.modelinfo-compare {
+    padding-top: 15px;
+}
+
+.modelinfo-policy {
+    padding: 20px;
+}
+
+// 라인업선택 레이어
+.layer__lineup {
+    padding: 0 15px 15px;
+    width: 260px;
+
+    .txt-date {
+        display: block;
+        font-size: 12px;
+        color: $color_tertiary_txt;
+    }
+}

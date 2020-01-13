@@ -1,0 +1,224 @@
+@charset "UTF-8";
+
+body,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,input,legend,li,ol,p,select,table,td,textarea,th,ul,hr {
+    margin: 0;
+    padding: 0;
+}
+
+body,button,h1,h2,h3,h4,h5,input,select,table,textarea {
+    font-family: "Helvetica Neue","Apple SD Gothic Neo",sans-serif;
+    font-size: 15px;
+    line-height: 1.267em;
+}
+
+body {
+    position: relative;
+    color: $color_primary_txt;
+    word-break: break-all;
+    -webkit-text-size-adjust: none;
+}
+
+html {
+    font-size: 10px;
+    line-height: 10px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+fieldset,img {
+    border: 0;
+}
+
+ol,ul {
+    list-style: none;
+}
+
+address,em {
+    font-style: normal;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,.1);
+}
+
+img {
+    vertical-align: top;
+}
+
+button,input,textarea  {
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    border:0;
+    background: 0 0;
+    appearance: none;
+}
+
+select{
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    background: 0 0;
+}
+
+input + label{
+    cursor: pointer;
+}
+
+input:focus+label {
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+// 레이어 펼침 시 body 스크롤 막기
+.disable-scroll{
+    position: fixed;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+}
+
+// body bg설정(부가정보 페이지-옵션상세정보, 할인상세정보 등)
+// example : 옵션상세정보 - http://markup-local.danawa.com/m/auto/newcar/infodetail_option.html
+// example : 할인상세정보 - http://markup-local.danawa.com/m/auto/newcar/infodetail_sale.html
+.bg-gray{
+    background:#f6f6f6;
+}
+
+// 대체텍스트
+.blind, .skip {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+
+// 강제 숨기기
+.hide{
+    display:none !important;
+}
+
+.off, button.off {
+    display:none;
+}
+
+// 공용 하우스 배너
+.adver_house {
+    overflow:hidden;
+
+    img{
+        display:block;
+        margin: 0 auto;
+        max-width: 100%;
+        max-height:75px;
+        border: 0;
+    }
+}
+
+// global btn : 정보 버튼
+.g-btn__info{
+    @extend %icon_common;
+    @include bg ($bpx:-125px, $bpy:0, $w:17px, $h:17px);
+    position:relative;
+    z-index:50;
+    display:inline-block;
+    margin-left: 5px;
+    vertical-align:top;
+    color:transparent;
+    overflow:hidden;
+}
+
+// global btn : 도움말 버튼
+.g-btn__help{
+    @extend %icon_common;
+    @include bg ($bpx:-145px, $bpy:0, $w:17px, $h:17px);
+    position:relative;
+    z-index:50;
+    display:inline-block;
+    margin-left: 5px;
+    vertical-align:top;
+    color:transparent;
+    overflow:hidden;
+}
+
+.g-label-ad {
+    display: inline-block;
+    margin: 1.5px 5px 1.5px 0;
+    padding: 0 3px;
+    border: 1px solid #9fa3a7;
+    border-radius: 0.2rem;
+    line-height: 1.3rem;
+    font-size: 12px;
+    color: #33383e;
+    letter-spacing: -0.04rem;
+    vertical-align: top;
+}
+
+.g-label-top {
+    display: inline-block;
+    margin: 1px 0 1px 5px;
+    padding: 0 5px;
+    border: 1px solid #9fa3a7;
+    border-radius: 1.7rem;
+    line-height: 1.4rem;
+    font-size: 11px;
+    color: #33383e;
+    letter-spacing: -0.04rem;
+    vertical-align: top;
+}
+
+.g-label-special {
+    display: inline-block;
+    margin: 1px 0 1px 5px;
+    padding: 0 5px;
+    border: 1px solid #f17b75;
+    border-radius: 1.7rem;
+    line-height: 1.4rem;
+    font-size: 11px;
+    color: #db241b;
+    letter-spacing: -0.04rem;
+    vertical-align: top;
+}
+
+.g-label-special {
+    display: inline-block;
+    margin: 1px 0 1px 5px;
+    padding: 0 5px;
+    border: 1px solid #f17b75;
+    border-radius: 1.7rem;
+    line-height: 1.4rem;
+    font-size: 11px;
+    color: #db241b;
+    letter-spacing: -0.04rem;
+    vertical-align: top;
+}
+
+.g-label-new{
+    display: inline-block;
+    margin: 1px 0 1px 5px;
+    padding: 0 5px;
+    border: 1px solid #96b5f4;
+    border-radius: 1.7rem;
+    line-height: 1.4rem;
+    font-size: 11px;
+    color: $color_primary;
+    letter-spacing: -0.04rem;
+    vertical-align: top;
+}
+
+.g-label-echo{
+    display: inline-block;
+    margin: 1px 0 1px 5px;
+    padding: 0 5px;
+    border: 1px solid #50b267;
+    border-radius: 1.7rem;
+    line-height: 1.4rem;
+    font-size: 11px;
+    color: #1d6f30;
+    letter-spacing: -0.04rem;
+    vertical-align: top;
+}

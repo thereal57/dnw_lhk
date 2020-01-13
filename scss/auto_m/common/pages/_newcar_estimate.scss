@@ -1,0 +1,630 @@
+@charset "UTF-8";
+
+// 모델정보
+.estimate-model {
+    padding: 17px 0 22px;
+
+    &__title {
+        padding: 0 20px 0 15px;
+
+        .logo {
+            height: 30px
+        }
+
+        .title {
+            display: inline;
+            line-height: 30px;
+            font-size: 19px;
+            color: $color_primary_txt;
+            letter-spacing: -0.05rem;
+        }
+    }
+
+    &__spec {
+        padding: 4px 19px 0;
+        line-height: 1.6rem;
+        font-size: 12px;
+        color: $color_secondary_txt;
+
+        .row {
+            display: block;
+        }
+    }
+
+    &__img {
+        margin: 0 auto;
+        padding-top: 12px;
+        width: 55.55%;
+        max-width: 200px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__btn {
+        padding-top: 13px;
+        text-align: center;
+
+        a {
+            margin: 0 4px;
+        }
+
+        .btn-white {
+            @include btn($pd:0 12px);
+        }
+
+        .btn-blue {
+            @include btn($type:blue, $pd:0 14px);
+        }
+    }
+}
+
+.estimate-tab {
+    &--fixed {
+        position: fixed;
+        top:0;
+        z-index:99;
+        background:$color_white;
+    }
+}
+
+// 신차견적내기 공통요소 
+.estimate {
+
+    // step title
+    &__title {
+        position: relative;
+
+        .title {
+            display: inline-block;
+            padding: 27px 0 11px 20px;
+            font-size: 17px;
+            line-height: 2.7rem;
+            color: $color_secondary_txt;
+            vertical-align: top;
+        }
+
+        .right {
+            position: absolute;
+            top: 27px;
+            right: 20px;
+
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0 12px;
+            line-height: 2.5rem;
+            font-size: 12px;
+            letter-spacing: -0.1rem;
+            text-decoration: none;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            border-radius: 2.5rem;
+            border: 1px solid #9fa3a7;
+            background: #fff;
+            color: #33383e;
+            font-weight: bold;
+        }
+
+        .date {
+            display: inline-block;
+            margin-top: 7px;
+            line-height: 1.7rem;
+            font-size: 13px;
+            color: $color_fourth_txt;
+        }
+
+        .info {
+            padding: 0 20px 7px;
+            font-size: 13px;
+            color: $color_tertiary_txt;
+        }
+    }
+
+    &__blank {
+        padding: 30px 0;
+        font-size: 14px;
+        color: $color_secondary_txt;
+        letter-spacing: -0.02rem;
+        text-align: center;
+    }
+}
+
+// form : 취득세/공채, 탁송 방법 선택
+.estimate-form {
+    &+& {
+        border-top: 1px solid #ececec;
+    }
+
+    &__header {
+        padding: 18px 20px 0;
+
+        .title {
+            display: inline;
+            line-height: 1.7rem;
+            vertical-align: top;
+        }
+    }
+
+    &__cont {
+        padding: 5px 0 15px;
+
+        .selectbox {
+            label,
+            select {
+                font-size: 13px;
+            }
+        }
+    }
+
+    &__item {
+        display: table;
+        padding: 5px 15px 5px 20px;
+        width: 100%;
+        box-sizing: border-box;
+
+        &.add-pd {
+            padding-top: 10px;
+            padding-bottom: 9px;
+        }
+
+        .title {
+            display: table-cell;
+            width: 100px;
+            vertical-align: middle;
+            white-space: nowrap;
+            font-size: 14px;
+            line-height: 1.7rem;
+        }
+
+        .g-btn__help {
+            margin-left: 4px;
+        }
+
+        .data {
+            position: relative;
+            display: table-cell;
+
+            .w-half {
+                float: left;
+                width: calc(50% - 2.5px);
+            }
+
+            .w-half+.w-half {
+                margin-left: 5px;
+            }
+        }
+
+        .sel-price {
+            &::before {
+                content: "|";
+                display: inline-block;
+                margin: 0 5px;
+                line-height: inherit;
+                color: #ddd;
+            }
+        }
+    }
+}
+
+// 결제방법
+.estimate-pay {
+
+    // 결제방법 선택 탭 (할부 | 일시불 | 렌트/리스)
+    &__tab {
+        margin: 0 20px;
+
+        .info {
+            display: block;
+            padding-top: 2px;
+            font-size: 12px;
+            font-weight: normal;
+            color: $color_fourth_txt;
+            letter-spacing: -0.02rem;
+            line-height: 1.4rem;
+            word-break: keep-all;
+        }
+
+        .tab-box__item--disabled {
+
+            .txt,
+            .subtxt {
+                color: #d3d3d3;
+            }
+        }
+
+        .tab-box__item--on {
+            .txt {
+                color: $color_primary;
+            }
+
+            .subtxt {
+                color: $color_secondary_txt;
+            }
+        }
+    }
+
+    // 할부 - 선납금
+    &__prepay {
+        position: relative;
+        margin: 20px 20px 0;
+
+        .title {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 72px;
+
+            .txt {
+                line-height: 3.5rem;
+            }
+
+        }
+
+        .cont {
+            padding-left: 72px;
+        }
+
+        input[type="number"] {
+            text-align: right;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .tip {
+            margin-top: 5px;
+            text-align: right;
+            line-height: 1.3rem;
+            font-size: 11px;
+            color: $color_fourth_txt;
+
+            .emphasis {
+                color: $color_secondary_txt;
+            }
+        }
+    }
+
+    // 할부 - 할부기간
+    &__month {
+        margin: 5px 20px 0;
+
+        .title {
+            margin-bottom: 10px;
+        }
+
+        .tab-box__item {
+            font-size: 13px;
+            color: $color_tertiary_txt;
+        }
+    }
+
+
+    // 할부 및 일시불 상품
+    .article-box {
+        margin-top: 20px;
+    }
+
+    //렌트/리스
+    &__rent {
+        display: table;
+        width: 100%;
+
+        .cont {
+            display: table-cell;
+            height: 150px;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        .noti {
+            margin-bottom: 10px;
+            width: 100%;
+            text-align: center;
+            font-size: 13px;
+            color: $color_secondary_txt;
+        }
+
+        .btn_link {
+            @include btn($type:blue, $pd:0 25px, $lh:3.2rem, $fs:13px);
+        }
+    }
+}
+
+// 책임의 한계
+.estimate-policy {
+    padding: 18px;
+}
+
+// 견적결과 하단 플로팅
+.estimate-result {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2900;
+
+    //열렸을때 dimm처리
+    &__dimm {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, .5);
+        cursor: pointer;
+    }
+
+    // 접고 펼치기 버튼영역
+    &__toggle {
+        position: relative;
+
+        .btn_toggle {
+            position: relative;
+            display: block;
+            border-bottom: 1px solid $color_primary;
+        }
+
+        .ico_arrow {
+            position: relative;
+            top: 1px;
+            display: block;
+            margin: 0 auto;
+            width: 66px;
+            height: 19px;
+            border: 1px solid $color_primary;
+            border-bottom: none;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            background: #fff;
+
+            &::after {
+                @extend %icon_common;
+                @include bg($bpx:-75px, $bpy:-30px, $w:12px, $h:7px, $mg:8px auto 0);
+                content: " ";
+                display: block;
+
+            }
+        }
+    }
+
+    //접혔을때 요약정보(선택모델, 가격) 노출
+    &__summary {
+        position: relative;
+        background: $color_white;
+    }
+
+    //열렸을때 상세정보 노출
+    &__wrap {
+        display: none;
+        position: relative;
+        background: $color_white;
+
+        .scroll-y {
+            position: relative;
+            overflow-y: scroll;
+            -webkit-overflow-scrolling: touch;
+            max-height: 220px;
+            max-height: calc(100vh - 250px);
+        }
+    }
+
+    &__info {
+        padding: 11px 18px;
+
+        &+& {
+            border-top: 1px solid #ececec;
+        }
+
+        .row {
+            display: table;
+            width: 100%;
+            padding: 3px 0;
+        }
+
+        .left {
+            display: table-cell;
+            width: 100%;
+            font-weight: bold;
+        }
+
+        .right {
+            display: table-cell;
+            white-space: nowrap;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: -0.04rem;
+
+            .txt{
+                padding-right:12px;
+                font-size: 13px;
+                font-weight: normal;
+                color: $color_tertiary_txt;
+                vertical-align: top;
+            }
+        }
+
+        .item {
+            display: table-cell;
+            width: 100%;
+            font-size: 13px;
+            color: $color_tertiary_txt;
+            text-align: right;
+        }
+
+        .price {
+            display: table-cell;
+            padding-left: 12px;
+            width: 68px;
+            white-space: nowrap;
+            font-size: 14px;
+            color: $color_tertiary_txt;
+            vertical-align: middle;
+        }
+
+        .point {
+            font-weight: bold;
+            color: $color_primary;
+        }
+
+        .del {
+            display: table-cell;
+            width: 20px;
+            white-space: nowrap;
+            vertical-align: middle;
+        }
+
+        .btn_del {
+            @extend %icon_common;
+            @include bg($bpx:0, $bpy:-30px, $w:10px, $h:9.5px, $mgl:5px);
+            display: block;
+        }
+    }
+
+    &__add {
+        padding: 10px 18px;
+        background: #f2f4f7;
+        color: $color_secondary_txt;
+
+        .row {
+            display: table;
+            padding: 2px 0;
+            width: 100%;
+        }
+
+        .left {
+            display: table-cell;
+            width: 100%;
+            font-size: 13px;
+        }
+
+        .right {
+            display: table-cell;
+            white-space: nowrap;
+            font-size: 14px;
+            letter-spacing: -0.04rem;
+        }
+
+        .adver {
+            img {
+                height: 18px;
+            }
+        }
+    }
+
+    // 최종 가격 접혔을때/열렸을때 공통 사용
+    &__total {
+        display: table;
+        table-layout: fixed;
+        padding: 8px 18px;
+        width: 100%;
+        min-height:45px;
+        box-sizing: border-box;
+
+        .left {
+            display: table-cell;
+            font-size: 13px;
+            color: $color_secondary_txt;
+            vertical-align: middle;
+        }
+
+        .right {
+            display: table-cell;
+            padding-left: 10px;
+            width: 140px;
+            white-space: nowrap;
+            text-align: right;
+            vertical-align: middle;
+            letter-spacing: -0.04rem;
+        }
+
+        .model {
+            @include ellipsis;
+            width: 100%;
+        }
+
+        .price {
+            font-weight: bold;
+
+            .num {
+                font-size: 16px;
+            }
+        }
+
+        .sale {
+            font-size: 13px;
+            color: $color_primary;
+        }
+    }
+
+
+    // 펼침 시 딤 노출
+    &--open &__dimm {
+        display: block;
+    }
+
+    // 펼침 시 토글버튼 화살표 이미지 변경
+    &--open &__toggle {
+        .ico_arrow {
+            &::after {
+                @include bg($bpx:-60px, $bpy:-30px);
+            }
+        }
+    }
+
+    // 펼침 시 요약정보 숨기기
+    &--open &__summary {
+        display: none;
+    }
+
+    // 펼침 시 상세정보 노출
+    &--open &__wrap {
+        display: block;
+    }
+
+    // 하단 견적요청 버튼영역
+    &__request {
+        position: relative;
+        padding: 0 18px 15px;
+        background: $color_white;
+
+        .btn-request {
+            @include btn($type:blue, $lh:4rem, $fs:16px);
+            display: block;
+            font-weight: bold;
+            text-align: center;
+
+            // 버튼 비활성화 시 예외처리
+            &--disabled {
+                border-color: #e6e6e6;
+                background: #e6e6e6;
+                color: #a6a6a6;
+
+            }
+        }
+    }
+
+    &__toast{
+        display:none;
+        position:absolute;
+        top:-45px;
+        left:0;
+        width:100%;
+        z-index:500;
+        text-align:center;
+
+        .text {
+            display: inline-block;
+            margin:10px;
+            padding: 11px 9px;
+            border-radius: 5px;
+            background: $color_primary;
+            color: $color_white;
+            -webkit-box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.2);
+            -moz-box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.2);
+        }
+    }
+}

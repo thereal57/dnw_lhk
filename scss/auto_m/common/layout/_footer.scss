@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+// ico transform
+.icon_tf90 {
+    transform: rotate(90deg);
+}
+
+.icon_tf180 {
+    transform: rotate(180deg);
+}
+
+.icon_tf270 {
+    transform: rotate(270deg);
+}
+
+.icon_tf360 {
+    transform: rotate(360deg);
+}
+
+.notice {
+    position: relative;
+    height: 48px;
+    padding: 0 20px;
+    border-top: 1px solid #c5c5c5;
+    border-bottom: 1px solid #c5c5c5;
+    background: #ededed;
+
+    .title {
+        position: absolute;
+        top: 0;
+        left: 20px;
+        line-height: 48px;
+        font-weight: bold;
+    }
+
+    .date {
+        position: absolute;
+        top: 0;
+        right: 20px;
+        line-height: 48px;
+        font-size: 12px;
+    }
+
+    .subj {
+        display: block;
+        padding: 0 65px 0 40px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        line-height: 48px;
+    }
+
+    li:last-child {
+        display: none;
+    }
+}

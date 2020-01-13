@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+// 인기모델 TOP3
+.top3 {
+    &__graph {
+        margin: 40px auto 0;
+        width: 200px;
+        height: 200px;
+    }
+
+    &__list {
+        padding: 52px 52px 52px 46px;
+    }
+
+    &__item {
+        position: relative;
+        padding-left: 49px;
+
+        &+& {
+            margin-top: 50px;
+        }
+
+        .rank {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 49px;
+            font-size: 16px;
+            color: $color_primary;
+
+            .num {
+                font-size: 18px;
+            }
+        }
+
+        .model {
+            display: block;
+            font-size: 16px;
+        }
+
+        .price {
+            display: inline-block;
+            padding-top: 3px;
+            font-size: 14px;
+            color: $color_fourth_txt;
+        }
+    }
+}

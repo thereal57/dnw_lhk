@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+%clear {
+    &:after {
+        display: block;
+        clear: both;
+        content: "";
+    }
+}
+
+// 헤더 아이콘들
+%icon_header {
+    background-image: url(//img.danawa.com/img/m/auto/icon_header.png);
+    background-repeat: no-repeat;
+    background-size: 90px auto;
+}
+
+// 레프트패널 아이콘들
+%icon_aside {
+    background-image: url(//img.danawa.com/img/m/auto/icon_aside.png);
+    background-repeat: no-repeat;
+    background-size: 130px auto;
+}
+
+// 앱아이콘
+%ico_app {
+    background-image: url(//img.danawa.com/img/m/auto/ico_app.png);
+    background-repeat: no-repeat;
+    background-size: 48px auto;
+}
+
+// 공용 아이콘들
+%icon_common {
+    background-image: url(//img.danawa.com/img/m/auto/icon_common.png);
+    background-repeat: no-repeat;
+    background-size: 210px auto;
+}

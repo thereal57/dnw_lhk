@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+// 스프라이트 믹스인 
+// @include bg ($bpx:-4, $bpy:-4, $w:21, $h:16, $mg:0 auto);
+// @include bg ($bpx:-4, $bpy:-4, $w:21, $h:16, $mgt:10px);
+@mixin bg($bpx:null, $bpy:null, $w:null, $h:null, $mg:null, $mgt:null, $mgr:null, $mgb:null, $mgl:null) {
+    background-position: $bpx $bpy;
+    width: $w;
+    height: $h;
+    margin: $mg;
+    margin-top: $mgt;
+    margin-right: $mgr;
+    margin-bottom: $mgb;
+    margin-left: $mgl;
+}
+
+// 버튼
+// $type : white(기본값) | blue | orange
+@mixin btn($type:white, $pd:0 10px, $lh:2.5rem, $fs:12px) {
+    display: inline-block;
+    padding: $pd;
+    border-radius: $lh;
+    line-height: $lh;
+    font-size: $fs;
+    letter-spacing: -0.1rem;
+    text-decoration: none;
+    box-sizing: border-box;
+
+    @if $type==white {
+        border: 1px solid #e5e5e5;
+        background: $color_white;
+        color: $color_secondary_txt;
+    }
+
+    @else if $type==blue {
+        border: 1px solid $color_primary;
+        background: $color_primary;
+        color: $color_white;
+    }
+
+    @else if $type==orange {
+        border: 1px solid $color_secondary;
+        background: $color_secondary;
+        color: $color_white;
+    }
+}
+
+// 말줄임(기본값 1)
+@mixin ellipsis ($lines: 1) {
+    @if ($lines==1) {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    @else {
+        display: block;
+        display: -webkit-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+        word-wrap: break-word;
+        word-break: break-all;
+        -webkit-line-clamp: $lines;
+        -webkit-box-orient: vertical;
+    }
+}

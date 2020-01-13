@@ -1,0 +1,318 @@
+@charset "UTF-8";
+
+// 메뉴영역
+.header-menu {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    // 메인 GNB 폰트굵기 예외처리
+    &--main{
+        font-weight:bold;
+    }
+
+    &__wrap{
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    &__list {
+        display: table;
+        padding:0 50px 0 7px;
+    }
+
+    &__item {
+        display: table-cell;
+        white-space: nowrap;
+    }
+
+    &__link {
+        display: block;
+        padding: 0 8px;
+        line-height: 40px;
+        letter-spacing: -0.1rem;
+
+        // 메뉴 활성화
+        &--on{
+            font-weight:bold;
+            color:$color_primary;
+        }
+
+        // N 라벨
+        &--new::after{
+            content: "N";
+            display: inline-block;
+            position:relative;
+            top:-5px;
+            left:2px;
+            font-size: 10px;
+            color: $color_primary;
+            font-weight: bold;
+            vertical-align: top;
+            margin-left: 1px;
+        }
+
+        // H 라벨
+        &--hot::after{
+            content: "H";
+            display: inline-block;
+            position:relative;
+            top:-5px;
+            left:2px;
+            font-size: 10px;
+            color: $color_secondary;
+            font-weight: bold;
+            vertical-align: top;
+            margin-left: 1px;
+        }
+    }
+
+    // 메뉴 접고 펼치기
+    &__toggle {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        height: 100%;
+
+        .btn_view {
+            display: block;
+            position: relative;
+            width: 40px;
+            height: 40px;
+            background: $color_white;
+
+            &::before {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 0;
+                left: -20px;
+                width: 20px;
+                height: 100%;
+                background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 94%, rgba(255, 255, 255, 1) 99%);
+            }
+
+            &::after {
+                @extend %icon_header;
+                @include bg ($bpx:-50px, $bpy:0, $w:12px, $h:7px);
+                content: "";
+                position: absolute;
+                top: 16px;
+                left: 14px;
+            }
+        }
+    }
+
+
+    // 메뉴 펼침시 예외처리
+    &--open {
+        min-height: 40px;
+        overflow: visible;
+    }
+
+    &--open &__wrap {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background: $color_white;
+    }
+
+    &--open &__list {
+        @extend %clear;
+        display: block;
+        padding: 5px 30px 10px 7px;
+    }
+
+    &--open &__item {
+        display: block;
+        float: left;
+    }
+
+    &--open &__link {
+        line-height: 30px;
+    }
+
+    &--open &__toggle {
+        .btn_view {
+            &::before {
+                width: 0;
+                height: 0;
+                background: none;
+            }
+
+            &::after {
+                background-position: -70px 0;
+            }
+        }
+    }
+}
+
+// 메인페이지 헤더
+.header-main {
+    height: 44px;
+    background: $color_primary;
+
+    &__title {
+        a {
+            display: block;
+            margin: 0 auto;
+            width: 180px;
+            height: 44px;
+            background:url(//img.danawa.com/img/m/auto/bg_logo.png) 4px 13px no-repeat;
+            background-size:172px auto;
+        }
+    }
+
+    &__menu {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 5px;
+        width: 40px;
+        height: 44px;
+
+        &::after{
+            @extend %icon_header;
+            @include bg ($bpx:0, $bpy:0, $w:18px, $h:20px, $mg:12px 11px);
+            content: "";
+            display: block;
+        }
+    }
+
+    &__search {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 5px;
+        width: 40px;
+        height: 44px;
+
+        &::after{
+            @extend %icon_header;
+            @include bg ($bpx:-25px, $bpy:0, $w:20px, $h:20px, $mg:12px 10px);
+            content: "";
+            display: block;
+        }
+    } 
+}
+
+// 공용헤더
+.header{
+    height: 44px;
+    background: $color_white;
+    
+    // 제목
+    &__title {
+        padding:0 5px;
+        text-align:center;
+        letter-spacing:-0.03rem;    
+        line-height:44px;
+        font-size:19px;
+        font-weight:normal;
+        color:$color_primary_txt;
+        white-space:nowrap;
+    }
+
+    // 주요 서비스 메뉴 펼치기 버튼
+    &__menu {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 5px;
+        width: 40px;
+        height: 44px;
+
+        &::after{
+            @extend %icon_header;
+            @include bg ($bpx:0, $bpy:-25px, $w:18px, $h:20px, $mg:12px 11px);
+            content: "";
+            display: block;
+        }
+    }
+
+    // 홈으로 이동 버튼
+    &__home {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 45px;
+        width: 40px;
+        height: 44px;
+        background:$color_white;
+
+        &::after{
+            @extend %icon_header;
+            @include bg ($bpx:-50px, $bpy:-25px, $w:23px, $h:20px, $mg:12px 8.5px);
+            content: "";
+            display: block;
+        }
+    }
+
+    // 뒤로가기(<) 버튼 (상세페이지에서 사용, 주요 서비스 메뉴 펼치기 버튼과 동일위치)
+    &__back {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 5px;
+        width: 40px;
+        height: 44px;
+        background:$color_white;
+
+        &::after{
+            @extend %icon_header;
+            @include bg ($bpx:-25px, $bpy:-50px, $w:10px, $h:17px, $mg:13.5px 15px);
+            content: "";
+            display: block;
+        }
+    }
+
+    // 닫기(X) 버튼 (상세페이지에서 사용, 주요 서비스 메뉴 펼치기 버튼과 동일위치)
+    &__close {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 5px;
+        width: 40px;
+        height: 44px;
+        background:$color_white;
+
+        &::after{
+            @extend %icon_header;
+            @include bg ($bpx:0, $bpy:-50px, $w:18px, $h:17px, $mg:13.5px 11px);
+            content: "";
+            display: block;
+        }
+    }
+
+    // 검색 버튼
+    &__search {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 5px;
+        width: 40px;
+        height: 44px;
+        background:$color_white;
+
+        &::after{
+            @extend %icon_header;
+            @include bg ($bpx:-25px, $bpy:-25px, $w:20px, $h:20px, $mg:12px 10px);
+            content: "";
+            display: block;
+        }
+    } 
+
+    // 헤더 고정시 여백처리
+    &--fixed{
+        padding-bottom:40px;
+
+        .header-menu{
+            position:fixed;
+            top:0;
+            z-index:99;
+            background: $color_white;
+        }
+    }
+}

@@ -1,0 +1,214 @@
+@charset "UTF-8";
+
+// 브랜드 선택 레이어
+.layer__brand {
+    .brand {
+        &__group{
+            padding: 0 15px 25px 15px;
+        }
+        
+        &__group:first-child {
+            margin-top: 0;
+        }
+
+        &__title {
+            display: inline-block;
+            padding: 0 13px;
+            border: 1px solid $color_primary;
+            border-radius: 2.6rem;
+            line-height: 2.6rem;
+            letter-spacing: -0.05rem;
+            font-weight: normal;
+            color: $color_primary;
+            vertical-align: top;
+        }
+
+        &__list {
+            @extend %clear;
+        }
+
+        &__item {
+            float: left;
+            margin-top: 10px;
+            width: 20%;
+
+            a {
+                display: block;
+                width: 100%;
+            }
+
+            .logo {
+                display: block;
+                margin: 0 auto;
+                height: 33px;
+            }
+
+            .name {
+                display: block;
+                text-align: center;
+                font-size: 1.25rem;
+                letter-spacing: -0.07rem;
+                line-height: 1.2;
+                white-space: nowrap;
+            }
+        }
+    }
+}
+
+// 모델 선택 레이어
+.layer__model{
+    .model{
+        &__location{
+            margin-bottom:15px;
+            background:#f6f6f6;
+
+            .btn-depth{
+                display:inline-block;
+                padding:0 15px;
+                line-height:4.0rem;
+                vertical-align:top;
+                color:$color_secondary_txt;
+                white-space:nowrap;
+
+                .txt{
+                    &::after{
+                        @extend %icon_common;
+                        @include bg($bpx:-90px, $bpy:-30px, $w:10px, $h:6px, $mg:0 0 2px 4px);
+                        content:"";
+                        display:inline-block;
+                    }
+                }
+            }
+        }
+
+        &__group{
+            padding: 0 15px 25px 15px;
+        }
+
+        &__title {
+            display: inline-block;
+            padding: 0 13px;
+            border: 1px solid $color_primary;
+            border-radius: 2.6rem;
+            line-height: 2.6rem;
+            letter-spacing: -0.05rem;
+            font-weight: normal;
+            color: $color_primary;
+            vertical-align: top;
+        }
+
+        &__list {
+            @extend %clear;
+        }
+
+        &__item {
+            float: left;
+            margin-top: 10px;
+            width: 33.333%;
+
+            a {
+                display: block;
+                width: 100%;
+            }
+
+            .img {
+                display: block;
+                margin: 0 auto;
+                height: 45px;
+            }
+
+            .name {
+                display: block;
+                margin-top:4px;
+                text-align: center;
+                font-size: 1.25rem;
+                letter-spacing: -0.07rem;
+                white-space: nowrap;
+                overflow:hidden;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+}
+
+// 신차견적 > 할인선택 레이어
+.layer__sale-info {
+    padding: 13px 15px 25px;
+    width: 230px;
+    letter-spacing: -0.025rem;
+
+    .subj {
+        font-weight: bold;
+        color: $color_secondary_txt;
+    }
+
+    .exp {
+        padding-top: 10px;
+        font-size: 14px;
+        color: $color_tertiary_txt;
+    }
+}
+
+// 견적 완료 후 신차견적 리스트에 뜨는 레이어
+.layer__estm-complete {
+    position: relative;
+    padding-bottom: 20px;
+    border-radius: 3px 3px 0 0;
+    text-align: center;
+
+    .model {
+        position: absolute;
+        top: -43px;
+        left: 50%;
+        display: block;
+        width: 180px;
+        margin-left: -90px;
+    }
+
+    .header {
+        padding: 55px 0 15px;
+        border-radius: 3px 3px 0 0;
+        background: #f0f2f8;
+
+        .title {
+            display: block;
+            text-align: center;
+            font-size: 19px;
+        }
+
+        .txt {
+            color: $color_secondary_txt;
+        }
+    }
+
+    .event {
+        padding: 20px 0;
+        border-bottom: 1px solid #ececec;
+        font-size: 14px;
+        color: $color_secondary_txt;
+        letter-spacing: -0.04rem;
+    }
+
+    .btn-event {
+        @include btn($type:orange, $pd:0 50px, $lh:3.3rem, $fs:14px);
+        margin-top: 15px;
+        font-weight: bold;
+    }
+
+    .g-policy {
+        margin: 17px;
+
+        .title{
+            font-size:15px;
+        }
+
+        .cont{
+            font-size:13px;
+        }
+    }
+
+    .btn-confirm {
+        @include btn($type:blue, $pd:0 32px, $lh:3.3rem, $fs:14px);
+        font-weight: bold;
+    }
+}

@@ -1,0 +1,396 @@
+@charset "UTF-8";
+
+// 트림, 옵션, 할인정보 등 범용으로 사용하기 위한 ui
+// example : 신차견적내기 - http://markup-local.danawa.com/m/auto/newcar/estimate_v2.html
+.article-box {
+    background: #f6f6f6;
+
+    // 토글기능일때 라인 추가
+    // 토글 펼침 시 article-box--open
+    // 토글 닫힘 시 article-box--close
+    // 토글 유무는 class에 -- 유무로 확인
+    &[class *="--open"], &[class *="--close"] {
+        border-bottom: 1px solid #ececec;
+    }
+
+    // 토글기능일때 라인 추가
+    &[class *="--open"]:first-child, &[class *="--close"]:first-child {
+        border-top: 1px solid #ececec;
+    }
+
+    // 토글기능일때 header 여백 변경
+    &[class *="--open"] &__header, &[class *="--close"] &__header {
+        padding: 14px 50px 14px 15px;
+    }
+
+    // 콘텐츠 다음에 헤더가 오는 경우 상단여백 조정
+    &__cont+&__header {
+        padding-top: 2px;
+    }
+
+    // 토글이 아닐경우 첫번째 article-box의 헤더 상단 여백 예외처리
+    &:first-child &__header {
+        padding-top: 14px;
+    }
+
+    &__header {
+        position: relative;
+        display:table;
+        width:100%;
+        padding: 2px 15px 7px 15px;
+        box-sizing:border-box;
+
+        .title {
+            display:inline;
+            font-size: 14px;
+            line-height: 1.7rem;
+            vertical-align: top;
+        }
+
+        .price {
+            display: table-cell;
+            font-size: 14px;
+            line-height: 1.7rem;
+            vertical-align: middle;
+            white-space:nowrap;
+            text-align:right;
+            font-weight:bold;
+        }
+
+        .btn-toggle {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            text-align: right;
+            font-size: 1rem;
+            color: transparent;
+
+            &::after {
+                @extend %icon_common;
+                @include bg ($bpx:-45px, $bpy:-30px, $w:12px, $h:7px, $mgt:-3.5px);
+                content: "";
+                position: absolute;
+                top: 50%;
+                right: 20px;
+            }
+        }
+    }
+
+    &__cont {
+        padding: 15px 15px 5px;
+    }
+
+    &__header+&__cont {
+        padding-top: 0;
+    }
+
+    // article-box 박스 콘텐츠 닫힘시 헤더 배경색, 아이콘모양 변경
+    &--close &__header {
+        background: #fff;
+
+        .btn-toggle {
+            &::after {
+                @include bg ($bpx:-30px, $bpy:-30px);
+            }
+        }
+    }
+
+    // article-box 박스 콘텐츠 닫힘시 비노출 처리
+    &--close &__cont {
+        display: none;
+    }
+
+    // article-box--single(헤더가 없고 choice가 한개일때) 가 연속으로 있을 경우 상단 여백 제거
+    // example : 신차견적내기 > 판매조건 - http://markup-local.danawa.com/m/auto/newcar/estimate_v2.html?sale=1 
+    &--single + &--single > &__cont{
+        padding-top:0;
+    }
+}
+
+// 트림, 옵션, 할인정보 등 범용으로 사용하기 위한 ui
+// 구조순서 : input + label + &__check + &__wrap
+// example : 신차견적내기 - http://markup-local.danawa.com/m/auto/newcar/estimate_v2.html
+.choice {
+    position: relative;
+    margin-bottom: 10px;
+
+    &__check {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        margin-top: -10px;
+        width: 40px;
+
+        .icon_check {
+            @extend %icon_common;
+            @include bg ($w:20px, $h:20px, $mg:0 10px);
+            display: block;
+        }
+    }
+
+    &__wrap {
+        display: table;
+        padding-left: 40px;
+        padding-right: 9px;
+        width: 100%;
+        border: 1px solid $color_white;
+        border-radius: 3px;
+        background: $color_white;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    &__cell {
+        display: table-cell;
+        vertical-align: middle;
+        font-size: 14px;
+        color: $color_secondary_txt;
+    }
+
+    &__info {
+        padding: 9px 0;
+
+        .txt {
+            line-height: 1.7rem;
+            vertical-align: top;
+        }
+
+        .subtxt {
+            line-height: 1.7rem;
+            vertical-align: top;
+            color: $color_tertiary_txt;
+        }
+
+    }
+
+    &__price {
+        padding: 9px 0;
+        width: 73px;
+        text-align: right;
+        white-space: nowrap;
+
+        .discount {
+            display: block;
+            line-height: 1.2rem;
+            font-size: 11px;
+            color: $color_fourth_txt;
+            letter-spacing: -0.02rem;
+            text-decoration: line-through;
+        }
+
+        .txt, .num {
+            line-height: 1.7rem;
+            vertical-align: top;
+        }
+
+        .subtxt {
+            display: block;
+            line-height: 1.2rem;
+            font-size: 12px;
+            color: $color_tertiary_txt;
+            letter-spacing: -0.02rem;
+        }
+    }
+
+    &__row {
+        display: table-row;
+    }
+
+    &__row &__cell {
+        padding: 12px 0;
+        border-top: 1px solid #f6f6f6;
+        vertical-align: top;
+        font-size: 13px;
+        color: $color_tertiary_txt;
+    }
+
+    & input {
+        position: absolute;
+        clip: rect(0 0 0 0);
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+    }
+
+    & label {
+        display: block;
+        position: absolute;
+        z-index: 5;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        font-size: 0;
+        box-sizing: border-box;
+    }
+
+    // inputbox 체크시
+    // 체크 했을 시 - 아이콘 변경
+    & input:checked+label+&__check {
+        .icon_check {
+            @include bg ($bpx:-25px, $bpy:0);
+        }
+    }
+
+    // 체크 했을 시 - 라인 컬러 변경
+    & input:checked+label+&__check+&__wrap {
+        border-color: #96b5f4;
+    }
+
+    // 체크 했을 시 - 폰트 컬러, 굵기 변경
+    & input:checked+label+&__check+&__wrap &__info,
+    & input:checked+label+&__check+&__wrap &__price {
+        .txt {
+            color: $color_secondary_txt;
+        }
+    }
+
+    // 체크 했을 시 - 폰트 컬러, 굵기 변경
+    & input:checked+label+&__check+&__wrap>&__info,
+    & input:checked+label+&__check+&__wrap>&__price {
+        .txt {
+            font-weight: bold;
+            color: $color_primary_txt;
+        }
+    }
+}
+
+// 구조순서 : input + &__header( > label) + &__cont( > label)
+.choice-toggle {
+    margin-bottom: 10px;
+
+    & input {
+        position: absolute;
+        clip: rect(0 0 0 0);
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+    }
+
+    &__header {
+        position: relative;
+        border-radius: 3px;
+        border: 1px solid $color_white;
+        background: $color_white;
+        box-sizing: border-box;
+
+        label {
+            display: block;
+            position: absolute;
+            z-index: 5;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            font-size: 0;
+            box-sizing: border-box;
+        }
+
+        // 토글형식일때 choice 예외처리
+        .choice__wrap{
+            padding-right:30px;
+        }
+    }
+
+    &__btn{
+        position:absolute;
+        z-index:10;
+        top:0;
+        right:0;
+        bottom:0;
+        width: 30px;
+        height: 100%;
+        text-align:right;
+        white-space: nowrap;
+
+        .btn-toggle{
+            position:relative;
+            display:block;
+            width:100%;
+            height:100%;
+
+            &::after{
+                @extend %icon_common;
+                @include bg($bpx:-90px, $bpy:-30px, $w:10px, $h:6px, $mgt:-3px, $mgl:11px);
+                content:"";
+                position:absolute;
+                top:50%;
+                display:block;
+            }
+        }
+    }
+
+    &__cont {
+        border: 1px solid $color_white;
+        border-top: none;
+        background:$color_white;
+
+        &::before{
+            content:"";
+            display:block;
+            width:100%;
+            height:1px;
+            background:#e7e7e7;
+        }
+    }
+
+    // input focus시 outline 표시
+    & input:focus+&__header label,
+    & input:focus+&__header+&__cont label {
+        outline: -webkit-focus-ring-color auto 5px;
+    }
+
+    // 체크시 header border 컬러 변경
+    & input:checked+&__header {
+        display: block;
+        border-color: #96b5f4;
+    }
+
+    // 체크 했을 시 - 아이콘 변경
+    & input:checked+&__header .choice__check {
+        .icon_check {
+            @include bg ($bpx:-25px, $bpy:0);
+        }
+    }
+
+    // 체크 했을 시 - 폰트 컬러, 굵기 변경
+    & input:checked+&__header .choice__info,
+    & input:checked+&__header .choice__price {
+        .txt {
+            font-weight: bold;
+            color: $color_primary_txt;
+        }
+    }
+
+    // 체크시 cont border 컬러 변경
+    & input:checked+&__header+&__cont {
+        border-radius: 0 0 3px 3px;
+        border-bottom: 1px solid #96b5f4;
+        border-right: 1px solid #96b5f4;
+        border-left: 1px solid #96b5f4;
+    }
+
+    // 토글 열림 시 header 예외처리
+    &--open &__header {
+        border-radius: 3px 3px 0 0;
+        border-bottom:none;
+    }
+
+    // 토글 열림 시 버튼 화살표 변경
+    &--open &__btn{
+        .btn-toggle{
+            &::after{
+                @include bg($bpx:-105px, $bpy:-30px);
+            }
+        }
+    }
+
+    // 토글 닫힘 시 cont 비노출 처리
+    &--close &__cont {
+        display: none;
+    }
+}

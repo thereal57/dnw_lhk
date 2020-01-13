@@ -1,0 +1,184 @@
+@charset "UTF-8";
+
+//견적요청
+.request-form {
+    padding: 0 20px;
+    border-top: 10px solid #f6f6f6;
+
+    &__header {
+        padding-top: 24px;
+
+        .title {
+            display: inline;
+            vertical-align: top;
+            line-height: 1.8rem;
+        }
+    }
+
+    &__cont {
+        @extend %clear;
+    }
+
+    .w-half {
+        float: left;
+        width: calc(50% - 5px);
+    }
+
+    .w-half+.w-half {
+        margin-left: 10px;
+    }
+
+    .inputbox, .radiobox, .selectbox, .textareabox{
+        border-color:#bfbfbf;
+    }
+}
+
+
+// 외장색상 선택
+.request-color {
+    &__list {
+        @extend %clear;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        position: relative;
+        width: 10.3125%;
+        margin-top: 2.5%;
+        margin-left: 2.5%;
+        padding-top: 10.3125%;
+
+        &:nth-child(8n+1) {
+            margin-left: 0;
+        }
+    }
+
+    &--twotone {
+        .color {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 50%;
+        }
+    }
+
+    &--choice {
+        padding-top: calc(10.3125% - 2px);
+        border: 2px solid $color_primary;
+
+        &::after {
+            @extend %icon_common;
+            @include bg($bpx:-120px, $bpy:-25px, $w:11px, $h:11px, $mgt:-5.5px, $mgl:-5.5px);
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+    }
+
+    &__choice {
+        margin-top: 10px;
+        line-height: 1.5rem;
+
+        .txt {
+            font-size: 12px;
+            color: $color_tertiary_txt;
+        }
+
+        .txt+.txt::before {
+            content: ", ";
+        }
+    }
+}
+
+.request-reply {
+    padding-top: 14px;
+}
+
+.request-local {
+    padding-top: 10px;
+}
+
+.request-counsel {
+    padding-top:10px;
+
+    textarea {
+        height: 67px;
+    }
+}
+
+.request-personal{
+    padding-top:10px;
+    padding-bottom:25px;
+
+    &__item{
+        display: table;
+        width: 100%;
+    }
+
+    &__item + &__item{
+        margin-top:8px;
+    }
+
+    .title {
+        display: table-cell;
+        width: 105px;
+        vertical-align: middle;
+        white-space: nowrap;
+        font-size: 14px;
+        line-height: 1.7rem;
+        color:$color_secondary_txt;
+    }
+
+    .txt-required{
+        color:#db3838;  
+    }
+
+    .data {
+        position: relative;
+        display: table-cell;
+    }
+
+    .phone{
+        padding-left:90px;
+
+        &::before{
+            content:"";
+            position:absolute;
+            top:50%;
+            left:78px;
+            display:block;
+            width:8px;
+            height:2px;
+            background:#bfbfbf;
+
+        }
+
+        .selectbox{
+            position:absolute;
+            top:0;
+            left:0;
+            width:74px;
+        }
+    }
+}
+
+// 개인정보 수집 및 제3자 제공 동의
+.request-agree {
+    padding: 0 20px;
+    border-top: 10px solid #f6f6f6;
+}
+
+.request-btn {
+    padding: 0 20px 40px;
+
+    .btn-request {
+        @include btn($type:blue, $lh:4rem, $fs:16px);
+        display: block;
+        text-align: center;
+        font-weight: bold;
+    }
+}

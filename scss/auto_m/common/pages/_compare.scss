@@ -1,0 +1,150 @@
+@charset "UTF-8";
+
+.compare {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background:$color_white;
+
+    &__left {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 80px;
+        background: $color_white;
+        z-index: 20;
+    }
+
+    &__right {
+        display: block;
+        position: relative;
+        padding-left: 80px;
+        z-index: 15;
+        overflow-x: auto;
+    }
+
+    &__table {
+        border-collapse: separate;
+        border-spacing: 0;
+        letter-spacing: -0.05rem;
+        font-size: 12px;
+        font-size: 1.2rem;
+        color: $color_tertiary_txt;
+
+        th,
+        td {
+            padding: 7px 10px;
+            padding: 0.7rem 1rem;
+            box-sizing: border-box;
+        }
+
+        td {
+            border-top: 1px solid #f6f6f6;
+            line-height: 15px;
+            line-height: 1.5rem;
+
+        }
+
+        .point {
+            color: $color_primary;
+        }
+
+        .help {
+            text-decoration: underline;
+        }
+    }
+
+    &__header {
+        th,
+        td {
+            background: $color_primary;
+            color: $color_white;
+            font-size: 13px;
+            font-size: 1.3rem;
+        }
+
+        th {
+            position: relative;
+            border-right: 1px solid $color_primary;
+            font-weight: normal;
+        }
+
+        .trim {
+            display: block;
+            margin-bottom: 3px;
+            font-weight: bold;
+        }
+
+        .price {
+            display: block;
+            font-size: 12px;
+            font-size: 1.2rem;
+        }
+
+        .btn-move {
+            @extend %icon_common;
+            @include bg($bpx:-165px, $bpy:0, $w:23px, $h:18px, $mgt:-9px);
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: -11.5px;
+        }
+
+        th:first-child{
+            .btn-move{
+                display:none;
+            }
+        }
+
+        .blind {
+            width: 0;
+            height: 0;
+            padding: 0;
+        }
+    }
+
+    &__body {
+        border-bottom: 1px solid #eee;
+
+        th {
+            border-right: 1px solid #f6f6f6;
+            border-bottom: 1px solid #f6f6f6;
+            background: #f6f6f6;
+            text-align: left;
+        }
+
+        td {
+            border-right: 1px solid #eee;
+        }
+    }
+
+    // 좌측 예외처리
+    &__left &__table {
+        width: 80px;
+        color: $color_secondary_txt;
+    }
+
+    &__left &__header {
+        th {
+            border-right-color: #487ae2;
+        }
+    }
+
+    // 우측 예외처리
+    &__right &__table {
+
+        th,
+        td {
+            width: 130px;
+        }
+
+        color:$color_secondary_txt;
+    }
+
+    // 상단 고정 시
+    &--fixed &__header {
+        position: fixed;
+        top: 0;
+        z-index: 99;
+    }
+}

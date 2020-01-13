@@ -1,0 +1,99 @@
+@charset "UTF-8";
+
+//개인정보 수집 및 제3자 제공 동의
+.g-agree {
+    .txt-required {
+        color: #db3838;
+    }
+
+    &__title {
+        padding-bottom: 15px;
+    }
+
+    &__item {
+        border: 1px solid #bfbfbf;
+        border-radius: 3px;
+        overflow: hidden;
+    }
+
+    &__item:not([class*="close"])+&__item {
+        margin-top: 10px;
+        border-radius: 3px;
+    }
+
+    &__header {
+        .btn-toggle {
+            position: relative;
+            display: block;
+            padding: 13px 30px 13px 10px;
+            font-size: 14px;
+
+            &::after {
+                @extend %icon_common;
+                @include bg($bpx:-105px, $bpy:-30px, $w:10px, $h:6px, $mgt:-3px);
+                content: "";
+                position: absolute;
+                top: 50%;
+                right: 12px;
+            }
+        }
+    }
+
+    &__cont {
+        padding: 10px;
+        border-top: 1px solid #bfbfbf;
+        background: #f8f8f8;
+        font-size: 12px;
+        line-height: 1.4rem;
+        color: $color_secondary_txt;
+
+        p {
+            padding: 4px 0;
+        }
+    }
+
+    // 상세정보 닫힘 시 item 예외처리
+    &--close {
+        border-radius: 0;
+
+        &+& {
+            margin-top: -1px;
+        }
+
+        &:first-of-type {
+            border-radius: 3px 3px 0 0;
+        }
+
+        &:last-of-type {
+            border-radius: 0 0 3px 3px;
+        }
+    }
+
+    &--close+&--open {
+        margin-top: -1px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    // 상세정보 닫힘 시 header 예외처리
+    &--close &__header {
+        .btn-toggle {
+            &::after {
+                @include bg($bpx:-90px, $bpy:-30px);
+            }
+        }
+    }
+
+    // 상세정보 닫힘 시 cont 예외처리
+    &--close &__cont {
+        display: none;
+    }
+
+    &__confirm {
+        padding: 15px 0 20px;
+
+        .checkbox__wrap {
+            font-size: 14px;
+        }
+    }
+}

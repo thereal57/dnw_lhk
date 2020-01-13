@@ -1,0 +1,326 @@
+@charset "UTF-8";
+
+.aside-member {
+    position: relative;
+    display: flex;
+    padding-left: 40px;
+    padding-right: 5px;
+    height: 49px;
+    border-bottom: 1px solid #3f74e3;
+    background: $color_primary;
+    color: $color_white;
+    overflow: hidden;
+
+    &__left {
+        flex: 1;
+    }
+
+    &__right {
+        @extend %clear;
+    }
+
+    &__nick {
+        display: table-cell;
+        height: 49px;
+        vertical-align: middle;
+
+        .txt {
+            display: inline-block;
+            font-size: 17px;
+            color: $color_white;
+            letter-spacing: -0.03rem;
+            white-space: nowrap;
+        }
+    }
+
+    &__btn-back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 40px;
+        height: 100%;
+
+        &::after {
+            @extend %icon_aside;
+            @include bg ($bpx:0, $bpy:0, $w:10px, $h:17px, $mg:16px 15px);
+            content: "";
+            display: block;
+        }
+    }
+
+    &__btn-noti {
+        float: left;
+        width: 37px;
+        height: 100%;
+        position:relative;
+
+        .count{
+            position:absolute;
+            top:13px;
+            left:16px;
+            padding:0 3px 0 2px;
+            min-width:9px;
+            border-radius:14px;
+            line-height:1.273;
+            letter-spacing:-0.08rem;
+            font-size:11px;
+            font-weight:bold;
+            color:$color_primary_txt;
+            background:$color_white;
+            text-align:center;
+            white-space:nowrap;
+        }
+
+        &::after {
+            @extend %icon_aside;
+            @include bg ($bpx:0, $bpy:-65px, $w:22px, $h:21px, $mg:14.5px 7.5px);
+            content: "";
+            display: block;
+        }
+    }
+
+    &__btn-mypage {
+        float: left;
+        width: 37px;
+        height: 100%;
+
+        &::after {
+            @extend %icon_aside;
+            @include bg ($bpx:-20px, $bpy:0, $w:19px, $h:20px, $mg:14.5px 9px);
+            content: "";
+            display: block;
+        }
+    }
+
+    &__btn-set {
+        float: left;
+        width: 37px;
+        height: 100%;
+
+        &::after {
+            @extend %icon_aside;
+            @include bg ($bpx:-45px, $bpy:0, $w:22px, $h:21px, $mg:14px 7.5px);
+            content: "";
+            display: block;
+        }
+    }
+}
+
+.aside-major {
+    @extend %clear;
+    background: $color_primary;
+    color: $color_white;
+
+    &__item {
+        float: left;
+        width: 25%;
+        height: 70px;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    &__item+&__item {
+        border-left: 1px solid #3f74e3;
+    }
+
+
+    &__btn {
+        display: block;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+
+        [class *="icon-"] {
+            @extend %icon_aside;
+            @include bg ($w:30px, $h:30px, $mg:9px auto 4px);
+            content: "";
+            display: block;
+            box-sizing: border-box;
+        }
+
+        .icon-estm {
+            background-position: 0 -30px;
+        }
+
+        .icon-rent {
+            background-position: -30px -30px;
+        }
+
+        .icon-sale {
+            background-position: -60px -30px;
+        }
+
+        .icon-insure {
+            background-position: -90px -30px;
+        }
+
+        .txt {
+            display: block;
+            text-align: center;
+            font-size: 12px;
+        }
+    }
+}
+
+.aside-menu {
+    &__wrap {
+        display: flex;
+        border-bottom: 1px solid #eee;
+    }
+
+    &__header {
+        padding: 20px 0 0 14px;
+        width: calc(25% + 1px);
+        background: #f9f9f9;
+        box-sizing: border-box;
+
+        .title {
+            font-size: 12px;
+            font-weight: normal;
+            color: $color_secondary_txt;
+            letter-spacing: -0.05rem;
+        }
+    }
+
+    &__cont {
+        flex: 1;
+        padding: 10px 0 10px 10px;
+
+        .link {
+            display: block;
+            float: left;
+            width: 50%;
+            padding: 8px 14px;
+            font-size: 13px;
+            color: $color_primary_txt;
+            letter-spacing: -0.05rem;
+            box-sizing: border-box;
+        }
+    }
+}
+
+.aside-etc {
+    display: flex;
+    border-bottom: 1px solid #eee;
+
+    &__btn {
+        position: relative;
+        flex: 1;
+        height: 50px;
+        text-align: center;
+
+        .icon-event {
+            @extend %icon_aside;
+            @include bg ($bpx:-75px, $bpy:0, $w:18px, $h:18px, $mgr:9px);
+            display: inline-block;
+            vertical-align: -3px;
+        }
+
+        .icon-help {
+            @extend %icon_aside;
+            @include bg ($bpx:-100px, $bpy:0, $w:16px, $h:18px, $mgr:9px);
+            display: inline-block;
+            vertical-align: -3px;
+        }
+
+        .txt {
+            line-height: 50px;
+            font-weight: bold;
+            color: $color_secondary_txt;
+        }
+    }
+
+    &__btn+&__btn {
+        &::before {
+            content: "";
+            position: absolute;
+            top: 17.5px;
+            left: 0;
+            width: 1px;
+            height: 15px;
+            background: #eee;
+        }
+    }
+}
+
+.aside-recent {
+    &__header {
+        .title {
+            padding: 0 19px;
+            line-height: 41px;
+            font-size: 13px;
+            font-weight: normal;
+            color: $color_primary_txt;
+        }
+    }
+
+    &__cont {
+        @extend %clear;
+        padding: 0 8px;
+        border-bottom: 1px solid #eee;
+    }
+
+    &__model {
+        display: block;
+        float: left;
+        width: 33.33%;
+        padding: 0 7px;
+        box-sizing: border-box;
+
+        img {
+            display: block;
+            margin: 6px auto;
+            width: 100%;
+            max-width: 100px;
+        }
+
+        .txt {
+            display: block;
+            padding-bottom: 18px;
+            text-align: center;
+            font-size: 12px;
+            color: $color_secondary_txt;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+    }
+}
+
+.aside-app {
+    @extend %clear;
+    padding: 20px 10px;
+
+    &__link {
+        display: block;
+        float: left;
+        width: 25%;
+        text-align: center;
+    }
+
+    .icon_app-auto {
+        @extend %ico_app;
+        @include bg ($w:48px, $h:48px, $mg:0 auto 5px);
+        display: block;
+        position:relative;
+        border-radius: 3px;
+        color: transparent;
+
+        &::after {
+            @include bg ($w:25px, $h:14px);
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            right: -8px;
+            display: block;
+            background-image: url(//img.danawa.com/img/m/prod/ico_apps_label_190610.png);
+            background-size: 25px auto;
+        }
+    }
+
+    .txt {
+        font-size: 12px;
+        color: $color_secondary_txt;
+        letter-spacing: -0.05rem;
+    }
+}

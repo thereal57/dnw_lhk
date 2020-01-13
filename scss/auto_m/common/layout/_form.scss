@@ -1,0 +1,286 @@
+@charset "UTF-8";
+
+//inputbox 공용
+// 입력값 삭제 버튼 clear(입력값이 없을 때 hide클래스로 비노출 처리)
+.inputbox {
+    position: relative;
+    display: table;
+    padding: 0 9px;
+    width: 100%;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    input {
+        display: table-cell;
+        width: 100%;
+        font-size: 14px;
+        line-height: 3.3rem;
+        vertical-align: top;
+    }
+
+    .txt {
+        display: table-cell;
+        padding-left: 5px;
+        width: 14px;
+        line-height: 3.3rem;
+        font-size: 13px;
+        color: $color_secondary_txt;
+        white-space: nowrap;
+        vertical-align: top;
+    }
+
+    .clear {
+        position: relative;
+        display: table-cell;
+        width: 25px;
+        color: transparent;
+        font-size: 0;
+        white-space: nowrap;
+        vertical-align: middle;
+
+        &::after {
+            @extend %icon_common;
+            @include bg ($bpx:-101px, $bpy:0, $w:20px, $h:20px, $mgt:-10px, $mgl:5px);
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+        }
+    }
+}
+
+//checkbox 공용
+// 구조순서 : input + label + &__check + &__wrap
+.checkbox {
+    position: relative;
+
+    &__check {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        margin-top: -11px;
+        width: 30px;
+
+        .icon_check {
+            @extend %icon_common;
+            @include bg ($bpx:-135px, $bpy:-20px, $w:22px, $h:22px);
+            display: block;
+        }
+    }
+
+    &__wrap {
+        padding-left: 30px;
+        line-height: 2.2rem;
+        color: $color_secondary_txt;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    & input {
+        position: absolute;
+        clip: rect(0 0 0 0);
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+    }
+
+    & label {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        font-size: 0;
+        box-sizing: border-box;
+        z-index:1;
+    }
+
+    // inputbox 체크시
+    // 체크 했을 시 - 아이콘 변경
+    & input:checked+label+&__check {
+        .icon_check {
+            @include bg ($bpx:-160px, $bpy:-20px);
+        }
+    }
+
+    // 체크 했을 시 - 폰트 굵기, 컬러 변경
+    & input:checked+label+&__check+&__wrap {
+        font-weight: bold;
+        color: $color_primary_txt;
+    }
+}
+
+//radiobox 공용
+// 구조순서 : input + label + &__check + &__wrap
+.radiobox {
+    position: relative;
+
+    &__check {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        margin-top: -11px;
+        width: 30px;
+
+        .icon_check {
+            @extend %icon_common;
+            @include bg ($bpx:-50px, $bpy:0, $w:22px, $h:22px);
+            display: block;
+        }
+    }
+
+    &__wrap {
+        padding-left: 30px;
+        line-height: 2.2rem;
+        color: $color_secondary_txt;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    & input {
+        position: absolute;
+        clip: rect(0 0 0 0);
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+    }
+
+    & label {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        font-size: 0;
+        box-sizing: border-box;
+        z-index:1;
+    }
+
+    // inputbox 체크시
+    // 체크 했을 시 - 아이콘 변경
+    & input:checked+label+&__check {
+        .icon_check {
+            @include bg ($bpx:-75px, $bpy:0);
+        }
+    }
+
+    // 체크 했을 시 - 폰트 굵기, 컬러 변경
+    & input:checked+label+&__check+&__wrap {
+        font-weight: bold;
+        color: $color_primary_txt;
+    }
+}
+
+// selectbox 공용
+// label(부가정보 노출 또는 placeholder기능, hide클래스로 노출여부 결정) + select 형식
+// example : 신차견적내기 > 취득세/공채, 탁송방법선택 - http://markup-local.danawa.com/m/auto/newcar/estimate_v2.html
+.selectbox {
+    position: relative;
+    width: 100%;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    &::before {
+        @extend %icon_common;
+        @include bg ($bpx:-15px, $bpy:-30px, $w:9px, $h:7px, $mgt:-4.5px);
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 10px;
+    }
+
+    label {
+        display: block;
+        padding: 0.9rem 2.9rem 0.9rem 0.9rem;
+        line-height: 1.5rem;
+        font-size: 14px;
+
+        .placeholder {
+            color: $color_fourth_txt;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+
+    // label 노출시 selectbox position변경
+    // (label 요소의 높이를 유동적임에 따라 absolute 처리)
+    label:not([class*="hide"])+select {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        color: transparent;
+    }
+
+    select {
+        padding: 0.9rem;
+        width: 100%;
+        border:0;
+        line-height: 1.5rem;
+        font-size: 14px;
+        appearance: none;
+    }
+
+    option {
+        color: $color_secondary_txt;
+    }
+
+    .btn{
+        display:block;
+        padding: 0.9rem;
+        width: 100%;
+        line-height: 1.5rem;
+        font-size: 14px;
+        box-sizing:border-box;
+    }
+}
+
+// textareabox 공용(테두리 있는 타입)
+// 구조순서 : textarea + label
+.textareabox {
+    position: relative;
+    padding: 0.9rem;
+    width: 100%;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    font-size: 13px;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    textarea {
+        width: 100%;
+        resize: vertical;
+        font-size: 13px;
+    }
+
+    label {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: block;
+        padding: 0.9rem;
+        font-size: 14px;
+        color: #b2b2b2;
+        background: $color_white;
+    }
+
+    textarea:focus {
+        outline: none;
+    }
+
+    textarea:focus+label {
+        display: none;
+    }
+}

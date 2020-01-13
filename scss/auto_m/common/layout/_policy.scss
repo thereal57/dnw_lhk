@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+// 책임의한계 공통사용
+.g-policy{
+    position:relative;
+    text-align:left;
+    letter-spacing:-0.071rem;
+    
+    .title{
+        margin-bottom:7px;
+        padding-right:60px;
+        font-weight:bold;
+        font-size:13px;
+        color:$color_secondary_txt;    
+    }
+
+    .cont{
+        font-size:12px;
+        color:$color_tertiary_txt;
+    }
+
+    .btn-policy{
+        position:absolute;
+        top:0;
+        right:0;
+        display:block;
+        font-size:12px;
+        color:$color_primary;
+        text-decoration:underline;
+    }
+}

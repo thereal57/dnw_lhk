@@ -1,0 +1,105 @@
+@charset "UTF-8";
+
+// 상세 정보(옵션 상세정보, 할인 상세정보, 할부상품 상세정보)
+.infodetail {
+    &__cont {
+        padding: 0 11px 10px;
+        color: $color_tertiary_txt;
+        letter-spacing: -0.02rem;
+
+        .title {
+            padding-top: 12px;
+            font-size: 13px;
+            font-weight: normal;
+        }
+
+        .exp {
+            margin-top: 10px;
+            font-size: 12px;
+            line-height: 1.6rem;
+        }
+    }
+
+    &__btn {
+        padding: 10px 0;
+        text-align: center;
+
+        .btn-check {
+            @include btn($type:blue, $pd:0 17px, $lh:3rem, $fs:13px);
+
+            &--option::after {
+                content: "옵션 선택";
+            }
+
+            &--sale::after {
+                content: "할인 선택";
+            }
+
+            // 부모 엘리먼트 토글버튼 체크유무에 따른 버튼 예외처리
+            @at-root .choice-toggle input:checked+.choice-toggle__header+.choice-toggle__cont & {
+                border-color: $color_tertiary_txt;
+                background: $color_tertiary_txt;
+
+                &::after {
+                    content: "선택 해제";
+                }
+            }
+        }
+    }
+
+    // 할부상품 상세정보
+    .finance {
+        &__summary {
+            padding: 20px;
+            background: #f6f6f6;
+
+            .title {
+                padding-bottom: 15px;
+                font-size: 16px
+            }
+
+            .info {
+                display: table;
+                padding: 3px 0;
+            }
+
+            .left {
+                display: table-cell;
+                padding-right:10px;
+                width: 85px;
+                white-space: nowrap;
+                font-size: 14px;
+                color: $color_tertiary_txt;
+            }
+
+            .right {
+                display: table-cell;
+                font-size: 14px;
+            }
+        }
+
+        &__cont {
+            padding: 20px;
+
+            font-size: 13px !important;
+
+            strong {
+                font-size: 14px !important;
+                color: $color_primary_txt !important;
+            }
+        }
+
+        &__btn {
+            padding: 0 20px 30px;
+
+            .btn-estm {
+                @include btn($type:blue, $lh:4rem, $fs:16px);
+                display: block;
+                border-color: #707070;
+                background: #707070;
+                text-align: center;
+                font-weight: bold;
+            }
+        }
+    }
+}

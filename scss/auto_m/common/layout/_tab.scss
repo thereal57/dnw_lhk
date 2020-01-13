@@ -1,0 +1,116 @@
+@charset "UTF-8";
+
+// 범용으로 사용하기 위한 탭 ui
+// example : 신차견적내기 - http://markup-local.danawa.com/m/auto/newcar/estimate_v2.html
+.tab-list {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+
+    &__item {
+        display: table-cell;
+        border-bottom: 2px solid #d8d8d8;
+        color: #c3c3c3;
+
+        &:first-of-type:nth-last-of-type(1) {
+            width: 100%;
+        }
+
+        @for $i from 2 through 4 {
+
+            &:first-of-type:nth-last-of-type(#{$i}),
+            &:first-of-type:nth-last-of-type(#{$i})~& {
+                width: (100% / #{$i});
+            }
+        }
+
+        .link {
+            display: block;
+            padding: 1.2rem 0;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        // 탭 활성 화
+        &--on {
+            border-bottom-color: $color_secondary_txt;
+            font-weight: bold;
+            color: $color_secondary_txt;
+        }
+    }
+}
+
+// 범용으로 사용하기 위한 탭 ui
+// example : 신차견적내기 > 결제방법 - http://markup-local.danawa.com/m/auto/newcar/estimate_v2.html
+.tab-box {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: separate;
+
+    &__item {
+        display: table-cell;
+        color: $color_secondary_txt;
+        overflow: hidden;
+        border-width: 1px;
+        border-right-width: 0;
+        border-style: solid;
+        border-color: #e5e5e5;
+        color: $color_secondary_txt;
+        font-size: 14px;
+        letter-spacing: -0.02rem;
+
+        &:first-of-type {
+
+            border-radius: 3px 0 0 3px;
+        }
+
+        &:last-of-type {
+            border-right-width: 1px;
+            border-radius: 0 3px 3px 0;
+        }
+
+        &:first-of-type:nth-last-of-type(1) {
+            border-radius: 3px;
+            width: 100%;
+        }
+
+        @for $i from 2 through 3 {
+
+            &:first-of-type:nth-last-of-type(#{$i}),
+            &:first-of-type:nth-last-of-type(#{$i})~& {
+                width: (100% / #{$i});
+            }
+        }
+
+        .link {
+            position: relative;
+            display: block;
+            padding: 0.8rem 0.6rem;
+            text-align: center;
+        }
+
+        // 탭 비활성화
+        &--disabled {
+            color: #d3d3d3;
+        }
+
+        // 탭 활성 화
+        &--on {
+            border-right-width: 1px;
+            border-color: #96b5f4;
+            font-weight: bold;
+            color: $color_secondary_txt;
+
+            .link {
+                font-weight: bold;
+                color: $color_primary;
+                letter-spacing: -0.06rem;
+            }
+        }
+
+        &--on+& {
+            border-left-width: 0;
+        }
+    }
+}
